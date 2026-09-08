@@ -1,0 +1,605 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="OS-ImGui">
+      <UniqueIdentifier>{1fa18322-f47a-416e-9669-ea104bc0a42b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OS-ImGui\ImGui">
+      <UniqueIdentifier>{1af9c72e-bff2-4250-aa5b-a6f311503697}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Offset">
+      <UniqueIdentifier>{792e2c8b-aeab-4aa8-87e4-2e780ccb0201}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDK">
+      <UniqueIdentifier>{fcaa1c4e-28d7-4cbd-a1bb-4dc16258bc6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logic">
+      <UniqueIdentifier>{45a3dc72-f6cf-47c6-8af8-58c0274f1df0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logic\Shock">
+      <UniqueIdentifier>{34e3788c-c11a-4ed5-a9b5-1c6e03a94454}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logic\Blue">
+      <UniqueIdentifier>{3a651591-67af-4605-8df5-e2d44dad5440}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ESP">
+      <UniqueIdentifier>{86255432-2589-4686-95b2-81220e23b73f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Menu">
+      <UniqueIdentifier>{2fc3d5b0-2e57-4aed-adde-fb1b0396e99d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OS-ImGui\etc_elements">
+      <UniqueIdentifier>{082644f0-778c-44ae-9708-97f06bd3521d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OS-ImGui\nav_elements">
+      <UniqueIdentifier>{29deb13a-adff-42a1-ac0f-a63cff0a04c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AimBot">
+      <UniqueIdentifier>{8e948b20-c8ef-4a6e-af56-30f42eff8e95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HOOK">
+      <UniqueIdentifier>{af31cb97-5b86-46f2-96f2-7826ea837132}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FakeThread">
+      <UniqueIdentifier>{13ba84a0-c082-4ae5-8bd0-fdec6954aa41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Memory">
+      <UniqueIdentifier>{723f802b-d878-4e04-ad1e-fc92e97afab5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kmbox">
+      <UniqueIdentifier>{94518c0e-3cc0-455c-978d-7d2514ae014a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libs">
+      <UniqueIdentifier>{c81ce8ad-66cd-40b7-b98e-0cc3e09bc85a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Thread">
+      <UniqueIdentifier>{1ecb4f2b-b6e2-4aec-8481-4c52a8734b52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NetVerHelp">
+      <UniqueIdentifier>{40694bd0-be5f-4e2f-b5b7-52a90a0f760d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NetVerHelp\Help头文件">
+      <UniqueIdentifier>{26916f23-d865-461c-862d-ad9a3d7cb6f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NetVerHelp\Help源文件">
+      <UniqueIdentifier>{517e5007-b5c9-4685-83b9-f3b6c17c582d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NetVerHelp\Model">
+      <UniqueIdentifier>{2e749e8e-49b1-4fac-9274-de6628f055e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dhzbox">
+      <UniqueIdentifier>{6d5f66f4-a48d-48bc-a248-29c5bc490dbf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LOG">
+      <UniqueIdentifier>{e5d1af5e-b218-4a76-9c5a-aad6a7e226aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Wu">
+      <UniqueIdentifier>{639b3138-4d93-424d-9b66-61bb25757826}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Wu\xuli">
+      <UniqueIdentifier>{6eda593d-d717-4ba8-983c-d14fa1777bd5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="OS-ImGui\imgui\imgui.cpp">
+      <Filter>OS-ImGui\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="OS-ImGui\imgui\imgui_demo.cpp">
+      <Filter>OS-ImGui\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="OS-ImGui\imgui\imgui_draw.cpp">
+      <Filter>OS-ImGui\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="OS-ImGui\imgui\imgui_impl_dx11.cpp">
+      <Filter>OS-ImGui\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="OS-ImGui\imgui\imgui_impl_win32.cpp">
+      <Filter>OS-ImGui\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="OS-ImGui\imgui\imgui_tables.cpp">
+      <Filter>OS-ImGui\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="OS-ImGui\imgui\imgui_widgets.cpp">
+      <Filter>OS-ImGui\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="OS-ImGui\OS-ImGui.cpp">
+      <Filter>OS-ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="OS-ImGui\OS-ImGui_Base.cpp">
+      <Filter>OS-ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="OS-ImGui\OS-ImGui_External.cpp">
+      <Filter>OS-ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK.cpp">
+      <Filter>SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="Thread.cpp">
+      <Filter>Thread</Filter>
+    </ClCompile>
+    <ClCompile Include="kmboxNet.cpp">
+      <Filter>Kmbox</Filter>
+    </ClCompile>
+    <ClCompile Include="ShockKnife.cpp">
+      <Filter>Logic\Shock</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="etc_elements.cpp">
+      <Filter>OS-ImGui\etc_elements</Filter>
+    </ClCompile>
+    <ClCompile Include="nav_elements.cpp">
+      <Filter>OS-ImGui\nav_elements</Filter>
+    </ClCompile>
+    <ClCompile Include="ESP.cpp">
+      <Filter>ESP</Filter>
+    </ClCompile>
+    <ClCompile Include="Data.cpp">
+      <Filter>Offset</Filter>
+    </ClCompile>
+    <ClCompile Include="aimbot.cpp">
+      <Filter>AimBot</Filter>
+    </ClCompile>
+    <ClCompile Include="my_enc.cpp">
+      <Filter>Kmbox</Filter>
+    </ClCompile>
+    <ClCompile Include="Hook.cpp">
+      <Filter>HOOK</Filter>
+    </ClCompile>
+    <ClCompile Include="FakeThread.cpp">
+      <Filter>FakeThread</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Memory\Memory.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="Memory\Shellcode.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="Memory\InputManager.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="Memory\Registry.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="KmBox.cpp">
+      <Filter>Kmbox</Filter>
+    </ClCompile>
+    <ClCompile Include="SkillActivate.h">
+      <Filter>Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="NetVerHelp\Help头文件\cJSON.c">
+      <Filter>NetVerHelp\Help头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="NetVerHelp\Help源文件\CJsonObject.cpp">
+      <Filter>NetVerHelp\Help源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="NetVerHelp\Help源文件\HttpRequestTool.cpp">
+      <Filter>NetVerHelp\Help源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="NetVerHelp\Help源文件\Md5.cpp">
+      <Filter>NetVerHelp\Help源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="NetVerHelp\Help源文件\NetworkVerHelp.cpp">
+      <Filter>NetVerHelp\Help源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="NetVerHelp\Help源文件\OtherHelpTools.cpp">
+      <Filter>NetVerHelp\Help源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="NetVerHelp\Help源文件\Rc4.cpp">
+      <Filter>NetVerHelp\Help源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ShuangDao.cpp">
+      <Filter>Wu</Filter>
+    </ClCompile>
+    <ClCompile Include="changqiang.cpp">
+      <Filter>Wu</Filter>
+    </ClCompile>
+    <ClCompile Include="xulihou.cpp">
+      <Filter>Wu\xuli</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pak.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="OS-ImGui\imgui\imconfig.h">
+      <Filter>OS-ImGui\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="OS-ImGui\imgui\imgui.h">
+      <Filter>OS-ImGui\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="OS-ImGui\imgui\imgui_impl_dx11.h">
+      <Filter>OS-ImGui\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="OS-ImGui\imgui\imgui_impl_win32.h">
+      <Filter>OS-ImGui\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="OS-ImGui\imgui\imgui_internal.h">
+      <Filter>OS-ImGui\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="OS-ImGui\imgui\imstb_rectpack.h">
+      <Filter>OS-ImGui\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="OS-ImGui\imgui\imstb_textedit.h">
+      <Filter>OS-ImGui\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="OS-ImGui\imgui\imstb_truetype.h">
+      <Filter>OS-ImGui\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="OS-ImGui\OS-ImGui.h">
+      <Filter>OS-ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="OS-ImGui\OS-ImGui_Base.h">
+      <Filter>OS-ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="OS-ImGui\OS-ImGui_Exception.hpp">
+      <Filter>OS-ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="OS-ImGui\OS-ImGui_External.h">
+      <Filter>OS-ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="OS-ImGui\OS-ImGui_Struct.h">
+      <Filter>OS-ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Offset.h">
+      <Filter>Offset</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK.h">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Data.h">
+      <Filter>Offset</Filter>
+    </ClInclude>
+    <ClInclude Include="Thread.h">
+      <Filter>Thread</Filter>
+    </ClInclude>
+    <ClInclude Include="Tool.h">
+      <Filter>Thread</Filter>
+    </ClInclude>
+    <ClInclude Include="ShockKnife.h">
+      <Filter>Logic\Shock</Filter>
+    </ClInclude>
+    <ClInclude Include="ShockKnifeLogic1.h">
+      <Filter>Logic\Shock</Filter>
+    </ClInclude>
+    <ClInclude Include="HeroActivation.h">
+      <Filter>Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="AttackShockKnife.h">
+      <Filter>Logic\Blue</Filter>
+    </ClInclude>
+    <ClInclude Include="AttackWrite.h">
+      <Filter>Logic\Blue</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="etc_elements.h">
+      <Filter>OS-ImGui\etc_elements</Filter>
+    </ClInclude>
+    <ClInclude Include="nav_elements.h">
+      <Filter>OS-ImGui\nav_elements</Filter>
+    </ClInclude>
+    <ClInclude Include="ESP.h">
+      <Filter>ESP</Filter>
+    </ClInclude>
+    <ClInclude Include="aimbot.h">
+      <Filter>AimBot</Filter>
+    </ClInclude>
+    <ClInclude Include="AttackDuanXu.h">
+      <Filter>Logic\Blue</Filter>
+    </ClInclude>
+    <ClInclude Include="autoCombo.h">
+      <Filter>Logic\Blue</Filter>
+    </ClInclude>
+    <ClInclude Include="my_enc.h">
+      <Filter>Kmbox</Filter>
+    </ClInclude>
+    <ClInclude Include="Hook.h">
+      <Filter>HOOK</Filter>
+    </ClInclude>
+    <ClInclude Include="FakeThread.h">
+      <Filter>FakeThread</Filter>
+    </ClInclude>
+    <ClInclude Include="Memory\Memory.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Memory\Shellcode.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Memory\pch.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Memory\InputManager.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Memory\Registry.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="KmboxNet.h">
+      <Filter>Kmbox</Filter>
+    </ClInclude>
+    <ClInclude Include="HidTable.h">
+      <Filter>Kmbox</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\vmmdll.h">
+      <Filter>libs</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\leechcore.h">
+      <Filter>libs</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\VMProtectSDK.h">
+      <Filter>libs</Filter>
+    </ClInclude>
+    <ClInclude Include="json.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="xorstr.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ShockKnifeLogic.h">
+      <Filter>Logic\Shock</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Help头文件\cJSON.h">
+      <Filter>NetVerHelp\Help头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Help头文件\CJsonObject.hpp">
+      <Filter>NetVerHelp\Help头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Help头文件\HttpRequestTool.h">
+      <Filter>NetVerHelp\Help头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Help头文件\Md5.h">
+      <Filter>NetVerHelp\Help头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Help头文件\NetworkVerHelp.h">
+      <Filter>NetVerHelp\Help头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Help头文件\OtherHelpTools.h">
+      <Filter>NetVerHelp\Help头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Help头文件\Rc4.h">
+      <Filter>NetVerHelp\Help头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\ActiveState.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\ApiRequestArgs.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\BusinessCompleteType.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\BusinessType.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\DisableCardOrAccountType.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\EncryptType.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\In_accountDetailArgs.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\In_AccountLoginArgs.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\In_AccountRegisterArgs.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\In_BucklePointArgs.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\In_BuyCardNumArgs.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\In_BuyGoodsArgs.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\In_cardDetailArgs.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\In_CardLoginArgs.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\In_CreateCardArgs.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\In_DataBaseArgs.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\In_DisableCardOrAccountArgs.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\In_getCalculateArgs.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\In_getGoodsPriceArgs.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\In_getRemoteVarArgs.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\In_getSoftPriceListArgs.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\In_HeartBeatArgs.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\In_IniSoftInfoArgs.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\In_LoginOutArgs.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\In_OpenRenewAccountArgs.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\In_OpenRenewCardNumArgs.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\In_rechCardDetailArgs.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\In_RechCardRenewCardOrAccountArgs.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\In_SearchOrderArgs.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\In_unbundMacArgs.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\In_UpdOrderFlagArgs.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\In_UpdPwdArgs.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\In_updRemarkArgs.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\IsPay.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\OpenState.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\OrderState.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\Out_accountDetail.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\Out_bucklePoint.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\Out_BuyCardNum.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\Out_BuyGoods.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\Out_cardDetail.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\Out_CreateCard.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\Out_DataBaseArgs.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\Out_getCalculate.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\Out_getRemoteVar.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\Out_goodsInfo.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\Out_GoodsPrice.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\Out_heartBeat.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\Out_iniGoodsInfo.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\Out_iniSoftInfo.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\Out_Login.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\Out_LoginJurisdiction.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\Out_OpenRenewAccount.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\Out_OpenRenewCardNum.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\Out_rechCardNumDetail.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\Out_SearchOrder.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\Out_softInfo.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\Out_softPrice.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\Out_SoftPriceList.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\Out_unbundMacArgs.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\Out_Var.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\PayType.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\PlatformType.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="NetVerHelp\Model\Result.h">
+      <Filter>NetVerHelp\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="DhzBoxNet.h">
+      <Filter>Dhzbox</Filter>
+    </ClInclude>
+    <ClInclude Include="log.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyBindManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="landing.h">
+      <Filter>Logic\Blue</Filter>
+    </ClInclude>
+    <ClInclude Include="changqiang.h">
+      <Filter>Wu</Filter>
+    </ClInclude>
+    <ClInclude Include="ShuangDao.h">
+      <Filter>Wu</Filter>
+    </ClInclude>
+    <ClInclude Include="xulihou.h">
+      <Filter>Wu\xuli</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Naraka.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

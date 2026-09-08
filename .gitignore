@@ -1,0 +1,75 @@
+################################################################################
+# 此 .gitignore 文件已由 Microsoft(R) Visual Studio 自动创建。
+################################################################################
+
+/App/.vs
+# 忽略 VS 的临时文件夹
+.vs/
+.idea/
+obj/
+bin/
+Library/
+Temp/
+Logs/
+UserSettings/
+
+# 忽略各种缓存文件
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.db
+*.opdb
+*.ipch
+
+# 根目录散落的构建中间产物/日志/临时文件
+*.obj
+*.i
+*.log
+*.tlog
+imgui.ini
+build_mcp*.log
+/tmp/
+/.tmp/
+/.agent/
+/.claude/
+/.vscode/
+
+# Visual Studio 编译产物（含工程内输出目录，不限于 bin/obj）
+*.exe
+*.dll
+*.lib
+*.pdb
+*.iobj
+*.ipdb
+*.ilk
+*.exp
+*.aps
+*.idb
+*.res
+*.recipe
+*.FileListAbsolute
+*.lastbuildstate
+x64/
+Debug/
+Release/
+Release_staging/
+.vs/
+*.vcxproj.user
+
+################################################################################
+# 工作区大产物：DMA 镜像（数百 MB）不进 git（GitHub 单文件限 100MB，无意义）
+################################################################################
+# 保留 docs/ Il2CppRuntimeDumper_src/ tools/ inject_test/(cfg+dll) logs/
+# 忽略 output/ 下的大镜像与历史 dump 产物
+/dump_workspace/output/
+/dump_workspace/run/
+# 忽略输出目录内的生成物（若保留 output 目录结构）
+/dump_workspace/output/images_*/
+/dump_workspace/output/*.dll
+/dump_workspace/output/*.cs
+/dump_workspace/output/*.json
+/dump_workspace/output/*.log
+/dump_workspace/inject_test/out/
+/dump_workspace/inject_test/inject_stdout.txt
+/dump_workspace/inject_test/inject_stderr.txt

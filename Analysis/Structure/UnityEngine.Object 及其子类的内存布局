@@ -1,0 +1,131 @@
+C# System.Object
+    ↓
+UnityEngine.Object (Unity 根对象)
+    ├── GameObject (游戏对象)
+    ├── Component (组件基类)
+    │   ├── Transform (变换组件)
+    │   ├── Behaviour (可启用组件)
+    │   │   ├── MonoBehaviour (脚本组件)
+    │   │   ├── Camera (摄像机)
+    │   │   ├── Light (光源)
+    │   │   └── AudioSource (音频源)
+    │   └── Renderer (渲染器)
+    ├── Material (材质)
+    ├── Texture (纹理)
+    ├── Shader (着色器)
+    └── ScriptableObject (可脚本化对象)
+
+
+    1. C# System.Object
+定义：C# 语言中所有类的最终基类
+
+作用：提供了所有对象的基础功能，如 ToString()、GetHashCode()、Equals() 等基本方法
+
+特点：每个 C# 对象都隐式继承自 System.Object
+
+2. UnityEngine.Object (Unity 根对象)
+定义：Unity 引擎中所有游戏对象的基类
+
+作用：提供了 Unity 特有的对象管理功能，如实例化、销毁、名称管理、实例ID等
+
+特点：
+
+所有 Unity 游戏对象（GameObject）、组件、资源都继承自它
+
+包含 name 属性用于标识对象名称
+
+每个实例有唯一的 instanceID
+
+支持 Unity 的序列化系统
+
+3. GameObject (游戏对象)
+定义：Unity 场景中的基本实体
+
+作用：作为所有组件的容器，是构建游戏世界的基本单位
+
+特点：
+
+可以拥有多个 Component（组件）
+
+有 Transform 组件（不能删除）
+
+可以设置层级（layer）和标签（tag）
+
+可以被激活/禁用
+
+可以父子化形成场景层级
+
+4. Component (组件基类)
+定义：所有可以附加到 GameObject 上的功能单元的基类
+
+作用：为 GameObject 提供特定功能
+
+特点：
+
+必须依附于 GameObject 存在
+
+每个 Component 都有所属的 GameObject 引用
+
+可以动态添加/移除
+
+包括内置组件和自定义脚本组件
+
+5. Transform (变换组件)
+定义：控制 GameObject 位置、旋转和缩放的组件
+
+作用：管理对象在 3D 空间中的变换状态
+
+特点：
+
+每个 GameObject 都必须有且只有一个 Transform
+
+维护父子关系，形成场景层级
+
+提供局部坐标和世界坐标的转换
+
+支持物理碰撞检测的基础
+
+6. Behaviour (可启用组件)
+定义：可以被启用或禁用的组件基类
+
+作用：增加了 enabled 属性，允许控制组件是否生效
+
+特点：
+
+可以随时启用/禁用而不需要移除组件
+
+禁用时组件功能完全停止
+
+包括所有需要运行时控制的组件
+
+7. MonoBehaviour (脚本组件)
+定义：所有 Unity 脚本的基类
+
+作用：允许开发者编写游戏逻辑，提供完整的生命周期回调
+
+特点：
+
+提供 Start()、Update()、Awake() 等生命周期方法
+
+支持协程（Coroutine）
+
+可以响应各种事件（点击、碰撞等）
+
+支持序列化字段在 Inspector 中显示
+
+所有自定义游戏逻辑脚本都继承自它
+
+8. Camera (摄像机)
+定义：用于渲染场景的视觉组件
+
+作用：定义游戏世界的可视范围和视角
+
+特点：
+
+负责将 3D 场景渲染到 2D 屏幕
+
+可以设置视场角、裁剪平面、渲染目标等
+
+支持多种投影方式（透视/正交）
+
+可以有多个摄像机（主摄像机、UI摄像机等）
