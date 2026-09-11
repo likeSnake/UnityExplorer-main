@@ -23,3 +23,13 @@
 - `[SAMPLE]` 至少应有连续有效的 `D/R/G`。只看单个数值不能证明异常或恢复。
 
 该 DLL 不写目标进程、不开启硬件断点、不调用游戏方法。异常复现必须在这份基线日志确认模块和对象链之后单独记录，避免把旧版本 RVA 或未初始化对象误判成机制复现。
+
+## 当前持续复现实例
+
+`AddDelayRepro.dll` 已改为持续模式并注入当前 PID `2204`。它会持续为游戏线程设置目标执行断点，直到检测到：
+
+```text
+F:\gua\UnityExplorer-main\dump_workspace\research\adddelay-time-domain\evidence\runtime\adddelay_repro.stop
+```
+
+收到关闭指令后，由维护者创建该空文件；DLL 会清除断点、移除 VEH、采样恢复 2 秒并自动卸载。持续运行期间 `adddelay_repro.log` 由 DLL 独占写入，读取失败属于预期现象。

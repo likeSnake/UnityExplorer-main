@@ -26,3 +26,10 @@
 - `Observed`: 复现前和恢复后只读探针均确认目标 RVA 字节 `F2 0F 5C 40 28`。
 - `Inferred`: 当前样本完整复现文档的算术机制和恢复条件；未验证服务器端命中/伤害效果。
 - `Artifacts`: `evidence/runtime/adddelay_repro_success_20260911.log`、`evidence/runtime/adddelay_probe_postrestore_20260911.log`、`2026-09-11_AddDelay复现验证.md`。
+
+## 持续模式
+
+- `Observed`: `AddDelayRepro.dll` 已重编译为停止标志控制的持续模式，SHA-256 前缀为 `CDECEAA2F11DD85C5DCCED030B8415A516A8D3760EFE7CB35DF2B666DD9A...`。
+- `Observed`: 已按 PID `2204` 注入成功并返回有效模块句柄；进程保持存活。
+- `Inferred`: 日志文件被持续实例独占是预期行为，当前不能在运行中读取完整日志；停止后再复制和校验。
+- `Control`: 创建 `evidence/runtime/adddelay_repro.stop` 即触发清理，未收到用户关闭指令前不创建该文件。

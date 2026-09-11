@@ -30,3 +30,12 @@
 ## 未验证项
 
 未采集服务器端命中判定、HP/护甲变化或网络包接受结果；本记录只覆盖客户端时间计算原语。
+
+## 持续模式恢复记录（2026-09-11）
+
+- 用户发出恢复指令后创建停止标志：`evidence/runtime/adddelay_repro.stop`（0 字节）。
+- 日志出现停止处理并清除执行断点：`hits=6054`。
+- 清除断点后的连续样本中，D 从 `4090.2917` 回落至 `2307.0184–2307.0199`，与原始正常基线一致。
+- PID `2204` 的 `NarakaBladepoint` 仍存活；模块枚举确认 `AddDelayRepro.dll` 已卸载。
+- 本次归档：`evidence/runtime/adddelay_repro_persistent_restore_20260911_110636.log`。
+- 归档 SHA-256：`FE100FEB88DEDE3092DA3511D38674EC2CA61536AA4BB642519510EF3C2BBFA4`。
