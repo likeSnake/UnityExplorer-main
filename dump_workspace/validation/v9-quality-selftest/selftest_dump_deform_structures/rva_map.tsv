@@ -1,0 +1,16 @@
+﻿RVA	ClassId	Assembly	Namespace	Class	Method	Signature	MethodInfoVA	MethodVA	Token	Flags	Slot	AddressStatus
+0x1000	2	Test.dll	Test.Game	Sample	.ctor	public Void .ctor()	0x1C2A3C69360	0x1C2A3C63000	0x6000003	0x6		模块内地址
+0x1010	2	Test.dll	Test.Game	Sample	get_Count	public Int32 get_Count()	0x1C2A3C69240	0x1C2A3C63010	0x6000001	0x6		模块内地址
+0x1020	2	Test.dll	Test.Game	Sample	set_Count	public Void set_Count(Int32 value)	0x1C2A3C692C0	0x1C2A3C63020	0x6000002	0x6		模块内地址
+0x1030	2	Test.dll	Test.Game	Sample	DoWork	public Void DoWork(Int32 a, ref Single b, out Int32 c)	0x1C2A3C693F0	0x1C2A3C63030	0x6000004	0x6		模块内地址
+0x1040	2	Test.dll	Test.Game	Sample	Virtual	public virtual Void Virtual()	0x1C2A3C69470	0x1C2A3C63040	0x6000005	0x146	4	模块内地址
+0x1100	9	Test.dll	Test.Game	Extra1	M1	public Void M1()	0x1C2A3C69F60	0x1C2A3C63100	0x6001001	0x6		模块内地址
+0x1110	9	Test.dll	Test.Game	Extra1	M2	public Void M2()	0x1C2A3C69FC0	0x1C2A3C63110	0x6001002	0x6		模块内地址
+0x1200	10	Test.dll	Test.Game	Extra2	M1	public Void M1()	0x1C2A3C6A2B0	0x1C2A3C63200	0x6002001	0x6		模块内地址
+0x1210	10	Test.dll	Test.Game	Extra2	M2	public Void M2()	0x1C2A3C6A310	0x1C2A3C63210	0x6002002	0x6		模块内地址
+0x1220	10	Test.dll	Test.Game	Extra2	M3	public Void M3()	0x1C2A3C6A370	0x1C2A3C63220	0x6002003	0x6		模块内地址
+0x1300	11	Test.dll	Test.Game	Extra3	M1	public Void M1()	0x1C2A3C6A720	0x1C2A3C63300	0x6003001	0x6		模块内地址
+0x1310	11	Test.dll	Test.Game	Extra3	M2	public Void M2()	0x1C2A3C6A780	0x1C2A3C63310	0x6003002	0x6		模块内地址
+0x1320	11	Test.dll	Test.Game	Extra3	M3	public Void M3()	0x1C2A3C6A7E0	0x1C2A3C63320	0x6003003	0x6		模块内地址
+0x1330	11	Test.dll	Test.Game	Extra3	M4	public Void M4()	0x1C2A3C6A840	0x1C2A3C63330	0x6003004	0x6		模块内地址
+	2	Test.dll	Test.Game	Sample	NoPointer	public Void NoPointer()	0x1C2A3C694D0	0x0	0x6000006	0x6		空方法指针

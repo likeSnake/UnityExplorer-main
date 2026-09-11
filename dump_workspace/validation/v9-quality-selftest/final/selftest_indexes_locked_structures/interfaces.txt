@@ -1,0 +1,1 @@
+﻿ClassId	Assembly	Namespace	Class	ClassVA	ArrayIndex	InterfaceAssembly	InterfaceNamespace	Interface	InterfaceClassVA	Status

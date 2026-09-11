@@ -1,0 +1,5 @@
+﻿ClassId	Assembly	Namespace	Class	ClassVA	ArrayIndex	InterfaceAssembly	InterfaceNamespace	Interface	InterfaceClassVA	Status
+2	Test.dll	Test.Game	Sample	0x2C713349000	0	Test.dll	Test.Game	IFoo	0x2C713340370	接口标志匹配
+2	Test.dll	Test.Game	Sample	0x2C713349000	1	Test.dll	Test.Game	IBar	0x2C7133404C0	接口标志匹配
+4	Test.dll	Test.Game	MyStruct	0x2C7133497B0	0	Test.dll	Test.Game	IFoo	0x2C713340370	接口标志匹配
+4	Test.dll	Test.Game	MyStruct	0x2C7133497B0	1	Test.dll	Test.Game	IBar	0x2C7133404C0	接口标志匹配

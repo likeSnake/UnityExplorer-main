@@ -1,0 +1,123 @@
+﻿{
+  "class_meta.tsv": {
+    "rows": 56495,
+    "bytes": 10617188
+  },
+  "rva_map.tsv": {
+    "rows": 532497,
+    "bytes": 102737994
+  },
+  "interfaces.txt": {
+    "rows": 6913,
+    "bytes": 1097394
+  },
+  "all_bases.txt": {
+    "rows": 56562,
+    "bytes": 8497348
+  },
+  "member_diagnostics.tsv": {
+    "rows": 34568,
+    "bytes": 7409607
+  },
+  "dump": {
+    "name": "dump_20260910_190110_294.cs",
+    "bytes": 83000398,
+    "lines": 1987394,
+    "sha256": "339FE94D2B3D4876CAE7ACD004071D57642F5E28CD4591CDBEA60174AEFD3309"
+  },
+  "body_counts": {
+    "Field": 297979,
+    "Method": 532497,
+    "Property": 82235
+  },
+  "method_addresses": {
+    "0": 531367,
+    "2": 1130
+  },
+  "unique_rvas": 367731,
+  "shared_rvas": 8309,
+  "interface_status": {
+    "接口标志匹配": 6913
+  },
+  "interface_index_parity": {
+    "0": 6913
+  },
+  "interface_target_kinds": {
+    "interface": 1042,
+    "not_enumerated_definition": 5871
+  },
+  "slots": {
+    "matched": 36738,
+    "classes": 36671,
+    "unmatched_classes": 19824,
+    "multiple_classes": 65,
+    "selected": 8
+  },
+  "diagnostic_totals": {
+    "方法": {
+      "NullArray": 45872,
+      "Unreadable": 0,
+      "InvalidName": 17079,
+      "InvalidUtf8": 0,
+      "OwnerMismatch": 0,
+      "InvalidType": 0,
+      "MissingAccessor": 0,
+      "NotInterface": 0,
+      "LimitSkipped": 0,
+      "groups": 11130
+    },
+    "字段": {
+      "NullArray": 252677,
+      "Unreadable": 0,
+      "InvalidName": 0,
+      "InvalidUtf8": 0,
+      "OwnerMismatch": 0,
+      "InvalidType": 0,
+      "MissingAccessor": 0,
+      "NotInterface": 0,
+      "LimitSkipped": 0,
+      "groups": 12394
+    },
+    "属性": {
+      "NullArray": 5958,
+      "Unreadable": 0,
+      "InvalidName": 5693,
+      "InvalidUtf8": 0,
+      "OwnerMismatch": 0,
+      "InvalidType": 0,
+      "MissingAccessor": 0,
+      "NotInterface": 0,
+      "LimitSkipped": 0,
+      "groups": 7646
+    },
+    "接口": {
+      "NullArray": 7555,
+      "Unreadable": 771,
+      "InvalidName": 81,
+      "InvalidUtf8": 25,
+      "OwnerMismatch": 0,
+      "InvalidType": 0,
+      "MissingAccessor": 0,
+      "NotInterface": 120,
+      "LimitSkipped": 0,
+      "groups": 3398
+    }
+  },
+  "offset_status": {
+    "RUNTIME_VA": 3,
+    "UNRESOLVED": 31,
+    "NOT_LOADED": 10,
+    "NOT_FOUND": 2,
+    "FOUND": 156,
+    "CONFIG_CONSTANT": 1,
+    "CALIBRATED": 8,
+    "VERIFIED": 1,
+    "CANDIDATE": 1,
+    "SKIPPED_LEGACY": 2,
+    "DERIVED": 1,
+    "UNRESOLVED_LAYOUT": 4,
+    "ABI_LAYOUT": 1
+  },
+  "consistency_errors": {},
+  "scope": "Consistency and strict UTF-8 only; semantic findings require review of diagnostics."
+}

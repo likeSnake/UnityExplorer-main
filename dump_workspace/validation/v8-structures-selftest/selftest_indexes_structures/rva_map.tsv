@@ -1,0 +1,22 @@
+﻿RVA	ClassId	Assembly	Namespace	Class	Method	Signature	MethodInfoVA	MethodVA	Token	Flags	Slot	AddressStatus
+0x1000	2	Test.dll	Test.Game	Sample	.ctor	public Void .ctor()	0x2C713349320	0x2C713343000	0x6000003	0x6		模块内地址
+0x1010	2	Test.dll	Test.Game	Sample	get_Count	public Int32 get_Count()	0x2C713349220	0x2C713343010	0x6000001	0x6		模块内地址
+0x1020	2	Test.dll	Test.Game	Sample	set_Count	public Void set_Count(Int32 value)	0x2C713349290	0x2C713343020	0x6000002	0x6		模块内地址
+0x1030	2	Test.dll	Test.Game	Sample	DoWork	public Void DoWork(Int32 a, ref Single b, out Int32 c)	0x2C7133493A0	0x2C713343030	0x6000004	0x6		模块内地址
+0x1040	2	Test.dll	Test.Game	Sample	Virtual	public virtual Void Virtual()	0x2C713349410	0x2C713343040	0x6000005	0x146	4	模块内地址
+0x1100	9	Test.dll	Test.Game	Extra1	M1	public Void M1()	0x2C713349E60	0x2C713343100	0x6001001	0x6		模块内地址
+0x1100	14	Test.dll	Tests	Collision	Overload	public Void Overload(Int32 p0)	0x2C71334AEE0	0x2C713343100	0x6001000	0x6		模块内地址
+0x1100	14	Test.dll	Tests	Collision	Overload	public Void Overload()	0x2C71334AF40	0x2C713343100	0x6001010	0x6		模块内地址
+0x1100	15	Test.dll	Tests	Collision	Overload	public Void Overload(Single p0)	0x2C71334B160	0x2C713343100	0x6001001	0x6		模块内地址
+0x1100	15	Test.dll	Tests	Collision	Overload	public Void Overload()	0x2C71334B1C0	0x2C713343100	0x6001011	0x6		模块内地址
+0x1110	9	Test.dll	Test.Game	Extra1	M2	public Void M2()	0x2C713349EB0	0x2C713343110	0x6001002	0x6		模块内地址
+0x1200	10	Test.dll	Test.Game	Extra2	M1	public Void M1()	0x2C71334A170	0x2C713343200	0x6002001	0x6		模块内地址
+0x1210	10	Test.dll	Test.Game	Extra2	M2	public Void M2()	0x2C71334A1C0	0x2C713343210	0x6002002	0x6		模块内地址
+0x1220	10	Test.dll	Test.Game	Extra2	M3	public Void M3()	0x2C71334A210	0x2C713343220	0x6002003	0x6		模块内地址
+0x1300	11	Test.dll	Test.Game	Extra3	M1	public Void M1()	0x2C71334A590	0x2C713343300	0x6003001	0x6		模块内地址
+0x1310	11	Test.dll	Test.Game	Extra3	M2	public Void M2()	0x2C71334A5E0	0x2C713343310	0x6003002	0x6		模块内地址
+0x1320	11	Test.dll	Test.Game	Extra3	M3	public Void M3()	0x2C71334A630	0x2C713343320	0x6003003	0x6		模块内地址
+0x1330	11	Test.dll	Test.Game	Extra3	M4	public Void M4()	0x2C71334A680	0x2C713343330	0x6003004	0x6		模块内地址
+	14	Test.dll	Tests	Collision	Outside	public Void Outside()	0x2C71334AFA0	0x2C716341000	0x6001020	0x6		模块外地址，仅保留运行时VA
+	15	Test.dll	Tests	Collision	Outside	public Void Outside()	0x2C71334B220	0x2C716341000	0x6001021	0x6		模块外地址，仅保留运行时VA
+	2	Test.dll	Test.Game	Sample	NoPointer	public Void NoPointer()	0x2C713349460	0x0	0x6000006	0x6		空方法指针

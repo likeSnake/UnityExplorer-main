@@ -1,0 +1,8 @@
+﻿ClassId	Assembly	Namespace	Class	ClassVA	Category	RawCount	Attempted	Exported	LimitSkipped	Filtered	NullArray	Unreadable	InvalidName	InvalidUtf8	OwnerMismatch	InvalidType	MissingAccessor	NotInterface	FirstIndex	FirstAddress	FirstName	FirstReason	FirstUtf8Index	FirstUtf8Address	FirstUtf8Name	Status
+1	Test.dll	Tests	LargeGeneratedType	0x1974E5EAD70	字段	32760	32760	32760	0	0	0	0	0	0	0	0	0	0								超过旧版上限，已完整遍历
+1	Test.dll	Tests	LargeGeneratedType	0x1974E5EAD70	方法	26374	26374	26374	0	0	0	0	0	0	0	0	0	0								超过旧版上限，已完整遍历
+1	Test.dll	Tests	LargeGeneratedType	0x1974E5EAD70	属性	5340	5340	5340	0	0	0	0	0	0	0	0	0	0								超过旧版上限，已完整遍历
+2	Test.dll	Tests	MixedInterfaces	0x1974EB904E0	接口	6	6	2	0	1	0	1	0	1	0	0	0	1	1	0x1974EB90230	DisplayClass	目标不是有效接口	2	0x1974EB90390	NP\x83	存在未导出或已拒绝条目，请检查原因
+3	Test.dll	Tests	UninitializedMembers	0x1974EB90670	字段	32760	0	0	0	0	32760	0	0	0	0	0	0	0	0	0x1974EB906F0		成员数组为空				存在未导出或已拒绝条目，请检查原因
+4	Test.dll	Tests	MixedMembers	0x1974EB907D0	字段	5	5	2	0	0	0	0	0	1	1	1	0	0	1	0x1974EB90A80	WrongOwner	成员所属类型不匹配	2	0x1974EB90AA0	NP\x83	存在未导出或已拒绝条目，请检查原因
+4	Test.dll	Tests	MixedMembers	0x1974EB907D0	属性	1	1	0	0	0	0	0	0	0	0	0	1	0	0	0x1974EB90B00	NoAccessor	属性没有可用访问器				存在未导出或已拒绝条目，请检查原因

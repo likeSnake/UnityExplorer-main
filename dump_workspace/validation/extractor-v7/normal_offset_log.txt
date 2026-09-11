@@ -1,0 +1,457 @@
+偏移量提取结果
+========================================================================
+输入文件：F:\gua\myCode\Naraka\Offset.h
+转储文件：F:\gua\dump\dump2026.09.03.cs
+目标模块：未确定
+模块变体：普通版
+提取方式：按类与字段注释匹配旧格式转储
+处理条目：221 项
+处理汇总：保留原值，不写入运行时地址：4 项；保留原值，尚未确认：71 项；数值相同，无需修改：146 项
+只有已找到、已校准、已验证或已推导的有效数值允许写入。
+未确认、另一变体、候选、常量及运行时绝对地址保留输入原值；保留不代表已验证。
+符号初始化被成功值替换后，仅代表本次选中变体。
+
+Offset::UnityPlayer（第 4 行） 原值：0 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，不写入运行时地址 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::GameAssembly（第 5 行） 原值：0 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，不写入运行时地址 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::NarakaBladepoint（第 6 行） 原值：0 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，不写入运行时地址 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::MatrixAddr（第 7 行） 原值：0 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，不写入运行时地址 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::Base_WindowBase（第 8 行） 原值：0x2795D38 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::m_GlobalTime（第 9 行） 原值：0xe644808 → 提取值：0xE644808 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：GameBaseObject [类型信息相对地址]
+Offset::m_CharacterManager（第 10 行） 原值：0xe642388 → 提取值：0xE642388 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：CharacterManager [类型信息相对地址]
+Offset::m_UserDataManager（第 11 行） 原值：0xe644068 → 提取值：0xE644068 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：UserData [类型信息相对地址]
+Offset::m_CharactorSync（第 12 行） 原值：0xe606490 → 提取值：0xE606490 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：CharactorSync [类型信息相对地址]
+Offset::m_EntityManager（第 13 行） 原值：0xe643020 → 提取值：0xE643020 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：GameEntity [类型信息相对地址]
+Offset::m_BuffManager（第 14 行） 原值：0xE641868 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::m_TransparentTagHandler（第 15 行） 原值：0xE88A328 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::Base_WindowBase2（第 17 行） 原值：0x3764380 → 提取值：无可用数值 | 状态：未加载 | 处理：保留原值，尚未确认 | 来源：顶部偏移摘要
+  依据：变量属于Super / SuperIBT 变体，当前变体为普通版
+Offset::m_GlobalTime2（第 18 行） 原值：0x3755D18 → 提取值：无可用数值 | 状态：未加载 | 处理：保留原值，尚未确认 | 来源：顶部偏移摘要
+  依据：变量属于Super / SuperIBT 变体，当前变体为普通版
+Offset::m_CharacterManager2（第 19 行） 原值：0x374C2B8 → 提取值：无可用数值 | 状态：未加载 | 处理：保留原值，尚未确认 | 来源：顶部偏移摘要
+  依据：变量属于Super / SuperIBT 变体，当前变体为普通版
+Offset::m_UserDataManager2（第 20 行） 原值：0x3772EA8 → 提取值：无可用数值 | 状态：未加载 | 处理：保留原值，尚未确认 | 来源：顶部偏移摘要
+  依据：变量属于Super / SuperIBT 变体，当前变体为普通版
+Offset::m_CharactorSync2（第 21 行） 原值：0x374C368 → 提取值：无可用数值 | 状态：未加载 | 处理：保留原值，尚未确认 | 来源：顶部偏移摘要
+  依据：变量属于Super / SuperIBT 变体，当前变体为普通版
+Offset::m_EntityManager2（第 22 行） 原值：0x3755DD0 → 提取值：无可用数值 | 状态：未加载 | 处理：保留原值，尚未确认 | 来源：顶部偏移摘要
+  依据：变量属于Super / SuperIBT 变体，当前变体为普通版
+Offset::m_BuffManager2（第 23 行） 原值：0x374AE20 → 提取值：无可用数值 | 状态：未加载 | 处理：保留原值，尚未确认 | 来源：顶部偏移摘要
+  依据：变量属于Super / SuperIBT 变体，当前变体为普通版
+Offset::m_TransparentTagHandler2（第 24 行） 原值：0x376ABF8 → 提取值：无可用数值 | 状态：未加载 | 处理：保留原值，尚未确认 | 来源：顶部偏移摘要
+  依据：变量属于Super / SuperIBT 变体，当前变体为普通版
+Offset::MemoryShockUnresolvedRva（第 88 行） 原值：0x111 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::InitActorKitRefer（第 89 行） 原值：MemoryShockUnresolvedRva → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::Il2CppClassNameOffset（第 92 行） 原值：0x10 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::Il2CppClassParentOffset（第 93 行） 原值：0x58 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::Il2CppClassMethodsOffset（第 94 行） 原值：0x98 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::Il2CppClassMethodCountOffset（第 95 行） 原值：0x120 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::Il2CppClassStaticFieldsOffset（第 96 行） 原值：0xB8 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::Il2CppMethodPointerOffset（第 97 行） 原值：0x00 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::Il2CppMethodNameOffset（第 98 行） 原值：0x18 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::Il2CppMethodSlotOffset（第 99 行） 原值：0x50 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::Il2CppMethodParameterCountOffset（第 100 行） 原值：0x52 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::Il2CppStaticInstanceOffset（第 101 行） 原值：0x08 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::MemoryShockHookContextEntityKitOffset（第 104 行） 原值：0x10 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::MemoryShockEntityKitActorModelOffset（第 105 行） 原值：0x18 → 提取值：0x18 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.EntityKit->ActorModel <actorModel>k__BackingField [实例字段]
+Offset::MemoryShockTransparentTagHandlerActorKitOffset（第 106 行） 原值：0x70 → 提取值：0x70 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.TransparentTagHandler->ActorKit actorkit [实例字段]
+Offset::MemoryShockTransparentTagHandlerCharacterManagerOffset（第 107 行） 原值：0xD8 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::MemoryShockCharacterManagerMainPlayerOffset（第 108 行） 原值：0x18 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::MemoryShockInteractableVtableSlotOffset（第 109 行） 原值：0x198 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::MemoryShockCacheDelayBreakTypeOffset（第 110 行） 原值：0x58 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::MemoryShockCodecaveHintRva（第 113 行） 原值：0x55E5C → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::MemoryShockBootstrapChain0Offset（第 114 行） 原值：0x18 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::MemoryShockBootstrapChain1Offset（第 115 行） 原值：0xC0 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::MemoryShockBootstrapChain2Offset（第 116 行） 原值：0x90 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::MemoryShockLegacyReferRva（第 117 行） 原值：0x3EC8D92 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::MemoryShockLegacyReRva（第 118 行） 原值：0x3EE3AB8 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::MemoryShockLegacyRefRva（第 119 行） 原值：0x36F3250 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::MemoryShockLegacyJmpRva（第 120 行） 原值：0xCBA5669 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::MemoryShockLegacyJmp2Rva（第 121 行） 原值：0xCBA5630 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::MemoryShockLegacyJmp3Rva（第 122 行） 原值：0xCBA55A8 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::MemoryShockLegacyJmp4Rva（第 123 行） 原值：0xCBA5669 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::MemoryShockLegacyLocalActorChain0Offset（第 124 行） 原值：0xA8 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::MemoryShockLegacyLocalActorChain1Offset（第 125 行） 原值：0x18 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::MemoryShockLegacyTestFieldOffset（第 126 行） 原值：0x48B → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::MemoryShockLegacyCompareValue（第 127 行） 原值：0x245A → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::MemoryShockLegacyMoveFieldOffset（第 128 行） 原值：0x122E8 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::MemoryShockLegacyRefStateOffset（第 129 行） 原值：0xE0 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::MemoryShockLegacyRefObjectOffset（第 130 行） 原值：0xB8 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::MemoryShockLegacyRefCompareOffset（第 131 行） 原值：0x18 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::MemoryShockFlushIdentityChain0Offset（第 134 行） 原值：0xA8 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::MemoryShockFlushIdentityChain1Offset（第 135 行） 原值：0x58 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::MemoryShockFlushIdentityChain2Offset（第 136 行） 原值：0x18 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::MemoryShockFlushIdentityChain3Offset（第 137 行） 原值：0x30 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::MemoryShockFlushAnimPlayableOffset（第 138 行） 原值：0x2C0 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::MemoryShockVirtualVtableSlotOffset（第 141 行） 原值：0x190 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::MemoryShockVirtualBreakCacheOffset（第 142 行） 原值：0x10 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::MemoryShockVirtualCallARva（第 143 行） 原值：0x12C6750 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::MemoryShockVirtualCallBRva（第 144 行） 原值：0x238ED00 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::MemoryShockVirtualCallCRva（第 145 行） 原值：0x13B00B0 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::MemoryShockVirtualReturnRva（第 146 行） 原值：0x36E1E73 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::AnimPlayableCrossFadeInFixedTimeNormal（第 149 行） 原值：0x5811350 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::AnimPlayableCrossFadeInFixedTimeSuper（第 150 行） 原值：0x797D760 → 提取值：无可用数值 | 状态：未加载 | 处理：保留原值，尚未确认 | 来源：顶部偏移摘要
+  依据：变量属于Super / SuperIBT 变体，当前变体为普通版
+Offset::FlushState（第 152 行） 原值：0x1D7BE0 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::CrossFadeInFixedTime（第 153 行） 原值：AnimPlayableCrossFadeInFixedTimeNormal → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::LocalGenRangeSingleData（第 155 行） 原值：0x111 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::op_Subtraction（第 156 行） 原值：0x1111 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::Call_GetVelocity（第 158 行） 原值：0x6C3C3D0 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::Character.lastSPLFramCount（第 162 行） 原值：0xb8 → 提取值：0xB8 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.CharacterManager->Int32 lastSPLFramCount [实例字段]
+Offset::Character.AllAliveCharList（第 163 行） 原值：0x50 → 提取值：0x50 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.CharacterManager->Dictionary`2 fid2AliveCharacter [实例字段]
+Offset::Character.ArrayStart（第 164 行） 原值：0x30 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::Character.fpsFilter（第 165 行） 原值：0x40 → 提取值：0x40 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.CharacterManager->FpsFilter fpsFilter [实例字段]
+Offset::FpsFilter.fps（第 169 行） 原值：0x2C → 提取值：0x2C | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.FpsFilter->Int32 fps [实例字段]
+Offset::ActorModel.ObjectMsg（第 174 行） 原值：0xd8 → 提取值：0xD8 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.ActorModel->ObjectMessenger objectMsg [实例字段]
+Offset::ActorModel.EventTracksForLayer（第 175 行） 原值：0x30 → 提取值：0x30 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.ObjectMessenger->EventTrackSet[] EventTracksForLayer [实例字段]
+Offset::ActorModel._curAnimPlayableAgent（第 176 行） 原值：0x70 → 提取值：0x70 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.ObjectMessenger->AnimPlayable _curAnimPlayableAgent [实例字段]
+Offset::ActorModel._runtimeLogicLayers（第 177 行） 原值：0x48 → 提取值：0x48 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.AnimPlayable->RuntimeLogicLayer[] _runtimeLogicLayers [实例字段]
+Offset::ActorModel.Transform（第 179 行） 原值：0x128 → 提取值：0x128 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.ActorModel->Transform FastTransform [实例字段]
+Offset::ActorModel.ActorWeapon（第 180 行） 原值：0xf8 → 提取值：0xF8 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.ActorModel->ActorWeapon actorWeapon [实例字段]
+Offset::ActorModel.WeaponType（第 181 行） 原值：0x68 → 提取值：0x68 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.ActorWeapon->Int32 WeaponType [实例字段]
+Offset::ActorModel.RuntimePropertyData（第 182 行） 原值：0xa8 → 提取值：0xA8 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.ActorModel->RuntimePlayerPropertyData RuntimePropertyData [实例字段]
+Offset::ActorModel.PropertyData（第 183 行） 原值：0x358 → 提取值：0x358 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.ActorModel->ActorModelPropertyData propertyData [实例字段]
+Offset::ActorModel.FestivalGiftBagData（第 185 行） 原值：0xc8 → 提取值：0xC8 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.UserData->UserDataFestivalGiftBagActData FestivalGiftBagData [实例字段]
+Offset::ActorModel.PettyCashGiftData（第 186 行） 原值：0xc0 → 提取值：0xC0 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.UserData->UserDataPettyCashGiftActData PettyCashGiftData [实例字段]
+Offset::ActorModel.battleData（第 187 行） 原值：0x38 → 提取值：0x38 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.UserData->UserBattleData battleData [实例字段]
+Offset::ActorModel.skillData（第 188 行） 原值：0x118 → 提取值：0x118 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.UserBattleData->UserBattleSkillData skillData [实例字段]
+Offset::ActorModel.characterSkillDataDict（第 189 行） 原值：0x10 → 提取值：0x10 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.UserBattleSkillData->Dictionary`2 characterSkillDataDict [实例字段]
+Offset::ActorModel.fighterEquipData（第 191 行） 原值：0x70 → 提取值：0x70 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.UserBattleData->UserBattleEquipData fighterEquipData [实例字段]
+Offset::ActorModel.cur_weapon_slot（第 193 行） 原值：0x20 → 提取值：0x20 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.PlayerEquipInfoData->Int32 cur_weapon_slot [实例字段]
+Offset::ActorModel.cullingVisible（第 195 行） 原值：0x6C → 提取值：0x6C | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.ActorModel->Boolean cullingVisible [实例字段]
+Offset::ActorModel.shrtt（第 197 行） 原值：0x68 → 提取值：0x68 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：MobileNetwork.CharactorSync->Single shrtt [实例字段]
+Offset::ActorModel.currentTime（第 199 行） 原值：0x58 → 提取值：0x58 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.BattleLineCurve->Single currentTime [实例字段]
+Offset::ActorModel.length（第 200 行） 原值：0x54 → 提取值：0x54 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.BattleLineCurve->Single length [实例字段]
+Offset::ActorModel.nowTime（第 201 行） 原值：0x60 → 提取值：0x60 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.BattleLineCurve->Double nowTime [实例字段]
+Offset::ActorModel._globalTime（第 202 行） 原值：0x28 → 提取值：0x28 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.GameBaseObject->Double _globalTime [静态字段]
+Offset::ActorModel.CurShareState（第 204 行） 原值：0x48 → 提取值：0x48 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.RuntimeLogicLayer->PlayableState CurShareState [实例字段]
+Offset::ActorModel.NameHash（第 205 行） 原值：0x18 → 提取值：0x18 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.PlayableState->Int32 NameHash [实例字段]
+Offset::ActorModel.animClipName（第 206 行） 原值：0x18 → 提取值：0x18 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：Leihuo.EventTrackSet->String animClipName [实例字段]
+Offset::ActorModel.ProPerty.Heroid（第 211 行） 原值：0x108 → 提取值：0x108 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.ActorModelPropertyData->Int32 _HeroTid [实例字段]
+Offset::ActorModel.ProPerty.Group（第 212 行） 原值：0x118 → 提取值：0x118 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.ActorModelPropertyData->Int32 _Group [实例字段]
+Offset::ActorModel.ProPerty.WeaponId（第 213 行） 原值：0x128 → 提取值：0x128 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.ActorModelPropertyData->Int32 _WeaponId [实例字段]
+Offset::ActorModel.ProPerty.RobotId（第 214 行） 原值：0x130 → 提取值：0x130 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.ActorModelPropertyData->Int32 _RobotId [实例字段]
+Offset::ActorModel.ProPerty.BeControlledStatus（第 215 行） 原值：0x140 → 提取值：0x140 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.ActorModelPropertyData->Int32 _BeControlledStatus [实例字段]
+Offset::ActorModel.ProPerty.HeroBattleStatus（第 216 行） 原值：0x14c → 提取值：0x14C | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.ActorModelPropertyData->Int32 _HeroBattleStatus [实例字段]
+Offset::ActorModel.ProPerty.ComboId（第 217 行） 原值：0x158 → 提取值：0x158 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.ActorModelPropertyData->Int32 _ComboId [实例字段]
+Offset::ActorModel.ProPerty.CurrentStageType（第 218 行） 原值：0x160 → 提取值：0x160 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.ActorModelPropertyData->Int32 _CurrentStageType [实例字段]
+Offset::ActorModel.ProPerty.PlayerName（第 219 行） 原值：0x200 → 提取值：0x200 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.ActorModelPropertyData->String _Name [实例字段]
+Offset::ActorModel.ProPerty.SkillStatus（第 220 行） 原值：0x198 → 提取值：0x198 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.ActorModelPropertyData->Int32 _SkillCastStatus [实例字段]
+Offset::ActorModel.ProPerty.StereoDodgeType（第 221 行） 原值：0x1a0 → 提取值：0x1A0 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.ActorModelPropertyData->Int32 _StereoDodgeType [实例字段]
+Offset::ActorModel.ProPerty.LastStateHash（第 222 行） 原值：0x1ac → 提取值：0x1AC | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.ActorModelPropertyData->Int32 _LastStateHash [实例字段]
+Offset::ActorModel.ProPerty.CurrentUseItemSkinId（第 223 行） 原值：0x1b4 → 提取值：0x1B4 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.ActorModelPropertyData->Int32 _CurrentUseItemSkinId [实例字段]
+Offset::ActorModel.ProPerty.LastBeControlledStatus（第 224 行） 原值：0x1c8 → 提取值：0x1C8 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.ActorModelPropertyData->Int32 _LastBeControlledStatus [实例字段]
+Offset::ActorModel.ProPerty.LastBaseStateHash（第 225 行） 原值：0x1dc → 提取值：0x1DC | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.ActorModelPropertyData->Int32 _LastBaseStateHash [实例字段]
+Offset::ActorModel.ProPerty.UniqueSkillState（第 226 行） 原值：0x1f4 → 提取值：0x1F4 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.ActorModelPropertyData->Int32 _UniqueSkillState [实例字段]
+Offset::ActorModel.ProPerty.JiguansanState（第 227 行） 原值：0x1f8 → 提取值：0x1F8 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.ActorModelPropertyData->Int32 _JiguansanState [实例字段]
+Offset::ActorModel.ActorKit（第 230 行） 原值：0xc8 → 提取值：0xC8 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.ActorModel->ActorKit actorKit [实例字段]
+Offset::ActorModel.ActorKitS.BackingField（第 233 行） 原值：0x38 → 提取值：0x38 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.EntityKit->ActorAnimatorParams <AniParams>k__BackingField [实例字段]
+Offset::ActorModel.ActorKitS.InteractableDevice（第 234 行） 原值：0x90 → 提取值：0x90 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.EntityKit->IEntityKitInteractableDevice actorKitInteractableDevice [实例字段]
+Offset::ActorModel.ActorKitS.ActorKitInteractive（第 235 行） 原值：0xd0 → 提取值：0xD0 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.EntityKit->IEntityKitInteractive actorKitInteractive [实例字段]
+Offset::ActorModel.ActorKitS.ActorPhysics（第 236 行） 原值：0xe0 → 提取值：0xE0 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.EntityKit->ActorKitPhysics actorPhysics [实例字段]
+Offset::ActorModel.ActorKitS.CurrentCollisionFlags（第 237 行） 原值：0xf4 → 提取值：0xF4 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.ActorKitPhysics->CollisionFlags _currentCollisionFlags [实例字段]
+Offset::ActorModel.ActorKitS.HitSimulateData（第 238 行） 原值：0x100 → 提取值：0x100 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.EntityKit->ActionHitSimulateData actorKitHitSimulateData [实例字段]
+Offset::ActorModel.ActorKitS.HitSimulatePtr（第 239 行） 原值：0xf0 → 提取值：0xF0 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.EntityKit->SkillComboData actorKitComboData [实例字段]
+Offset::ActorModel.ActorKitS.actorKitBreakData（第 240 行） 原值：0x108 → 提取值：0x108 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.EntityKit->ActionBreakData actorKitBreakData [实例字段]
+Offset::ActorModel.ActorKitS.AnimPlayableAgent（第 241 行） 原值：0x2e8 → 提取值：0x2E8 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.ActorKit->AnimPlayable <AnimPlayableAgent>k__BackingField [实例字段]
+Offset::ActorModel.ActorKitS.HitSimulate.ReactionType（第 244 行） 原值：0x54 → 提取值：0x54 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：Code.Module_Battle.ActionHitSimulateData->EHitReactionType ReactionType [实例字段]
+Offset::ActorModel.ActorKitS.HitSimulate.RangeReactionType（第 245 行） 原值：0x58 → 提取值：0x58 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：Code.Module_Battle.ActionHitSimulateData->EHitReactionType RangeReactionType [实例字段]
+Offset::ActorModel.ActorKitS.HitSimulate.ReactionExtraType（第 246 行） 原值：0x5C → 提取值：0x5C | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：Code.Module_Battle.ActionHitSimulateData->EHitReactionExtraType ReactionExtraType [实例字段]
+Offset::ActorModel.ActorKitS.HitSimulate.endureLevel（第 247 行） 原值：0xD0 → 提取值：0xD0 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：Code.Module_Battle.ActionHitSimulateData->Int32 EndureLevel [实例字段]
+Offset::ActorModel.ActorKitS.HitSimulate.ActionDuration（第 248 行） 原值：0x2C → 提取值：0x2C | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：Code.Module_Battle.ActionHitSimulateData->Single ActionDuration [实例字段]
+Offset::ActorModel.ActorKitS.HitSimulate.ReactionParryType（第 249 行） 原值：0xB4 → 提取值：0xB4 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：Code.Module_Battle.ActionHitSimulateData->Int32 ParryGroup [实例字段]
+Offset::ActorModel.ActorKitS.HitSimulate.XuListate（第 250 行） 原值：0x70 → 提取值：0x70 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：Code.Module_Battle.SkillComboData->EComboCharge ChargeType [实例字段]
+Offset::ActorModel.ActorKitInteractiveS.TargetInteractiveFID（第 257 行） 原值：0x10 → 提取值：0x10 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.ActorKitInteractive->Int32 m_targetInteractiveFID [实例字段]
+Offset::ActorModel.ActorKitInteractiveS.CanRescueActor（第 258 行） 原值：0x28 → 提取值：0x28 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.ActorKitInteractive->ActorKit canRescueActor [实例字段]
+Offset::ActorModel.ActorKitInteractiveS.CanStealActor（第 259 行） 原值：0x30 → 提取值：0x30 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.ActorKitInteractive->ActorKit canStealActor [实例字段]
+Offset::ActorModel.ActorKitInteractiveS.DyingExecuteActorFid（第 260 行） 原值：0x38 → 提取值：0x38 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.ActorKitInteractive->Int32 DyingExecuteActorFid [实例字段]
+Offset::ActorModel.ActorKitInteractiveS.InteractiveType（第 261 行） 原值：0x58 → 提取值：0x58 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.ActorKitInteractive->ActorInteractiveType m_interactiveType [实例字段]
+Offset::ActorModel.ActorKitInteractiveS.IsMainPlayer（第 262 行） 原值：0x5c → 提取值：0x5C | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.ActorKitInteractive->Boolean isMainPlayer [实例字段]
+Offset::ActorModel.ActorKitInteractiveS.Status（第 263 行） 原值：0x60 → 提取值：0x60 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.ActorKitInteractive->ActorInteractiveStatus m_status [实例字段]
+Offset::ActorModel.ActorKitInteractiveS.IType（第 264 行） 原值：0x64 → 提取值：0x64 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.ActorKitInteractive->InteractiveType m_itype [实例字段]
+Offset::ActorModel.ActorKitInteractiveS.RescueFid（第 265 行） 原值：0x68 → 提取值：0x68 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.ActorKitInteractive->Int32 rescue_fid [实例字段]
+Offset::ActorModel.ActorKitInteractiveS.NowShowInteractiveType（第 266 行） 原值：0x70 → 提取值：0x70 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.ActorKitInteractive->ActorInteractiveType now_showinteractiveType [实例字段]
+Offset::ActorModel.RuntimeLogicLayerS.LayerIndex（第 272 行） 原值：0x10 → 提取值：0x10 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.RuntimeLogicLayer->Int32 layerIndex [实例字段]
+Offset::ActorModel.RuntimeLogicLayerS.LayerType（第 273 行） 原值：0x14 → 提取值：0x14 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.RuntimeLogicLayer->ELogicLayer LayerType [实例字段]
+Offset::ActorModel.RuntimeLogicLayerS.LayerWeight（第 274 行） 原值：0x18 → 提取值：0x18 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.RuntimeLogicLayer->Single _layerWeight [实例字段]
+Offset::ActorModel.RuntimeLogicLayerS.CurShareState（第 275 行） 原值：0x48 → 提取值：0x48 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.RuntimeLogicLayer->PlayableState CurShareState [实例字段]
+Offset::ActorModel.RuntimeLogicLayerS.CurStateStartTimeOffset（第 276 行） 原值：0x50 → 提取值：0x50 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.RuntimeLogicLayer->Single CurStateStartTimeOffset [实例字段]
+Offset::ActorModel.RuntimeLogicLayerS.CurDuration（第 277 行） 原值：0x54 → 提取值：0x54 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.RuntimeLogicLayer->Single CurDuration [实例字段]
+Offset::ActorModel.RuntimeLogicLayerS.CurTimeForLogicState（第 278 行） 原值：0x60 → 提取值：0x60 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.RuntimeLogicLayer->Single _curTimeForLogicState [实例字段]
+Offset::ActorModel.RuntimeLogicLayerS.TransitionDuration（第 279 行） 原值：0x74 → 提取值：0x74 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.RuntimeLogicLayer->Single TransitionDuration [实例字段]
+Offset::ActorModel.RuntimeLogicLayerS.TransitionPercent（第 280 行） 原值：0x78 → 提取值：0x78 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.RuntimeLogicLayer->Single _transitionPercent [实例字段]
+Offset::ActorModel.RuntimeLogicLayerS.CurIsLogicState（第 281 行） 原值：0x7c → 提取值：0x7C | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.RuntimeLogicLayer->Boolean CurIsLogicState [实例字段]
+Offset::ActorModel.RuntimeLogicLayerS.TransitionFinish（第 282 行） 原值：0x7e → 提取值：0x7E | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.RuntimeLogicLayer->Boolean transitionFinish [实例字段]
+Offset::ActorModel.PlayableStateS.AnimatorName（第 288 行） 原值：0x10 → 提取值：0x10 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.PlayableState->String animatorName [实例字段]
+Offset::ActorModel.PlayableStateS.NameHash（第 289 行） 原值：0x18 → 提取值：0x18 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.PlayableState->Int32 NameHash [实例字段]
+Offset::ActorModel.PlayableStateS.TagHash（第 290 行） 原值：0x1c → 提取值：0x1C | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.PlayableState->Int32 TagHash [实例字段]
+Offset::ActorModel.EntityKitS.CameraAgent（第 295 行） 原值：0x30 → 提取值：0x30 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.EntityKit->CameraAgent <cameraAgent>k__BackingField [实例字段]
+Offset::ActorModel.CameraAgentS.CameraController（第 300 行） 原值：0x88 → 提取值：0x88 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.CameraAgent->LXCameraController CameraController [实例字段]
+Offset::ActorModel.LXCameraControllerS.AdventureRig（第 305 行） 原值：0x58 → 提取值：0x58 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.LXCameraController->AdventureRig <AdventureRig>k__BackingField [实例字段]
+Offset::ActorModel.AdventureRigS.Euler（第 310 行） 原值：0x250 → 提取值：0x250 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：com.ootii.Cameras.AdventureRig->Vector3 _Euler [实例字段]
+Offset::GameBaseObject._Instance（第 315 行） 原值：0x8 → 提取值：0x8 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.GameBaseObject->GameBaseObject _Instance [静态字段]
+Offset::GameBaseObject._fps（第 316 行） 原值：0x18 → 提取值：0x18 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.GameBaseObject->AvgFPSManager _fps [实例字段]
+Offset::AvgFPSManager.AvgRenderFPS（第 321 行） 原值：0x14 → 提取值：0x14 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.AvgFPSManager->Int32 AvgRenderFPS [静态字段]
+Offset::UserData.InteractiveManager（第 327 行） 原值：0x240 → 提取值：0x240 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.UserBattleData->InteractiveManager interactiveManager [实例字段]
+Offset::UserData.ClientDodgeConsumeData（第 328 行） 原值：0x228 → 提取值：0x228 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.UserBattleData->ClientDodgeConsumeData clientDodgeConsumeData [实例字段]
+Offset::UserData.SpectatorData（第 329 行） 原值：0x90 → 提取值：0x90 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.UserData->UserDataSpectatorData spectatorData [实例字段]
+Offset::UserData.isSpectator（第 330 行） 原值：0x48 → 提取值：0x48 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.UserDataSpectatorData->Boolean isSpectator [实例字段]
+Offset::UserData.Skill_ID（第 331 行） 原值：0x10 → 提取值：0x10 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.SkillData->Int32 fid [实例字段]
+Offset::UserData.skillState（第 332 行） 原值：0x78 → 提取值：0x78 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.SkillData->SkillState skillState [实例字段]
+Offset::UserData.ClientLeftCdTime（第 333 行） 原值：0x40 → 提取值：0x40 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.SkillData->Single ClientLeftCdTime [实例字段]
+Offset::UserData.ClientLeftContinueTime（第 334 行） 原值：0x48 → 提取值：0x48 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.SkillData->Single ClientLeftContinueTime [实例字段]
+Offset::UserData.logicData（第 335 行） 原值：0x68 → 提取值：0x68 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.SkillData->SkillConfig_Skill logicData [实例字段]
+Offset::Il2CppList.Items（第 340 行） 原值：0x10 → 提取值：无可用数值 | 状态：未找到 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：未找到 Class/字段或类级 RVA
+Offset::Il2CppList.Size（第 341 行） 原值：0x18 → 提取值：无可用数值 | 状态：未找到 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：未找到 Class/字段或类级 RVA
+Offset::Il2CppList.FirstItem（第 342 行） 原值：0x20 → 提取值：无可用数值 | 状态：未找到 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：未找到 Class/字段或类级 RVA
+Offset::ClientDodgeConsumeData.DodgeConsumeIdx（第 347 行） 原值：0x10 → 提取值：0x10 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.ClientDodgeConsumeData->Int32 dodge_consume_idx [实例字段]
+Offset::ClientDodgeConsumeData.DodgeConsumePaddingList（第 348 行） 原值：0x18 → 提取值：0x18 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.ClientDodgeConsumeData->List`1 dodgeConsumePaddingList [实例字段]
+Offset::ClientDodgeConsumeDataItem.Valid（第 353 行） 原值：0x10 → 提取值：0x10 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.ClientDodgeConsumeDataItem->Boolean valid [实例字段]
+Offset::ClientDodgeConsumeDataItem.CostValue（第 354 行） 原值：0x14 → 提取值：0x14 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.ClientDodgeConsumeDataItem->Int32 cost_value [实例字段]
+Offset::ClientDodgeConsumeDataItem.RuntimeProp（第 355 行） 原值：0x18 → 提取值：0x18 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.ClientDodgeConsumeDataItem->Int32 rt_prop [实例字段]
+Offset::ArticleData.interactiveId（第 361 行） 原值：0x14 → 提取值：0x14 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.InteractiveData->Int32 interactiveId [实例字段]
+Offset::ArticleData.status（第 362 行） 原值：0x34 → 提取值：0x34 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.InteractiveData->Int32 status [实例字段]
+Offset::ArticleData.position（第 363 行） 原值：0x18 → 提取值：0x18 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.InteractiveData->Vector3 position [实例字段]
+Offset::SoulData.fid（第 369 行） 原值：0x350 → 提取值：0x350 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.ActorModel->Int32 fid [实例字段]
+Offset::SoulData.soulItemData（第 370 行） 原值：0x98 → 提取值：0x98 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.UserBattleData->UserBattleSoulItemData soulItemData [实例字段]
+Offset::SoulData.dataDict（第 371 行） 原值：0x10 → 提取值：0x10 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.UserBattleSoulItemData->Dictionary`2 dataDict [实例字段]
+Offset::SoulData.soulItemDataFid（第 372 行） 原值：0x10 → 提取值：0x10 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.PlayerBattleSoulItemData->Int32 fid [实例字段]
+Offset::SoulData._soulItemList（第 373 行） 原值：0x40 → 提取值：0x40 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.PlayerBattleSoulItemData->List`1 _soulItemList [实例字段]
+Offset::SoulData.info（第 375 行） 原值：0x10 → 提取值：0x10 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.BattleSoulItemData->SoulItemData info [实例字段]
+Offset::SoulData.fid_（第 376 行） 原值：0x18 → 提取值：0x18 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.SoulItemData->Int32 fid_ [实例字段]
+Offset::SoulData.soul_item_tid_（第 377 行） 原值：0x1c → 提取值：0x1C | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.SoulItemData->Int32 soul_item_tid_ [实例字段]
+Offset::SoulData.status（第 380 行） 原值：0x34 → 提取值：0x34 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.InteractiveData->Int32 status [实例字段]
+Offset::SoulData.position（第 381 行） 原值：0x18 → 提取值：0x18 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.InteractiveData->Vector3 position [实例字段]
+Offset::BattleItemData.itemData（第 387 行） 原值：0x90 → 提取值：0x90 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.UserBattleData->UserBattleItemInfo itemData [实例字段]
+Offset::BattleItemData.dataDict（第 388 行） 原值：0x10 → 提取值：0x10 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.UserBattleItemInfo->Dictionary`2 dataDict [实例字段]
+Offset::BattleItemData.itemDataFid（第 389 行） 原值：0x10 → 提取值：0x10 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.PlayerBattleItemInfo->Int32 fid [实例字段]
+Offset::BattleItemData.itemDataList（第 390 行） 原值：0x30 → 提取值：0x30 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.PlayerBattleItemInfo->List`1 itemDataList [实例字段]
+Offset::BattleItemData.battleItemInfo（第 392 行） 原值：0x10 → 提取值：0x10 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.BattleItemData->BattleItemInfo info [实例字段]
+Offset::BattleItemData.item_id_（第 393 行） 原值：0x1c → 提取值：0x1C | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.BattleItemInfo->Int32 item_id_ [实例字段]
+Offset::BattleItemData.count_（第 394 行） 原值：0x20 → 提取值：0x20 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.BattleItemInfo->Int32 count_ [实例字段]
+Offset::BattleItemData.listItems（第 395 行） 原值：0x10 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::BattleItemData.listSize（第 396 行） 原值：0x18 → 提取值：无可用数值 | 状态：缺少查找映射 | 处理：保留原值，尚未确认 | 来源：旧格式类与字段匹配
+  依据：旧 dump 无 Offset:: 摘要，声明也没有 Class 注释
+Offset::Buff._Instance（第 401 行） 原值：0x0 → 提取值：0x0 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.BuffManager->BuffManager _instance [静态字段]
+Offset::Buff.recordBuffHandlersDict（第 402 行） 原值：0x10 → 提取值：0x10 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.BuffManager->Dictionary`2 _recordBuffHandlersDict [实例字段]
+Offset::Buff.BuffDict（第 403 行） 原值：0x30 → 提取值：0x30 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.BuffHandler->Dictionary`2 _mBuffDict [实例字段]
+Offset::Buff.BuffInstanceIdList（第 404 行） 原值：0x38 → 提取值：0x38 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.BuffHandler->List`1 <BuffInstanceIdList>k__BackingField [实例字段]
+Offset::Buff.BuffTidList（第 405 行） 原值：0x40 → 提取值：0x40 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.BuffHandler->List`1 <BuffTidList>k__BackingField [实例字段]
+Offset::Buff.BuffId（第 406 行） 原值：0x20 → 提取值：0x20 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.Buff->Int32 <BuffId>k__BackingField [实例字段]
+Offset::Buff.GroupId（第 407 行） 原值：0x24 → 提取值：0x24 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.Buff->Int32 <GroupId>k__BackingField [实例字段]
+Offset::Buff.LeftTime（第 408 行） 原值：0x34 → 提取值：0x34 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.Buff->Single leftTime [实例字段]
+Offset::Buff.OwnerFid（第 409 行） 原值：0x84 → 提取值：0x84 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.Buff->Int32 ownerFid [实例字段]
+Offset::Buff.CasterFid（第 410 行） 原值：0x88 → 提取值：0x88 | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.Buff->Int32 casterFid [实例字段]
+Offset::Buff.BuffIId（第 411 行） 原值：0x8c → 提取值：0x8C | 状态：已找到 | 处理：数值相同，无需修改 | 来源：旧格式类与字段匹配
+  依据：类：.Buff->Int32 <BuffIId>k__BackingField [实例字段]
+
+更新后的头文件：dump_workspace\validation\extractor-v7\Normal_Offset_updated.h

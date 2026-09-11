@@ -1,0 +1,8 @@
+﻿ClassId	Assembly	Namespace	Class	ClassVA	Category	RawCount	Attempted	Exported	LimitSkipped	Filtered	NullArray	Unreadable	InvalidName	InvalidUtf8	OwnerMismatch	InvalidType	MissingAccessor	NotInterface	FirstIndex	FirstAddress	FirstName	FirstReason	Status
+1	Test.dll	Tests	LargeGeneratedType	0x2012741AD70	字段	32760	32760	32760	0	0	0	0	0	0	0	0	0	0					超过旧版上限，已完整遍历
+1	Test.dll	Tests	LargeGeneratedType	0x2012741AD70	方法	26374	26374	26374	0	0	0	0	0	0	0	0	0	0					超过旧版上限，已完整遍历
+1	Test.dll	Tests	LargeGeneratedType	0x2012741AD70	属性	5340	5340	5340	0	0	0	0	0	0	0	0	0	0					超过旧版上限，已完整遍历
+2	Test.dll	Tests	MixedInterfaces	0x201279C04E0	接口	6	6	2	0	1	0	1	0	1	0	0	0	1	1	0x201279C0230	DisplayClass	目标不是有效接口	存在未导出或已拒绝条目，请检查原因
+3	Test.dll	Tests	UninitializedMembers	0x201279C0670	字段	32760	0	0	0	0	32760	0	0	0	0	0	0	0	0	0x201279C06F0		成员数组为空	存在未导出或已拒绝条目，请检查原因
+4	Test.dll	Tests	MixedMembers	0x201279C07D0	字段	5	5	2	0	0	0	0	0	1	1	1	0	0	1	0x201279C0A80	WrongOwner	成员所属类型不匹配	存在未导出或已拒绝条目，请检查原因
+4	Test.dll	Tests	MixedMembers	0x201279C07D0	属性	1	1	0	0	0	0	0	0	0	0	0	1	0	0	0x201279C0B00	NoAccessor	属性没有可用访问器	存在未导出或已拒绝条目，请检查原因

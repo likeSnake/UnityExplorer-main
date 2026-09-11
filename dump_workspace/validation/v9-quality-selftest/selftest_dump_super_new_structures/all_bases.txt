@@ -1,0 +1,84 @@
+﻿RVA	ClassId	Assembly	Namespace	Class	ClassVA	SlotVA	Module	Protection	SelectedByDump	Status
+0x7058	7	Test.dll	Test.Game	BaseClass	0x1C2A3C60250	0x1C2A3C69058	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x71C0	2	Test.dll	Test.Game	Sample	0x1C2A3C69000	0x1C2A3C691C0	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7200	2	Test.dll	Test.Game	Sample	0x1C2A3C69000	0x1C2A3C69200	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7240	2	Test.dll	Test.Game	Sample	0x1C2A3C69000	0x1C2A3C69240	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7280	2	Test.dll	Test.Game	Sample	0x1C2A3C69000	0x1C2A3C69280	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7300	2	Test.dll	Test.Game	Sample	0x1C2A3C69000	0x1C2A3C69300	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7360	2	Test.dll	Test.Game	Sample	0x1C2A3C69000	0x1C2A3C69360	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x73B0	2	Test.dll	Test.Game	Sample	0x1C2A3C69000	0x1C2A3C693B0	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7450	2	Test.dll	Test.Game	Sample	0x1C2A3C69000	0x1C2A3C69450	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x74D0	2	Test.dll	Test.Game	Sample	0x1C2A3C69000	0x1C2A3C694D0	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7540	2	Test.dll	Test.Game	Sample	0x1C2A3C69000	0x1C2A3C69540	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x75A0	2	Test.dll	Test.Game	Sample	0x1C2A3C69000	0x1C2A3C695A0	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x75C0	2	Test.dll	Test.Game	Sample	0x1C2A3C69000	0x1C2A3C695C0	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x75E0	2	Test.dll	Test.Game	Sample	0x1C2A3C69000	0x1C2A3C695E0	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x75F0	2	Test.dll	Test.Game	Sample	0x1C2A3C69000	0x1C2A3C695F0	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7648	8	Test.dll	Test.Game	IFoo	0x1C2A3C603F0	0x1C2A3C69648	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7830	3	Test.dll	Test.Game	MyEnum	0x1C2A3C69660	0x1C2A3C69830	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7860	3	Test.dll	Test.Game	MyEnum	0x1C2A3C69660	0x1C2A3C69860	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7890	3	Test.dll	Test.Game	MyEnum	0x1C2A3C69660	0x1C2A3C69890	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x78B0	3	Test.dll	Test.Game	MyEnum	0x1C2A3C69660	0x1C2A3C698B0	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7A80	4	Test.dll	Test.Game	MyStruct	0x1C2A3C698C0	0x1C2A3C69A80	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7AB0	4	Test.dll	Test.Game	MyStruct	0x1C2A3C698C0	0x1C2A3C69AB0	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7AC0	8	Test.dll	Test.Game	IFoo	0x1C2A3C603F0	0x1C2A3C69AC0	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7CA0	5	Test.dll	Test.Game	Arrays	0x1C2A3C69AD0	0x1C2A3C69CA0	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7D10	5	Test.dll	Test.Game	Arrays	0x1C2A3C69AD0	0x1C2A3C69D10	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7D48	7	Test.dll	Test.Game	BaseClass	0x1C2A3C60250	0x1C2A3C69D48	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7D70	5	Test.dll	Test.Game	Arrays	0x1C2A3C69AD0	0x1C2A3C69D70	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7DB0	5	Test.dll	Test.Game	Arrays	0x1C2A3C69AD0	0x1C2A3C69DB0	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7DE0	5	Test.dll	Test.Game	Arrays	0x1C2A3C69AD0	0x1C2A3C69DE0	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7E00	5	Test.dll	Test.Game	Arrays	0x1C2A3C69AD0	0x1C2A3C69E00	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7E20	5	Test.dll	Test.Game	Arrays	0x1C2A3C69AD0	0x1C2A3C69E20	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7E40	5	Test.dll	Test.Game	Arrays	0x1C2A3C69AD0	0x1C2A3C69E40	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8010	9	Test.dll	Test.Game	Extra1	0x1C2A3C69E50	0x1C2A3C6A010	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8050	9	Test.dll	Test.Game	Extra1	0x1C2A3C69E50	0x1C2A3C6A050	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x80C0	9	Test.dll	Test.Game	Extra1	0x1C2A3C69E50	0x1C2A3C6A0C0	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8110	9	Test.dll	Test.Game	Extra1	0x1C2A3C69E50	0x1C2A3C6A110	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8150	9	Test.dll	Test.Game	Extra1	0x1C2A3C69E50	0x1C2A3C6A150	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8160	9	Test.dll	Test.Game	Extra1	0x1C2A3C69E50	0x1C2A3C6A160	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8360	10	Test.dll	Test.Game	Extra2	0x1C2A3C6A1A0	0x1C2A3C6A360	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x83A0	10	Test.dll	Test.Game	Extra2	0x1C2A3C6A1A0	0x1C2A3C6A3A0	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x83E0	10	Test.dll	Test.Game	Extra2	0x1C2A3C6A1A0	0x1C2A3C6A3E0	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8450	10	Test.dll	Test.Game	Extra2	0x1C2A3C6A1A0	0x1C2A3C6A450	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x84C0	10	Test.dll	Test.Game	Extra2	0x1C2A3C6A1A0	0x1C2A3C6A4C0	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8510	10	Test.dll	Test.Game	Extra2	0x1C2A3C6A1A0	0x1C2A3C6A510	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8540	10	Test.dll	Test.Game	Extra2	0x1C2A3C6A1A0	0x1C2A3C6A540	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8580	10	Test.dll	Test.Game	Extra2	0x1C2A3C6A1A0	0x1C2A3C6A580	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x85A0	10	Test.dll	Test.Game	Extra2	0x1C2A3C6A1A0	0x1C2A3C6A5A0	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x85B0	10	Test.dll	Test.Game	Extra2	0x1C2A3C6A1A0	0x1C2A3C6A5B0	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x85D8	10	Test.dll	Test.Game	Extra2	0x1C2A3C6A1A0	0x1C2A3C6A5D8	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x87E0	11	Test.dll	Test.Game	Extra3	0x1C2A3C6A620	0x1C2A3C6A7E0	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8820	11	Test.dll	Test.Game	Extra3	0x1C2A3C6A620	0x1C2A3C6A820	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8860	11	Test.dll	Test.Game	Extra3	0x1C2A3C6A620	0x1C2A3C6A860	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x88A0	11	Test.dll	Test.Game	Extra3	0x1C2A3C6A620	0x1C2A3C6A8A0	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8910	11	Test.dll	Test.Game	Extra3	0x1C2A3C6A620	0x1C2A3C6A910	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8980	11	Test.dll	Test.Game	Extra3	0x1C2A3C6A620	0x1C2A3C6A980	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x89F0	11	Test.dll	Test.Game	Extra3	0x1C2A3C6A620	0x1C2A3C6A9F0	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8A40	11	Test.dll	Test.Game	Extra3	0x1C2A3C6A620	0x1C2A3C6AA40	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8A70	11	Test.dll	Test.Game	Extra3	0x1C2A3C6A620	0x1C2A3C6AA70	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8AA0	11	Test.dll	Test.Game	Extra3	0x1C2A3C6A620	0x1C2A3C6AAA0	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8AE0	11	Test.dll	Test.Game	Extra3	0x1C2A3C6A620	0x1C2A3C6AAE0	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8B00	11	Test.dll	Test.Game	Extra3	0x1C2A3C6A620	0x1C2A3C6AB00	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8B20	11	Test.dll	Test.Game	Extra3	0x1C2A3C6A620	0x1C2A3C6AB20	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8B30	11	Test.dll	Test.Game	Extra3	0x1C2A3C6A620	0x1C2A3C6AB30	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8B58	11	Test.dll	Test.Game	Extra3	0x1C2A3C6A620	0x1C2A3C6AB58	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8B80	11	Test.dll	Test.Game	Extra3	0x1C2A3C6A620	0x1C2A3C6AB80	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x90B0	12	Test.dll		BuffManager	0x1C2A3C6AD60	0x1C2A3C6B0B0	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x90F0	13	Test.dll		TransparentTagHandler	0x1C2A3C6AEF0	0x1C2A3C6B0F0	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x9110	1	Test.dll		<Module>	0x1C2A3C6ABD0	0x1C2A3C6B110	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x9118	2	Test.dll	Test.Game	Sample	0x1C2A3C69000	0x1C2A3C6B118	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x9120	3	Test.dll	Test.Game	MyEnum	0x1C2A3C69660	0x1C2A3C6B120	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x9128	4	Test.dll	Test.Game	MyStruct	0x1C2A3C698C0	0x1C2A3C6B128	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x9130	5	Test.dll	Test.Game	Arrays	0x1C2A3C69AD0	0x1C2A3C6B130	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x9138	6	Test.dll	System	Object	0x1C2A3C600C0	0x1C2A3C6B138	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x9140	7	Test.dll	Test.Game	BaseClass	0x1C2A3C60250	0x1C2A3C6B140	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x9148	8	Test.dll	Test.Game	IFoo	0x1C2A3C603F0	0x1C2A3C6B148	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x9150	9	Test.dll	Test.Game	Extra1	0x1C2A3C69E50	0x1C2A3C6B150	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x9158	10	Test.dll	Test.Game	Extra2	0x1C2A3C6A1A0	0x1C2A3C6B158	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x9160	11	Test.dll	Test.Game	Extra3	0x1C2A3C6A620	0x1C2A3C6B160	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x9168	12	Test.dll		BuffManager	0x1C2A3C6AD60	0x1C2A3C6B168	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x9170	13	Test.dll		TransparentTagHandler	0x1C2A3C6AEF0	0x1C2A3C6B170	GameAssembly_Super.dll	0x4	0	指针值匹配，槽位用途待确认
+0x9178	2	Test.dll	Test.Game	Sample	0x1C2A3C69000	0x1C2A3C6B178	GameAssembly_Super.dll	0x4	1	指针值匹配，槽位用途待确认
+0x9180	12	Test.dll		BuffManager	0x1C2A3C6AD60	0x1C2A3C6B180	GameAssembly_Super.dll	0x4	1	指针值匹配，槽位用途待确认
+0x9188	13	Test.dll		TransparentTagHandler	0x1C2A3C6AEF0	0x1C2A3C6B188	GameAssembly_Super.dll	0x4	1	指针值匹配，槽位用途待确认

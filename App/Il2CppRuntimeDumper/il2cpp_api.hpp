@@ -132,22 +132,45 @@ struct Il2CppApi {
 };
 
 // ---------------------------------------------------------------------------
-// Resolution helper.
+// Resolution helper with mono fallback (mirrors CE Unity-Offset.dll).
+// Some GameAssembly builds (esp. VMP-protected / Super variants) do not export
+// the il2cpp_* names but DO export the legacy mono_* names; try both.
 // ---------------------------------------------------------------------------
-inline bool ResolveSymbol(const Il2CppApi &api, const char *name,
-                          void *&out) {
+inline void *TryGetProcAddress(HMODULE mod, const char *il2Name,
+                               const char *monoName) {
+  if (!mod)
+    return nullptr;
+  if (void *p = reinterpret_cast<void *>(GetProcAddress(mod, il2Name)))
+    return p;
+  if (monoName && *monoName) {
+    if (void *p = reinterpret_cast<void *>(GetProcAddress(mod, monoName)))
+      return p;
+  }
+  return nullptr;
+}
+
+inline bool ResolveSymbol(const Il2CppApi &api, const char *il2Name,
+                          const char *monoName, void *&out) {
   out = nullptr;
-  if (!api.gameAssembly || !name)
+  if (!api.gameAssembly || !il2Name)
     return false;
-  out = reinterpret_cast<void *>(
-      GetProcAddress(api.gameAssembly, name));
+  out = TryGetProcAddress(api.gameAssembly, il2Name, monoName);
   return out != nullptr;
 }
 
 #define IL2_RESOLVE(api, member, name)                                        \
   do {                                                                         \
     void *__p = nullptr;                                                       \
-    if (ResolveSymbol(api, name, __p)) {                                       \
+    if (ResolveSymbol(api, name, nullptr, __p)) {                              \
+      *reinterpret_cast<void **>(&(api).member) = __p;                         \
+    }                                                                          \
+  } while (0)
+
+// Variant with a mono fallback name (used where CE DLL shows mono exports).
+#define IL2_RESOLVE_MONO(api, member, name, mononame)                         \
+  do {                                                                         \
+    void *__p = nullptr;                                                       \
+    if (ResolveSymbol(api, name, mononame, __p)) {                             \
       *reinterpret_cast<void **>(&(api).member) = __p;                         \
     }                                                                          \
   } while (0)
@@ -164,14 +187,17 @@ inline bool ResolveIl2CppApi(Il2CppApi &api) {
   api.moduleName = "GameAssembly.dll";
   api.gameAssembly = GetModuleHandleA("GameAssembly.dll");
   if (!api.gameAssembly) {
-    // Variant names like GameAssembly_Super.dll / GameAssembly_Super_IBT.dll
-    api.gameAssembly = GetModuleHandleA("GameAssembly_Super.dll");
-    if (api.gameAssembly)
-      api.moduleName = "GameAssembly_Super.dll";
-    else {
-      api.gameAssembly = GetModuleHandleA("GameAssembly_Super_IBT.dll");
-      if (api.gameAssembly)
-        api.moduleName = "GameAssembly_Super_IBT.dll";
+    // Variant names (some builds use Super1 / Super_IBT1 suffix).
+    const char *variants[] = {
+        "GameAssembly_Super.dll", "GameAssembly_Super1.dll",
+        "GameAssembly_Super_IBT.dll", "GameAssembly_Super_IBT1.dll"};
+    for (const char *v : variants) {
+      HMODULE h = GetModuleHandleA(v);
+      if (h) {
+        api.gameAssembly = h;
+        api.moduleName = v;
+        break;
+      }
     }
   }
   if (!api.gameAssembly) {
@@ -193,6 +219,32 @@ inline bool ResolveIl2CppApi(Il2CppApi &api) {
       }
     }
   }
+
+  // Symmetric with the reference workable dumper: the module (and its export
+  // table) may not be ready at the instant we inject. The reference DLL loops
+  // GetModuleHandleA("GameAssembly.dll") + Sleep(1) until it appears. Retry
+  // a bounded number of times so our injection lands in the ready window
+  // instead of resolving against a not-yet-initialized module.
+  int waitTries = 0;
+  constexpr int kMaxWaitTries = 20000;   // ~20s of 1ms sleeps
+  while (!api.gameAssembly && waitTries < kMaxWaitTries) {
+    Sleep(1);
+    ++waitTries;
+    api.gameAssembly = GetModuleHandleA("GameAssembly.dll");
+    if (!api.gameAssembly) {
+      for (const char *v : std::initializer_list<const char *>{
+               "GameAssembly.dll", "GameAssembly_Super.dll",
+               "GameAssembly_Super1.dll", "GameAssembly_Super_IBT.dll",
+               "GameAssembly_Super_IBT1.dll"}) {
+        HMODULE h = GetModuleHandleA(v);
+        if (h) {
+          api.gameAssembly = h;
+          api.moduleName = v;
+          break;
+        }
+      }
+    }
+  }
   if (!api.gameAssembly)
     return false;
 
@@ -203,55 +255,82 @@ inline bool ResolveIl2CppApi(Il2CppApi &api) {
     api.baseAddress = reinterpret_cast<std::uintptr_t>(mi.lpBaseOfDll);
 
   // Resolve every symbol we care about.
-  IL2_RESOLVE(api, domain_get, "il2cpp_domain_get");
-  IL2_RESOLVE(api, domain_get_assemblies, "il2cpp_domain_get_assemblies");
-  IL2_RESOLVE(api, domain_get_assemblies_count,
-              "il2cpp_domain_get_assemblies_count");
+  // Core il2cpp exports, with legacy mono_* fallbacks for protected builds
+  // (aligns with the enhanced Unity-Offset.dll mechanism).
+  IL2_RESOLVE_MONO(api, domain_get, "il2cpp_domain_get", "mono_domain_get");
+  IL2_RESOLVE_MONO(api, domain_get_assemblies, "il2cpp_domain_get_assemblies",
+                   "mono_domain_get_assemblies");
+  IL2_RESOLVE_MONO(api, domain_get_assemblies_count,
+                   "il2cpp_domain_get_assemblies_count",
+                   "mono_domain_get_assemblies_iter");
   IL2_RESOLVE(api, assembly_get_name, "il2cpp_assembly_get_name");
-  IL2_RESOLVE(api, assembly_get_image, "il2cpp_assembly_get_image");
-  IL2_RESOLVE(api, image_get_name, "il2cpp_image_get_name");
+  IL2_RESOLVE_MONO(api, assembly_get_image, "il2cpp_assembly_get_image",
+                   "mono_assembly_get_image");
+  IL2_RESOLVE_MONO(api, image_get_name, "il2cpp_image_get_name",
+                   "mono_image_get_name");
   IL2_RESOLVE(api, image_get_class, "il2cpp_image_get_class");
   IL2_RESOLVE(api, image_get_class_count, "il2cpp_image_get_class_count");
   IL2_RESOLVE(api, image_class_from_name, "il2cpp_image_class_from_name");
   IL2_RESOLVE(api, image_get_filename, "il2cpp_image_get_filename");
-  IL2_RESOLVE(api, class_get_name, "il2cpp_class_get_name");
-  IL2_RESOLVE(api, class_get_namespace, "il2cpp_class_get_namespace");
-  IL2_RESOLVE(api, class_get_parent, "il2cpp_class_get_parent");
-  IL2_RESOLVE(api, class_get_type, "il2cpp_class_get_type");
-  IL2_RESOLVE(api, class_from_type, "il2cpp_class_from_type");
+  IL2_RESOLVE_MONO(api, class_get_name, "il2cpp_class_get_name",
+                   "mono_class_get_name");
+  IL2_RESOLVE_MONO(api, class_get_namespace, "il2cpp_class_get_namespace",
+                   "mono_class_get_namespace");
+  IL2_RESOLVE_MONO(api, class_get_parent, "il2cpp_class_get_parent",
+                   "mono_class_get_parent");
+  IL2_RESOLVE_MONO(api, class_get_type, "il2cpp_class_get_type",
+                   "mono_class_get_type");
+  IL2_RESOLVE_MONO(api, class_from_type, "il2cpp_class_from_type",
+                   "mono_type_get_class");
   IL2_RESOLVE(api, class_get_type_token, "il2cpp_class_get_type_token");
-  IL2_RESOLVE(api, class_get_flags, "il2cpp_class_get_flags");
-  IL2_RESOLVE(api, class_is_valuetype, "il2cpp_class_is_valuetype");
-  IL2_RESOLVE(api, class_is_enum, "il2cpp_class_is_enum");
+  IL2_RESOLVE_MONO(api, class_get_flags, "il2cpp_class_get_flags",
+                   "mono_class_get_flags");
+  IL2_RESOLVE_MONO(api, class_is_valuetype, "il2cpp_class_is_valuetype",
+                   "mono_class_is_valuetype");
+  IL2_RESOLVE_MONO(api, class_is_enum, "il2cpp_class_is_enum",
+                   "mono_class_is_enum");
   IL2_RESOLVE(api, class_is_abstract, "il2cpp_class_is_abstract");
   IL2_RESOLVE(api, class_is_interface, "il2cpp_class_is_interface");
   IL2_RESOLVE(api, class_is_generic, "il2cpp_class_is_generic");
   IL2_RESOLVE(api, class_is_inflated, "il2cpp_class_is_inflated");
   IL2_RESOLVE(api, class_enum_basetype, "il2cpp_class_enum_basetype");
-  IL2_RESOLVE(api, class_num_fields, "il2cpp_class_num_fields");
+  IL2_RESOLVE_MONO(api, class_num_fields, "il2cpp_class_num_fields",
+                   "mono_class_num_fields");
   IL2_RESOLVE(api, class_num_methods, "il2cpp_class_num_methods");
   IL2_RESOLVE(api, class_num_properties, "il2cpp_class_num_properties");
   IL2_RESOLVE(api, class_get_assemblyname, "il2cpp_class_get_assemblyname");
   IL2_RESOLVE(api, class_get_image, "il2cpp_class_get_image");
-  IL2_RESOLVE(api, class_get_fields, "il2cpp_class_get_fields");
-  IL2_RESOLVE(api, field_get_name, "il2cpp_field_get_name");
-  IL2_RESOLVE(api, field_get_type, "il2cpp_field_get_type");
-  IL2_RESOLVE(api, field_get_offset, "il2cpp_field_get_offset");
-  IL2_RESOLVE(api, field_get_flags, "il2cpp_field_get_flags");
+  IL2_RESOLVE_MONO(api, class_get_fields, "il2cpp_class_get_fields",
+                   "mono_class_get_fields");
+  IL2_RESOLVE_MONO(api, field_get_name, "il2cpp_field_get_name",
+                   "mono_field_get_name");
+  IL2_RESOLVE_MONO(api, field_get_type, "il2cpp_field_get_type",
+                   "mono_field_get_type");
+  IL2_RESOLVE_MONO(api, field_get_offset, "il2cpp_field_get_offset",
+                   "mono_field_get_offset");
+  IL2_RESOLVE_MONO(api, field_get_flags, "il2cpp_field_get_flags",
+                   "mono_field_get_flags");
   IL2_RESOLVE(api, field_get_parent, "il2cpp_field_get_parent");
   IL2_RESOLVE(api, field_get_token, "il2cpp_field_get_token");
   IL2_RESOLVE(api, field_is_literal, "il2cpp_field_is_literal");
   IL2_RESOLVE(api, field_is_static, "il2cpp_field_is_static");
-  IL2_RESOLVE(api, class_get_methods, "il2cpp_class_get_methods");
-  IL2_RESOLVE(api, method_get_name, "il2cpp_method_get_name");
+  IL2_RESOLVE_MONO(api, class_get_methods, "il2cpp_class_get_methods",
+                   "mono_class_get_methods");
+  IL2_RESOLVE_MONO(api, method_get_name, "il2cpp_method_get_name",
+                   "mono_method_get_name");
   IL2_RESOLVE(api, method_get_class, "il2cpp_method_get_class");
   IL2_RESOLVE(api, method_get_declaring_type, "il2cpp_method_get_declaring_type");
-  IL2_RESOLVE(api, method_get_return_type, "il2cpp_method_get_return_type");
-  IL2_RESOLVE(api, method_get_param_count, "il2cpp_method_get_param_count");
-  IL2_RESOLVE(api, method_get_param_name, "il2cpp_method_get_param_name");
-  IL2_RESOLVE(api, method_get_param, "il2cpp_method_get_param");
+  IL2_RESOLVE_MONO(api, method_get_return_type, "il2cpp_method_get_return_type",
+                   "mono_method_get_return_type");
+  IL2_RESOLVE_MONO(api, method_get_param_count, "il2cpp_method_get_param_count",
+                   "mono_method_get_param_count");
+  IL2_RESOLVE_MONO(api, method_get_param_name, "il2cpp_method_get_param_name",
+                   "mono_method_get_param_name");
+  IL2_RESOLVE_MONO(api, method_get_param, "il2cpp_method_get_param",
+                   "mono_method_get_param");
   IL2_RESOLVE(api, method_get_token, "il2cpp_method_get_token");
-  IL2_RESOLVE(api, method_get_flags, "il2cpp_method_get_flags");
+  IL2_RESOLVE_MONO(api, method_get_flags, "il2cpp_method_get_flags",
+                   "mono_method_get_flags");
   IL2_RESOLVE(api, method_get_iflags, "il2cpp_method_get_iflags");
   IL2_RESOLVE(api, method_is_static, "il2cpp_method_is_static");
   IL2_RESOLVE(api, method_is_instance, "il2cpp_method_is_instance");
@@ -259,24 +338,33 @@ inline bool ResolveIl2CppApi(Il2CppApi &api) {
   IL2_RESOLVE(api, method_is_inflated, "il2cpp_method_is_inflated");
   IL2_RESOLVE(api, method_get_pointer, "il2cpp_method_get_pointer");
   IL2_RESOLVE(api, method_get_invoker, "il2cpp_method_get_invoker");
-  IL2_RESOLVE(api, class_get_properties, "il2cpp_class_get_properties");
-  IL2_RESOLVE(api, property_get_name, "il2cpp_property_get_name");
-  IL2_RESOLVE(api, property_get_get_method, "il2cpp_property_get_get_method");
-  IL2_RESOLVE(api, property_get_set_method, "il2cpp_property_get_set_method");
+  IL2_RESOLVE_MONO(api, class_get_properties, "il2cpp_class_get_properties",
+                   "mono_class_get_properties");
+  IL2_RESOLVE_MONO(api, property_get_name, "il2cpp_property_get_name",
+                   "mono_property_get_name");
+  IL2_RESOLVE_MONO(api, property_get_get_method,
+                   "il2cpp_property_get_get_method",
+                   "mono_property_get_get_method");
+  IL2_RESOLVE_MONO(api, property_get_set_method,
+                   "il2cpp_property_get_set_method",
+                   "mono_property_get_set_method");
   IL2_RESOLVE(api, property_get_parent, "il2cpp_property_get_parent");
   IL2_RESOLVE(api, property_get_flags, "il2cpp_property_get_flags");
   IL2_RESOLVE(api, property_get_token, "il2cpp_property_get_token");
-  IL2_RESOLVE(api, type_get_name, "il2cpp_type_get_name");
-  IL2_RESOLVE(api, type_get_assembly_qualified_name,
-              "il2cpp_type_get_assembly_qualified_name");
-  IL2_RESOLVE(api, type_get_class_or_element_class,
-              "il2cpp_type_get_class_or_element_class");
+  IL2_RESOLVE_MONO(api, type_get_name, "il2cpp_type_get_name",
+                   "mono_type_get_name");
+  IL2_RESOLVE_MONO(api, type_get_assembly_qualified_name,
+                   "il2cpp_type_get_assembly_qualified_name",
+                   "mono_type_get_assembly_qualified_name");
+  IL2_RESOLVE_MONO(api, type_get_class_or_element_class,
+                   "il2cpp_type_get_class_or_element_class",
+                   "mono_type_get_class");
   IL2_RESOLVE(api, type_get_attrs, "il2cpp_type_get_attrs");
   IL2_RESOLVE(api, type_is_byref, "il2cpp_type_is_byref");
   IL2_RESOLVE(api, type_is_pointer, "il2cpp_type_is_pointer");
   IL2_RESOLVE(api, type_is_static, "il2cpp_type_is_static");
   IL2_RESOLVE(api, domain_assembly_open, "il2cpp_domain_assembly_open");
-  IL2_RESOLVE(api, get_corlib, "il2cpp_get_corlib");
+  IL2_RESOLVE_MONO(api, get_corlib, "il2cpp_get_corlib", "mono_get_corlib");
   IL2_RESOLVE(api, assembly_load, "il2cpp_assembly_load");
 
   // Core symbols must be present for the dump to work.

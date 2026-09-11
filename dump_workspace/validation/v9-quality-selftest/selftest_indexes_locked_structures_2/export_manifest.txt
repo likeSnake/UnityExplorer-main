@@ -1,0 +1,3 @@
+﻿SuperDumper v9 结构索引
+状态：正在生成；此标记未更新为完成前，不应视为成功。
+对应 dump：selftest_indexes_locked.cs

@@ -1,0 +1,20 @@
+﻿RVA	ClassId	Assembly	Namespace	Class	ClassVA	SlotVA	Module	Protection	SelectedByDump	Status
+0x7020	2	Test.dll	Test.Game	Sample	0x2C713349000	0x2C713349020	GameAssembly.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7180	2	Test.dll	Test.Game	Sample	0x2C713349000	0x2C713349180	GameAssembly.dll	0x4	0	指针值匹配，槽位用途待确认
+0x71C0	2	Test.dll	Test.Game	Sample	0x2C713349000	0x2C7133491C0	GameAssembly.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7200	2	Test.dll	Test.Game	Sample	0x2C713349000	0x2C713349200	GameAssembly.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7238	2	Test.dll	Test.Game	Sample	0x2C713349000	0x2C713349238	GameAssembly.dll	0x4	0	指针值匹配，槽位用途待确认
+0x72A8	2	Test.dll	Test.Game	Sample	0x2C713349000	0x2C7133492A8	GameAssembly.dll	0x4	0	指针值匹配，槽位用途待确认
+0x72F0	2	Test.dll	Test.Game	Sample	0x2C713349000	0x2C7133492F0	GameAssembly.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7338	2	Test.dll	Test.Game	Sample	0x2C713349000	0x2C713349338	GameAssembly.dll	0x4	0	指针值匹配，槽位用途待确认
+0x73B8	2	Test.dll	Test.Game	Sample	0x2C713349000	0x2C7133493B8	GameAssembly.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7428	2	Test.dll	Test.Game	Sample	0x2C713349000	0x2C713349428	GameAssembly.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7478	2	Test.dll	Test.Game	Sample	0x2C713349000	0x2C713349478	GameAssembly.dll	0x4	0	指针值匹配，槽位用途待确认
+0x74D0	2	Test.dll	Test.Game	Sample	0x2C713349000	0x2C7133494D0	GameAssembly.dll	0x4	0	指针值匹配，槽位用途待确认
+0x74F0	2	Test.dll	Test.Game	Sample	0x2C713349000	0x2C7133494F0	GameAssembly.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7510	2	Test.dll	Test.Game	Sample	0x2C713349000	0x2C713349510	GameAssembly.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7520	2	Test.dll	Test.Game	Sample	0x2C713349000	0x2C713349520	GameAssembly.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8880	1	Test.dll		<Module>	0x2C71334A860	0x2C71334A880	GameAssembly.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8CE0	1	Test.dll		<Module>	0x2C71334A860	0x2C71334ACE0	GameAssembly.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8CE8	2	Test.dll	Test.Game	Sample	0x2C713349000	0x2C71334ACE8	GameAssembly.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8D48	2	Test.dll	Test.Game	Sample	0x2C713349000	0x2C71334AD48	GameAssembly.dll	0x4	1	指针值匹配，槽位用途待确认

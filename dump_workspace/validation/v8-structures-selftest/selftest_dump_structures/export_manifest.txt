@@ -1,0 +1,37 @@
+﻿SuperDumper v8 结构索引（格式版本 1）
+状态：完成
+对应 dump：selftest_dump.cs
+模块：GameAssembly.dll
+变体：普通
+模块基址：0x2C713342000
+模块大小：0x2FFE000
+文件	数据行数	字节数	写入状态
+class_meta.tsv	13	2067	成功
+rva_map.tsv	15	1950	成功
+all_bases.txt	95	12205	成功
+interfaces.txt	4	539	成功
+
+正文完成状态：成功
+与正文计数核对：一致
+类型槽位匹配数：95
+已匹配类型数：13
+已扫描字节数：50323456
+读取失败字节数：0
+扫描完成状态：完成
+
+范围与解释：
+1. 索引与本次 dump 的 images/maxclasses/fields/methods/properties 配置范围一致。
+2. ClassId 是本次运行的关联键，可区分同名类及重复的局部类型索引。DumpTypeDefIndex 与正文相同，不额外宣称已验证全局元数据索引。
+3. 成员 Count 列记录正文实际成功导出的数量；RawCount 列保留校准位置的原始读数。
+4. InstanceSize 留空；RawInstanceSize 是未验证布局的读数，不能用于对象读取或容器步长计算。
+5. 方法按模块内地址、模块外地址、空指针分组排序。同一 RVA 的不同方法和重载全部保留。Slot 是 MethodInfo 的声明槽位，不是虚表字节偏移。
+6. all_bases 只扫描本模块内已提交且可读的非执行数据页；保护页、不读页和执行页不在范围内。保留全部指针值匹配，未证明每个候选都是 TypeInfo 全局槽。
+7. SelectedByDump=1 仅表示该槽位被原 dump 选用，不代表单例链已验证。多个候选不自动修改既有偏移摘要。
+8. VA 仅适用于本次运行。TSV 使用 UTF-8 BOM；单元格内反斜杠、制表符和换行分别转义为 \\, \t, \r, \n。
+
+布局线索：
+镜像索引模式：count@0x1C,start@0x18
+类标志偏移：0x108
+方法计数偏移：0x110
+字段计数偏移：0x114
+接口数组偏移：0xA8

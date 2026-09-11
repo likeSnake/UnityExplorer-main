@@ -8,15 +8,80 @@
 
 ## 0. 交接摘要（30 秒版）
 
-- **目标**：通过 DMA（FPGA，免句柄免注入）dump 永劫无间（Unity + IL2CPP）的**完整**游戏结构（dump.cs：类/字段名+偏移/方法名+RVA/属性），**脱离对闭源注入器 Unity-Offset.dll 的依赖**。
+- **目标**：通过注入式 dump（CE 注入自研 DLL，免 FPGA）dump 永劫无间（Unity + IL2CPP）的**完整**游戏结构（dump.cs：类/字段名+偏移/方法名+RVA/属性），**脱离对闭源注入器 Unity-Offset.dll 的依赖**。
+- **本机定位（关键）**：**本机是游戏主机（target），不是 DMA 分析机**。不需要 FPGA/DMA ——
+  CE 注入（`F:\DrunkenDreamDriverCE v1.4.0\`）是唯一注入通道。DMA 相关命令
+  （`--self-dump-cs`/`--dma-inject`/`--dump-image`）是原分析机路径，本机不执行。
 - **已完成**：
-  1. ✅ DMA 镜像导出（`--dump-image`，GameAssembly 440MB 有效 PE）
-  2. ✅ 自研运行时结构 dump（`--self-dump-cs`：**508 类 / 8049 字段 / 10639 方法**）
-  3. ✅ 自研注入式 dump DLL（`Il2CppRuntimeDumper.dll`，机制与 Unity-Offset.dll 完全等价，已编译）
-  4. ✅ 逆向确认 Unity-Offset.dll = 开源项目 [shalzuth/Il2CppRuntimeDumper]，源码已克隆到本地
-  5. ✅ DMA 注入原理验证（`--dma-inject`：executed=true，LoadLibraryA 成功加载过 DLL）
-- **待办**：游戏下载完成后，**用 CE 注入自研 DLL 验证 dump.cs 完整度**（首选路径）；DMA 注入受 VMP 保护模块空洞限制不稳定（原理已验证）。
-- **环境**：Windows x64 + Visual Studio 2022/2026 + MemProcFS(vmm.dll) + FPGA DMA（Metick/PCILeech）。
+  1. ✅ 自研注入式 dump DLL（`Il2CppRuntimeDumper.dll`，机制与 Unity-Offset.dll 完全等价，已在本机编译，bin\Release\）
+  2. ✅ 逆向确认 Unity-Offset.dll = 开源项目 [shalzuth/Il2CppRuntimeDumper]，源码已克隆到本地
+  3. ✅ 环境完善：MSVC v143 工具链 / MemProcFS 运行时 / git 代理 / cfg 路径修正
+  4. ✅ 参考 dump.cs 基准到位：`F:\gua\dump\dump2026.09.03.cs`（11525 类，Unity-Offset.dll 历史输出）
+- **待办**：游戏下载完成后，**用 CE 注入自研 DLL 验证 dump.cs 完整度**（任务 1，唯一主路径）
+- **环境**：Windows x64 + MSVC v143 + CE v1.4.0（游戏主机）。
+  DMA 历史结论（镜像导出/self-dump/dma-inject）保留为原分析机参考，本机不再依赖。
+
+---
+
+## 0.5 ★ 本会话重大技术更新（2026-09-08，决定性，接手必读）
+
+> 以下内容推翻旧 §5「任务1：CE 注入自研 DLL 验证 GetProcAddress 反射 dump」的前提。
+> 详细记录见 `dump_workspace/docs/项目进度与结论记录.md` §13–§16。
+
+### 根因定性：本构建是"双重重加固"IL2CPP（非通道问题、非时机问题）
+
+通过多轮 DiagProbe（注入游戏验证）与磁盘字节扫描，**确认**：
+
+1. **类型反射导出被裁剪**。用分类探针（普通体 GameAssembly.dll）GetProcAddress 实测：
+   - ✅ 运行时内核导出正常：`il2cpp_get_corlib` / `il2cpp_image_get_class` /
+     `image_get_class_count` / `image_get_name` / `image_get_assembly` / `init` /
+     `shutdown` / `thread_attach` 等全部解析成功。
+   - ❌ 类型反射导出全部为 NULL：`class_for_each` / `class_get_name` / `field_get_name` /
+     `method_get_name` / `domain_get` / `domain_get_assemblies` / `class_get_fields` /
+     `class_get_methods`，以及全部 `mono_*`。
+   - 磁盘全量明文导出名枚举：仅 **123 个 il2cpp_***（0 个 mono_*），全部是运行时内核类
+     （image/gc/thread/monitor/profiler/liveness 等），**没有任何 class/field/method 反射 getter**。
+2. **`global-metadata.dat` 双份均加密**：普通体（90MB）与 Super 体（79MB）头 4 字节
+   都不是魔数 `0xFAB11BAF`（普通=0x57CA7923），高熵。→ 离线 Il2CppDumper 直接读 metadata 不可行。
+
+**结论**：本构建对 il2cpp 做了"导出裁剪 + metadata 加密"加固。**任何基于 GetProcAddress
+解析 class/field/method 反射 getter 的 dump 器（含自研 DLL 的 validator、乃至旧 §5 任务 1
+的 CE 注入方案）在本构建上都必然 `[FAIL]`** —— validator 要求 `class_get_fields`/
+`class_get_methods` 非空，这些导出本就不存在。通道（GetProcAddress/注入）本身已被证明是好的。
+
+> 这也解释了为什么 299KB Unity-Offset.dll 能成功 dump 11525 类：它走的是**运行时内存中
+> 已解密的 Il2Cpp 结构直接偏移游走**（只用 image_get_class/get_corlib 引导），不依赖被裁剪
+> 的反射导出，也不依赖（进程外的）加密 metadata。
+
+### 已确认可行的 in-memory 游走基础（StructWalkProbe 实证）
+
+- `image_get_class(image,i)` + `image_get_class_count(image)` **能完整列出 corlib 的
+  1825 个类**（Unity 2019.4.41f2）。
+- `Il2CppClass` 内存结构首字段偏移已实证：`image=+0x00`、`name=+0x10`（真实类名：
+  `<Module>`/`Runtime`/`Locale`/`SR` 等）、`namespace=+0x18`（空或 `"Mono"`）。
+- 字段/方法数组偏移尚未锁定（本构建布局疑似被重排，不在常规定位；+0x190 处是字符串指针
+  而非数组）。需在更靠后区段继续解码。
+
+### 下一条技术路线（已定：内存结构游走 dumper）
+把自研 dumper 从"GetProcAddress 反射 API"改写为 **"内存已解密 Il2Cpp 结构直接偏移游走"**：
+用 `get_corlib`/`image_get_class`/`image_get_class_count` 引导枚举镜像→类，再按
+Unity 2019.4 的 `Il2CppClass`/`Il2CppImage`/`Il2CppMethodInfo`/`Il2CppFieldInfo` 结构偏移
+直接读字段/方法/名字串。**首要待完成子步骤**：在注入探针中定位 fields/methods 数组的
+精确偏移（参考 divinedragonfanclub/engage class.rs 布局 + +0x0F0..+0x120 计数字段区）。
+
+**✳ 重大突破（2026-09-08）**：已用自研 `MemoryStructDumper.dll` 成功 dump 出
+**Assembly-CSharp.dll 全部 39102 类**（`dump_workspace\selfdump\Assembly-CSharp_classes.cs`，
+1.39MB，游戏存活、可复现）。只用 4 个已确认导出函数（get_corlib / image_get_class /
+image_get_class_count / image_get_name），**完全自研，脱离反射 getter**。
+已实证结构偏移：`Il2CppClass.image=+0x00, name=+0x10, namespace=+0x18, fields=+0x80`；
+`FieldInfo.name=+0x00, offset(int32)=+0x18, 步长 0x20`。
+**NEAC 存活阈值**：CreateRemoteThread 通道下，快速类名全量 dump 能跑完；新建文件/每类
+逐字段重读会超窗被踢。**字段+方法全量落地很可能需走 CE 注入通道**（299KB 用的正是 CE）。
+
+**辅助工具已建**：`App/Il2CppRuntimeDumper/StructWalkProbe.cpp` + `StructWalkProbe.vcxproj`
+（编译 → `bin\Release\StructWalkProbe.dll`，注入后输出 `C:\walkprobe.log`）；
+`App/Il2CppRuntimeDumper/MemoryStructDumper.cpp` + `MemoryStructDumper.vcxproj`
+（编译 → `bin\Release\MemoryStructDumper.dll`，注入后输出 `C:\selfdump\dump.cs`）。
 
 ---
 
@@ -156,29 +221,30 @@ UnityExplorer-main/
 
 ---
 
-## 5. 下一步任务（接手后按序执行）
+## 5. 下一步任务（本机 = 游戏主机，按序执行）
 
-### 任务 1（最高优先）：游戏下载完成后，CE 注入验证自研 DLL
-1. 游戏启动到**登录界面**（普通变体，Unity-Offset.dll 已验证此时机可 dump）
-2. 确认 `dump_workspace\inject_test\Il2CppRuntimeDumper.cfg` 指向期望输出目录
-3. 用 **CE 注入** `dump_workspace\inject_test\Il2CppRuntimeDumper.dll`
-   （用户有 CE 注入器；也可用 `bin\Release\Injector.exe`，但反作弊可能拦截
-   CreateRemoteThread —— 用户 CE 注入是已验证通道）
-4. 等待 10-30 秒，检查输出目录 `dump.cs` + `log.txt`
-5. **对比**：与 Unity-Offset.dll 的输出（`J:\Code\C++\dma\er_new\dump\` 下
-   历史 dump.cs）对比类数/字段数/方法数，验证完整度
+### 任务 1（唯一主路径，游戏下载完成后立即执行）：CE 注入验证自研 DLL
+> ⚠️ **2026-09-08 已证伪**：本构建类型反射导出被裁剪，GetProcAddress 反射 dump 永不成功
+> （见 §0.5）。以下旧步骤只保留作历史参考，真正的下一步改为 §0.5 的"内存结构游走 dumper"。
+>
+**注入通道**：`F:\DrunkenDreamDriverCE v1.4.0\`（定制 CE，含 DBVM 驱动、
+`NarakaBladepoint.CT`、`Unity-Offset (1).dll`）。可继续用 CE 注入通道加载自研/探针 DLL，
+但 DLL 内部的解析逻辑必须换成结构游走，而非反射 getter。
+
+**步骤**：
+1. 游戏启动到**登录界面**（普通变体 GameAssembly.dll，Unity-Offset.dll 已验证此时机可 dump）
+2. 确认 `dump_workspace\inject_test\Il2CppRuntimeDumper.cfg` 指向
+   `F:\gua\UnityExplorer-main\dump_workspace\inject_test\out`（已改好，勿回退）
+3. 用 **CE 注入** `bin\Release\Il2CppRuntimeDumper.dll`
+   （CE 注入是已验证通道；`bin\Release\Injector.exe` 备用，反作弊可能拦截 CreateRemoteThread）
+4. 等待 10-30 秒，检查 `dump_workspace\inject_test\out\` 下 `dump.cs` + `log.txt`
+5. **对比完整度**：与基准 `F:\gua\dump\dump2026.09.03.cs` 对比类数/字段数/方法数。
+   基准规模：**11525 类**（class 7486 + struct 923 + interface 233 + enum 2883）、165万行。
 6. 若 dump.cs 异常/缺失：查看 log.txt（[FAIL]/[CRASH]/[OK]），
    检查 `dllmain.cpp` 的 `DumpWorkerBody` 与 `runtime_dumper.cpp` 的 `RunDump`
 
-### 任务 2（可选攻坚）：DMA 注入稳定性
-- 代码洞改到主模块（NarakaBladepoint.exe）：
-  用 DMA 直读主模块 PE（`ReadModuleSections` 已验证可读 GameAssembly，
-  主模块同样方式）找无 VMP 的 r-x/rw- 空洞
-- 或 shellcode 内先 VirtualAlloc 再跳转（需两步 shellcode）
-
-### 任务 3（可选）：dump.cs 输出格式升级
-- 若需 Il2CppDumper 兼容格式：参考 `Il2CppRuntimeDumper_src/Dumper.cs`
-  的 Mono.Cecil DummyDll 重建方式
+### 任务 2（原分析机遗留，本机不执行）
+DMA 注入稳定性 / self-dump / 镜像导出 —— 属原 FPGA 分析机路径，本机无 DMA 硬件，跳过。
 
 ---
 
@@ -236,13 +302,58 @@ vmm.dll / leechcore.dll / FTD3XX.dll   # dump_workspace\run\ 已备齐
 
 ---
 
-## 9. 与外部机器的路径差异提醒
+## 9. 与外部机器的路径差异提醒 + 本机（F: 盘）环境状态
 
-- 本仓库路径原为 `J:\Code\C++\dma\er_new\UnityExplorer-main`，
-  拉到新机器后**路径会变**。以下位置硬编码了旧路径，接手后需处理：
-  - `dump_workspace/docs/*.md` 内的示例路径（仅文档，可忽略）
-  - `dump_workspace/inject_test/Il2CppRuntimeDumper.cfg`（输出目录，需改）
-  - `dump_workspace/run/` 下 exe 无硬编码路径（运行目录自包含）
-  - 参考 dump 目录 `J:\Code\C++\dma\er_new\dump\` 可能不存在于新机器
-    （可跳过对比，或从原机器拷贝）
-- **建议**：在新机器重新构建所有工程（msbuild），确认编译通过后再操作
+### 9.1 本机环境现状（2026 交接时实录）
+
+**当前仓库实际路径**：`F:\gua\UnityExplorer-main`（原为 `J:\Code\C++\dma\er_new\UnityExplorer-main`，路径已变）。
+
+**本机缺失项（相对原始环境）**：
+- ❌ **MSVC 工具链**：本机原无 VS/MSBuild（vswhere 返回空）。已通过 winget 安装
+  `Microsoft.VisualStudio.2022.BuildTools` + `Microsoft.VisualStudio.Workload.VCTools`
+  （v143 工具集）。**装完需验证** `cl.exe`/`MSBuild.exe` 可用后再构建。
+- ❌ **DMA 运行时依赖**：`dump_workspace/run/` 为空，缺少 `vmm.dll / leechcore.dll /
+  FTD3XX.dll`。运行 DMA 命令前需从 MemProcFS 分发补齐（仓库 `deps/memprocfs/` 含源码，
+  或从原机器拷贝现成 DLL）。
+- ❌ **参考 dump 目录** `J:\Code\C++\dma\er_new\dump\`（本机无 J: 盘）。对比完整度时
+  可跳过，或用本机自研 `--self-dump-cs` 的 508 类数据作为基准。
+
+### 9.2 本机已完成的环境准备工作
+
+1. ✅ **`dump_workspace/inject_test/Il2CppRuntimeDumper.cfg` 已修正**：原指向不存在的
+   `J:\Code\...\out`，现改为 `F:\gua\UnityExplorer-main\dump_workspace\inject_test\out`
+   （注入 DLL 时将 dump.cs / log.txt 写入此目录）。
+2. ✅ **源头源码已拉取**：`dump_workspace/Il2CppRuntimeDumper_src/`（24 文件，
+   `Il2Cpp.cs` 44KB + `Dumper.cs` + `Program.cs` 等全部在位）。
+3. ✅ **git 代理已配置**：本机 github HTTPS 直连被重置，需代理
+   `http://127.0.0.1:7877`。已写入 git 全局配置（`http.proxy`/`https.proxy`）。
+   若重装系统或换机，需重新配置。
+
+### 9.4 本机环境完善完成状态（后续会话可复用）
+
+- ✅ **MSVC v143 工具链**：`C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools`，
+  MSBuild 17.14.51 + cl v14.44。构建命令：
+  ```
+  & "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\MSBuild.exe" App\ExternalResolveConsole.sln /p:Configuration=Release /p:Platform=x64 /m
+  ```
+- ✅ **链接库**：`vmm.lib`/`leechcore.lib` 已复制到 `deps\memprocfs\includes\lib64\`
+  （来自 MemProcFS v5.18 官方包，`dump_workspace\downloads\memprocfs_v5.18.zip`）。
+- ✅ **运行时自包含目录** `dump_workspace\run\`：`ExternalResolveConsole.exe` +
+  `vmm.dll` + `leechcore.dll` + `FTD3XX.dll`。
+- ✅ **自研注入工具** `bin\Release\`：`Il2CppRuntimeDumper.dll`(310KB) + `Injector.exe`。
+- ✅ **源头源码**：`dump_workspace\Il2CppRuntimeDumper_src\`（24 文件）。
+- ✅ **参考 dump.cs 基准**：`F:\gua\dump\dump2026.09.03.cs`（79.6MB / 165万行 /
+  **类 11525** = class 7486 + struct 923 + interface 233 + enum 2883）——
+  这是 Unity-Offset.dll 的完整注入式 dump，用作自研 DLL 输出完整度的对比基准。
+- ✅ **CE 注入通道**：本机 Cheet Engine 位于 `F:\DrunkenDreamDriverCE v1.4.0\`（目标
+  永劫无间定制版，含 `NarakaBladepoint.CT`、`Unity-Offset (1).dll`、DBVM 驱动）。
+  任务 1 用此 CE 注入自研 `Il2CppRuntimeDumper.dll`。
+- ⚠️ **exe 无参运行会阻塞**：无 FPGA DMA 设备时连接初始化挂起。用 `--help` 验证可运行。
+
+### 9.3 接手后常规路径调整清单
+
+- `dump_workspace/docs/*.md` 内的 `J:\...` 示例路径（仅文档，可忽略或顺手改正）
+- `dump_workspace/inject_test/Il2CppRuntimeDumper.cfg`（已改 F: 盘，勿回退）
+- `dump_workspace/run/` 下 exe 无硬编码路径（运行目录自包含）
+- **建议**：在本机重新构建所有工程（msbuild），确认编译通过后再操作
+- **网络**：github 相关拉取务必先配 `git config --global http.proxy http://127.0.0.1:7877`

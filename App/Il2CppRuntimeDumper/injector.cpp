@@ -15,6 +15,7 @@
 #include <TlHelp32.h>
 #include <cstdio>
 #include <cstring>
+#include <cstdlib>
 #include <string>
 
 namespace {
@@ -96,17 +97,22 @@ bool Inject(DWORD pid, const std::string &dllPath) {
 
 int main(int argc, char **argv) {
   if (argc < 3) {
-    printf("Usage: Injector.exe <process-name> <dll-path>\n");
+    printf("Usage: Injector.exe <process-name|pid> <dll-path>\n");
     printf("Example: Injector.exe NarakaBladepoint.exe C:\\dumps\\Il2CppRuntimeDumper.dll\n");
+    printf("         Injector.exe 18064 C:\\dumps\\AddDelayProbe.dll\n");
     return 1;
   }
 
-  const DWORD pid = FindProcessId(argv[1]);
+  char *end = nullptr;
+  unsigned long parsed = std::strtoul(argv[1], &end, 10);
+  const DWORD pid = (end && *end == '\0' && parsed > 0 && parsed <= 0xFFFFFFFFul)
+                        ? static_cast<DWORD>(parsed)
+                        : FindProcessId(argv[1]);
   if (!pid) {
     printf("[-] Process '%s' not found\n", argv[1]);
     return 1;
   }
-  printf("[+] Found %s pid=%lu\n", argv[1], pid);
+  printf("[+] Target %s pid=%lu\n", argv[1], pid);
 
   const bool ok = Inject(pid, argv[2]);
   printf("[%s] injection %s\n", ok ? "+" : "-", ok ? "OK" : "FAILED");

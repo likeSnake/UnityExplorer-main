@@ -1,0 +1,84 @@
+﻿RVA	ClassId	Assembly	Namespace	Class	ClassVA	SlotVA	Module	Protection	SelectedByDump	Status
+0x7058	7	Test.dll	Test.Game	BaseClass	0x1974E5E0250	0x1974E5E9058	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x71C0	2	Test.dll	Test.Game	Sample	0x1974E5E9000	0x1974E5E91C0	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7200	2	Test.dll	Test.Game	Sample	0x1974E5E9000	0x1974E5E9200	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7240	2	Test.dll	Test.Game	Sample	0x1974E5E9000	0x1974E5E9240	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7280	2	Test.dll	Test.Game	Sample	0x1974E5E9000	0x1974E5E9280	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7300	2	Test.dll	Test.Game	Sample	0x1974E5E9000	0x1974E5E9300	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7360	2	Test.dll	Test.Game	Sample	0x1974E5E9000	0x1974E5E9360	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x73B0	2	Test.dll	Test.Game	Sample	0x1974E5E9000	0x1974E5E93B0	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7450	2	Test.dll	Test.Game	Sample	0x1974E5E9000	0x1974E5E9450	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x74D0	2	Test.dll	Test.Game	Sample	0x1974E5E9000	0x1974E5E94D0	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7540	2	Test.dll	Test.Game	Sample	0x1974E5E9000	0x1974E5E9540	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x75A0	2	Test.dll	Test.Game	Sample	0x1974E5E9000	0x1974E5E95A0	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x75C0	2	Test.dll	Test.Game	Sample	0x1974E5E9000	0x1974E5E95C0	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x75E0	2	Test.dll	Test.Game	Sample	0x1974E5E9000	0x1974E5E95E0	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x75F0	2	Test.dll	Test.Game	Sample	0x1974E5E9000	0x1974E5E95F0	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7648	8	Test.dll	Test.Game	IFoo	0x1974E5E03F0	0x1974E5E9648	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7830	3	Test.dll	Test.Game	MyEnum	0x1974E5E9660	0x1974E5E9830	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7860	3	Test.dll	Test.Game	MyEnum	0x1974E5E9660	0x1974E5E9860	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7890	3	Test.dll	Test.Game	MyEnum	0x1974E5E9660	0x1974E5E9890	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x78B0	3	Test.dll	Test.Game	MyEnum	0x1974E5E9660	0x1974E5E98B0	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7A80	4	Test.dll	Test.Game	MyStruct	0x1974E5E98C0	0x1974E5E9A80	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7AB0	4	Test.dll	Test.Game	MyStruct	0x1974E5E98C0	0x1974E5E9AB0	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7AC0	8	Test.dll	Test.Game	IFoo	0x1974E5E03F0	0x1974E5E9AC0	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7CA0	5	Test.dll	Test.Game	Arrays	0x1974E5E9AD0	0x1974E5E9CA0	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7D10	5	Test.dll	Test.Game	Arrays	0x1974E5E9AD0	0x1974E5E9D10	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7D48	7	Test.dll	Test.Game	BaseClass	0x1974E5E0250	0x1974E5E9D48	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7D70	5	Test.dll	Test.Game	Arrays	0x1974E5E9AD0	0x1974E5E9D70	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7DB0	5	Test.dll	Test.Game	Arrays	0x1974E5E9AD0	0x1974E5E9DB0	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7DE0	5	Test.dll	Test.Game	Arrays	0x1974E5E9AD0	0x1974E5E9DE0	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7E00	5	Test.dll	Test.Game	Arrays	0x1974E5E9AD0	0x1974E5E9E00	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7E20	5	Test.dll	Test.Game	Arrays	0x1974E5E9AD0	0x1974E5E9E20	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x7E40	5	Test.dll	Test.Game	Arrays	0x1974E5E9AD0	0x1974E5E9E40	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8010	9	Test.dll	Test.Game	Extra1	0x1974E5E9E50	0x1974E5EA010	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8050	9	Test.dll	Test.Game	Extra1	0x1974E5E9E50	0x1974E5EA050	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x80C0	9	Test.dll	Test.Game	Extra1	0x1974E5E9E50	0x1974E5EA0C0	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8110	9	Test.dll	Test.Game	Extra1	0x1974E5E9E50	0x1974E5EA110	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8150	9	Test.dll	Test.Game	Extra1	0x1974E5E9E50	0x1974E5EA150	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8160	9	Test.dll	Test.Game	Extra1	0x1974E5E9E50	0x1974E5EA160	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8360	10	Test.dll	Test.Game	Extra2	0x1974E5EA1A0	0x1974E5EA360	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x83A0	10	Test.dll	Test.Game	Extra2	0x1974E5EA1A0	0x1974E5EA3A0	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x83E0	10	Test.dll	Test.Game	Extra2	0x1974E5EA1A0	0x1974E5EA3E0	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8450	10	Test.dll	Test.Game	Extra2	0x1974E5EA1A0	0x1974E5EA450	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x84C0	10	Test.dll	Test.Game	Extra2	0x1974E5EA1A0	0x1974E5EA4C0	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8510	10	Test.dll	Test.Game	Extra2	0x1974E5EA1A0	0x1974E5EA510	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8540	10	Test.dll	Test.Game	Extra2	0x1974E5EA1A0	0x1974E5EA540	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8580	10	Test.dll	Test.Game	Extra2	0x1974E5EA1A0	0x1974E5EA580	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x85A0	10	Test.dll	Test.Game	Extra2	0x1974E5EA1A0	0x1974E5EA5A0	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x85B0	10	Test.dll	Test.Game	Extra2	0x1974E5EA1A0	0x1974E5EA5B0	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x85D8	10	Test.dll	Test.Game	Extra2	0x1974E5EA1A0	0x1974E5EA5D8	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x87E0	11	Test.dll	Test.Game	Extra3	0x1974E5EA620	0x1974E5EA7E0	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8820	11	Test.dll	Test.Game	Extra3	0x1974E5EA620	0x1974E5EA820	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8860	11	Test.dll	Test.Game	Extra3	0x1974E5EA620	0x1974E5EA860	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x88A0	11	Test.dll	Test.Game	Extra3	0x1974E5EA620	0x1974E5EA8A0	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8910	11	Test.dll	Test.Game	Extra3	0x1974E5EA620	0x1974E5EA910	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8980	11	Test.dll	Test.Game	Extra3	0x1974E5EA620	0x1974E5EA980	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x89F0	11	Test.dll	Test.Game	Extra3	0x1974E5EA620	0x1974E5EA9F0	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8A40	11	Test.dll	Test.Game	Extra3	0x1974E5EA620	0x1974E5EAA40	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8A70	11	Test.dll	Test.Game	Extra3	0x1974E5EA620	0x1974E5EAA70	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8AA0	11	Test.dll	Test.Game	Extra3	0x1974E5EA620	0x1974E5EAAA0	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8AE0	11	Test.dll	Test.Game	Extra3	0x1974E5EA620	0x1974E5EAAE0	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8B00	11	Test.dll	Test.Game	Extra3	0x1974E5EA620	0x1974E5EAB00	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8B20	11	Test.dll	Test.Game	Extra3	0x1974E5EA620	0x1974E5EAB20	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8B30	11	Test.dll	Test.Game	Extra3	0x1974E5EA620	0x1974E5EAB30	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8B58	11	Test.dll	Test.Game	Extra3	0x1974E5EA620	0x1974E5EAB58	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x8B80	11	Test.dll	Test.Game	Extra3	0x1974E5EA620	0x1974E5EAB80	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x90B0	12	Test.dll		BuffManager	0x1974E5EAD60	0x1974E5EB0B0	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x90F0	13	Test.dll		TransparentTagHandler	0x1974E5EAEF0	0x1974E5EB0F0	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x92B0	1	Test.dll		<Module>	0x1974E5EABD0	0x1974E5EB2B0	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x92B8	2	Test.dll	Test.Game	Sample	0x1974E5E9000	0x1974E5EB2B8	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x92C0	3	Test.dll	Test.Game	MyEnum	0x1974E5E9660	0x1974E5EB2C0	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x92C8	4	Test.dll	Test.Game	MyStruct	0x1974E5E98C0	0x1974E5EB2C8	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x92D0	5	Test.dll	Test.Game	Arrays	0x1974E5E9AD0	0x1974E5EB2D0	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x92D8	6	Test.dll	System	Object	0x1974E5E00C0	0x1974E5EB2D8	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x92E0	7	Test.dll	Test.Game	BaseClass	0x1974E5E0250	0x1974E5EB2E0	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x92E8	8	Test.dll	Test.Game	IFoo	0x1974E5E03F0	0x1974E5EB2E8	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x92F0	9	Test.dll	Test.Game	Extra1	0x1974E5E9E50	0x1974E5EB2F0	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x92F8	10	Test.dll	Test.Game	Extra2	0x1974E5EA1A0	0x1974E5EB2F8	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x9300	11	Test.dll	Test.Game	Extra3	0x1974E5EA620	0x1974E5EB300	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x9308	12	Test.dll		BuffManager	0x1974E5EAD60	0x1974E5EB308	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x9310	13	Test.dll		TransparentTagHandler	0x1974E5EAEF0	0x1974E5EB310	GameAssembly_Super_IBT.dll	0x4	0	指针值匹配，槽位用途待确认
+0x9318	2	Test.dll	Test.Game	Sample	0x1974E5E9000	0x1974E5EB318	GameAssembly_Super_IBT.dll	0x4	1	指针值匹配，槽位用途待确认
+0x9320	12	Test.dll		BuffManager	0x1974E5EAD60	0x1974E5EB320	GameAssembly_Super_IBT.dll	0x4	1	指针值匹配，槽位用途待确认
+0x9328	13	Test.dll		TransparentTagHandler	0x1974E5EAEF0	0x1974E5EB328	GameAssembly_Super_IBT.dll	0x4	1	指针值匹配，槽位用途待确认

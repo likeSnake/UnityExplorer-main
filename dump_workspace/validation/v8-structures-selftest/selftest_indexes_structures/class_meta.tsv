@@ -1,0 +1,16 @@
+﻿ClassId	Assembly	Namespace	Name	DumpTypeDefIndex	ClassVA	Flags	Kind	ParentClassVA	ParentName	InstanceSize	InstanceSizeStatus	RawInstanceSize	RawInstanceSizeOffset	FieldCount	MethodCount	PropertyCount	InterfaceCount	RawFieldCount	RawMethodCount	RawPropertyCount	RawInterfaceCount
+1	Test.dll		<Module>	0x100	0x2C71334A860	0x0	class				布局未验证，仅保留原始读数	0x10	0xF0	0	0	0	0	0	0	0	0
+2	Test.dll	Test.Game	Sample	0x101	0x2C713349000	0x101	class	0x2C713340210	Test.Game.BaseClass		布局未验证，仅保留原始读数	0x10	0xF0	3	6	1	2	3	6	1	2
+3	Test.dll	Test.Game	MyEnum	0x102	0x2C713349590	0x101	enum	0x2C713340770	System.Enum		布局未验证，仅保留原始读数	0x4	0xF0	2	0	0	0	2	0	0	0
+4	Test.dll	Test.Game	MyStruct	0x103	0x2C7133497B0	0x101	struct	0x2C713340610	System.ValueType		布局未验证，仅保留原始读数	0x10	0xF0	1	0	0	2	1	0	0	2
+5	Test.dll	Test.Game	Arrays	0x104	0x2C713349980	0x1	class				布局未验证，仅保留原始读数	0x10	0xF0	4	0	0	0	4	0	0	0
+6	Test.dll	System	Object	0x105	0x2C7133400C0	0x1	class				布局未验证，仅保留原始读数	0x10	0xF0	0	0	0	0	0	0	0	0
+7	Test.dll	Test.Game	BaseClass	0x106	0x2C713340210	0x1	class	0x2C7133400C0	System.Object		布局未验证，仅保留原始读数	0x10	0xF0	0	0	0	0	0	0	0	0
+8	Test.dll	Test.Game	IFoo	0x107	0x2C713340370	0x21	interface				布局未验证，仅保留原始读数	0x10	0xF0	0	0	0	0	0	0	0	0
+9	Test.dll	Test.Game	Extra1	0x108	0x2C713349CC0	0x1	class				布局未验证，仅保留原始读数	0x10	0xF0	1	2	1	0	1	2	1	0
+10	Test.dll	Test.Game	Extra2	0x109	0x2C713349F90	0x1	class				布局未验证，仅保留原始读数	0x10	0xF0	2	3	2	0	2	3	2	0
+11	Test.dll	Test.Game	Extra3	0x10A	0x2C71334A370	0x1	class				布局未验证，仅保留原始读数	0x10	0xF0	3	4	3	0	3	4	3	0
+12	Test.dll		BuffManager	0x10B	0x2C71334A9B0	0x1	class				布局未验证，仅保留原始读数	0x10	0xF0	0	0	0	0	0	0	0	0
+13	Test.dll		TransparentTagHandler	0x10C	0x2C71334AB00	0x1	class				布局未验证，仅保留原始读数	0x10	0xF0	0	0	0	0	0	0	0	0
+14	Test.dll	Tests	Collision	0x10D	0x2C71334AD90	0x1	class				布局未验证，仅保留原始读数	0x10	0xF0	0	3	0	0	0	3	0	0
+15	Test.dll	Tests	Collision	0x10E	0x2C71334B010	0x1	class				布局未验证，仅保留原始读数	0x10	0xF0	0	3	0	0	0	3	0	0

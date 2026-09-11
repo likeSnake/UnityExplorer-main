@@ -1,0 +1,3 @@
+﻿ClassId	Assembly	Namespace	Class	ClassVA	ArrayIndex	InterfaceAssembly	InterfaceNamespace	Interface	InterfaceClassVA	Status
+2	Test.dll	Tests	MixedInterfaces	0x201279C04E0	0	Test.dll	Tests	I合法接口	0x201279BFF80	接口标志匹配
+2	Test.dll	Tests	MixedInterfaces	0x201279C04E0	5	Test.dll	Tests	ISecond	0x201279C00E0	接口标志匹配
