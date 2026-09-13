@@ -1,0 +1,4 @@
+﻿hero_id	battle_title	display_name	internal_name	category	is_main_config	placeholder	related_hero_id	related_from_hero_ids	deprecated	playable_now	names_differ
+100	测试女侠	null	heroine	UNCLASSIFIED	null	false	101	[]	false	null	false
+101	变身	null	form	UNCLASSIFIED	null	false	0	[100]	false	null	false
+102	【占坑】	null	future	PLACEHOLDER	null	true	0	[]	false	null	false

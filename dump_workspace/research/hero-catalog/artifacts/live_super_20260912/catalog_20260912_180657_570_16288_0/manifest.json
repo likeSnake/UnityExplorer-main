@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "status": "COMPLETE_WITH_LIMITATIONS",
+  "source_kind": "FILE_SNAPSHOT",
+  "live_process_verified": false,
+  "exported_at_local": "2026-09-12T18:06:57.570",
+  "counts": {
+    "config_records": 37,
+    "main_marked_records": 33,
+    "named_main_records": 28,
+    "placeholder_records": 5,
+    "related_non_main_forms": 4,
+    "missing_fashion_rows": 0,
+    "different_name_rows": 2,
+    "mapping_links": 370,
+    "unresolved_nonzero_mapping_links": 0,
+    "state_names": 9672,
+    "hero_skill_links": 321,
+    "unresolved_skill_records": 0,
+    "unresolved_skill_mapping_links": 0
+  },
+  "sources": [
+    {
+      "file": "F:\\gua\\dump\\dump_all\\super\\config\\HeroConfig_HeroBattleConfig.tsv",
+      "status": "PARSED",
+      "rows": 37,
+      "sha256": "1c010c8e5b1b37a99223ce34b475e3eb13c5c873818bdbdc6dfd86d97712cc7b",
+      "bytes": 3583
+    },
+    {
+      "file": "F:\\gua\\dump\\dump_all\\super\\config\\HeroFashion_HeroFashion.tsv",
+      "status": "PARSED",
+      "rows": 37,
+      "sha256": "81063b2c31ab1f9d8d346035863d07468c6ff8f8570ac4c2f50e0cee1fc12b82",
+      "bytes": 35459
+    },
+    {
+      "file": "F:\\gua\\dump\\dump_all\\super\\config\\HeroTalent_HeroTalent.tsv",
+      "status": "PARSED",
+      "rows": 37,
+      "sha256": "5704cc1e04bf65b80cc2177688105b883fd237de257212191287e052b81a31f4",
+      "bytes": 2391
+    },
+    {
+      "file": "F:\\gua\\dump\\dump_all\\super\\config\\PlayableMappingConfig_MappingConfig.tsv",
+      "status": "PARSED",
+      "rows": 3941,
+      "sha256": "03d2552def4d0ba154d8b67424812c6fb1605643c7595269fd04718847963017",
+      "bytes": 217797
+    },
+    {
+      "file": "F:\\gua\\dump\\dump_all\\super\\config\\AutoAnimatorStates_MaxStateMachineConf.tsv",
+      "status": "PARSED",
+      "rows": 9672,
+      "sha256": "5e22c6fc530281f26b25265052c9c5916b6615189734ad683e4f7233784c5e1f",
+      "bytes": 719098
+    },
+    {
+      "file": "F:\\gua\\dump\\dump_all\\super\\config\\TalentConfig_TalentSkill.tsv",
+      "status": "PARSED",
+      "rows": 325,
+      "sha256": "e159034e8b40ff90d22325729a03807584a059531143fcc4327e363b6aeeeadf",
+      "bytes": 284417
+    }
+  ],
+  "products": [
+    {
+      "file": "heroes.json",
+      "bytes": 2306352,
+      "sha256": "7dd366c5d7f77b1bd9a3ab8b187a90609491714c5be025015e7a09fa98817b03"
+    },
+    {
+      "file": "heroes.tsv",
+      "bytes": 3513,
+      "sha256": "c623a56884d2b254d6773318900398100facbfd9edd0d1f4a4bed2b2b2a82002"
+    },
+    {
+      "file": "hero_action_links.tsv",
+      "bytes": 36190,
+      "sha256": "308aa0ee9f08deec3f9541ac22afded706b9875eb77d73c646b1adf663aeaaf9"
+    },
+    {
+      "file": "hero_skills.tsv",
+      "bytes": 46126,
+      "sha256": "fec3503f036c73b5039bce2785c03df377dce444f71e5043396ae567a5019e6f"
+    },
+    {
+      "file": "action_states.tsv",
+      "bytes": 676683,
+      "sha256": "b40cfe2ea7f73d3f19cc6842c5b91b1d1eff7293b9e46ada0e3916000b351a6c"
+    },
+    {
+      "file": "dump_header.cs",
+      "bytes": 2715,
+      "sha256": "e6804ea663792749a8ef9ff86aedaf4f3776cdbeb3611a0d887695437a20055a"
+    },
+    {
+      "file": "offset_log.txt",
+      "bytes": 668,
+      "sha256": "e7750f81eb01a9fdc7222a9cd76581d523b804ff0cc21361ed63ad125926a59a"
+    }
+  ]
+}

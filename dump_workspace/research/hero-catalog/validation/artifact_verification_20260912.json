@@ -1,0 +1,142 @@
+{
+    "passed":  34,
+    "failed":  0,
+    "checks":  [
+                   {
+                       "name":  "source F:\\gua\\dump\\dump_all\\super\\config\\HeroConfig_HeroBattleConfig.tsv",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "source F:\\gua\\dump\\dump_all\\super\\config\\HeroFashion_HeroFashion.tsv",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "source F:\\gua\\dump\\dump_all\\super\\config\\HeroTalent_HeroTalent.tsv",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "source F:\\gua\\dump\\dump_all\\super\\config\\PlayableMappingConfig_MappingConfig.tsv",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "source F:\\gua\\dump\\dump_all\\super\\config\\AutoAnimatorStates_MaxStateMachineConf.tsv",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "source F:\\gua\\dump\\dump_all\\super\\config\\TalentConfig_TalentSkill.tsv",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "product F:\\gua\\UnityExplorer-main\\dump_workspace\\research\\hero-catalog\\artifacts\\super_reference\\catalog_20260912_170137_210_16784_0\\heroes.json",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "product F:\\gua\\UnityExplorer-main\\dump_workspace\\research\\hero-catalog\\artifacts\\super_reference\\catalog_20260912_170137_210_16784_0\\heroes.tsv",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "product F:\\gua\\UnityExplorer-main\\dump_workspace\\research\\hero-catalog\\artifacts\\super_reference\\catalog_20260912_170137_210_16784_0\\hero_action_links.tsv",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "product F:\\gua\\UnityExplorer-main\\dump_workspace\\research\\hero-catalog\\artifacts\\super_reference\\catalog_20260912_170137_210_16784_0\\hero_skills.tsv",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "product F:\\gua\\UnityExplorer-main\\dump_workspace\\research\\hero-catalog\\artifacts\\super_reference\\catalog_20260912_170137_210_16784_0\\action_states.tsv",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "product F:\\gua\\UnityExplorer-main\\dump_workspace\\research\\hero-catalog\\artifacts\\super_reference\\catalog_20260912_170137_210_16784_0\\dump_header.cs",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "product F:\\gua\\UnityExplorer-main\\dump_workspace\\research\\hero-catalog\\artifacts\\super_reference\\catalog_20260912_170137_210_16784_0\\offset_log.txt",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "row counts F:\\gua\\UnityExplorer-main\\dump_workspace\\research\\hero-catalog\\artifacts\\super_reference\\catalog_20260912_170137_210_16784_0",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "identity uniqueness F:\\gua\\UnityExplorer-main\\dump_workspace\\research\\hero-catalog\\artifacts\\super_reference\\catalog_20260912_170137_210_16784_0",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "composed digest F:\\gua\\UnityExplorer-main\\dump_workspace\\research\\hero-catalog\\artifacts\\super_reference\\catalog_20260912_170137_210_16784_0",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "original dump body unchanged F:\\gua\\UnityExplorer-main\\dump_workspace\\research\\hero-catalog\\artifacts\\super_reference\\catalog_20260912_170137_210_16784_0",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "source F:\\gua\\dump\\dump_all\\normal\\config\\HeroConfig_HeroBattleConfig.tsv",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "source F:\\gua\\dump\\dump_all\\normal\\config\\HeroFashion_HeroFashion.tsv",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "source F:\\gua\\dump\\dump_all\\normal\\config\\HeroTalent_HeroTalent.tsv",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "source F:\\gua\\dump\\dump_all\\normal\\config\\PlayableMappingConfig_MappingConfig.tsv",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "source F:\\gua\\dump\\dump_all\\normal\\config\\AutoAnimatorStates_MaxStateMachineConf.tsv",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "source F:\\gua\\dump\\dump_all\\normal\\config\\TalentConfig_TalentSkill.tsv",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "product F:\\gua\\UnityExplorer-main\\dump_workspace\\research\\hero-catalog\\artifacts\\normal_reference\\catalog_20260912_170137_308_15176_0\\heroes.json",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "product F:\\gua\\UnityExplorer-main\\dump_workspace\\research\\hero-catalog\\artifacts\\normal_reference\\catalog_20260912_170137_308_15176_0\\heroes.tsv",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "product F:\\gua\\UnityExplorer-main\\dump_workspace\\research\\hero-catalog\\artifacts\\normal_reference\\catalog_20260912_170137_308_15176_0\\hero_action_links.tsv",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "product F:\\gua\\UnityExplorer-main\\dump_workspace\\research\\hero-catalog\\artifacts\\normal_reference\\catalog_20260912_170137_308_15176_0\\hero_skills.tsv",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "product F:\\gua\\UnityExplorer-main\\dump_workspace\\research\\hero-catalog\\artifacts\\normal_reference\\catalog_20260912_170137_308_15176_0\\action_states.tsv",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "product F:\\gua\\UnityExplorer-main\\dump_workspace\\research\\hero-catalog\\artifacts\\normal_reference\\catalog_20260912_170137_308_15176_0\\dump_header.cs",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "product F:\\gua\\UnityExplorer-main\\dump_workspace\\research\\hero-catalog\\artifacts\\normal_reference\\catalog_20260912_170137_308_15176_0\\offset_log.txt",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "row counts F:\\gua\\UnityExplorer-main\\dump_workspace\\research\\hero-catalog\\artifacts\\normal_reference\\catalog_20260912_170137_308_15176_0",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "identity uniqueness F:\\gua\\UnityExplorer-main\\dump_workspace\\research\\hero-catalog\\artifacts\\normal_reference\\catalog_20260912_170137_308_15176_0",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "composed digest F:\\gua\\UnityExplorer-main\\dump_workspace\\research\\hero-catalog\\artifacts\\normal_reference\\catalog_20260912_170137_308_15176_0",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "original dump body unchanged F:\\gua\\UnityExplorer-main\\dump_workspace\\research\\hero-catalog\\artifacts\\normal_reference\\catalog_20260912_170137_308_15176_0",
+                       "passed":  true
+                   }
+               ]
+}

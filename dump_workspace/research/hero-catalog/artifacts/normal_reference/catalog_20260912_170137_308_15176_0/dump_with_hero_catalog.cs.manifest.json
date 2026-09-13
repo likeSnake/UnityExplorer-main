@@ -1,0 +1,25 @@
+{
+    "status":  "COMPOSED_FILE_SNAPSHOT",
+    "live_process_verified":  false,
+    "source_dump":  "F:\\gua\\dump\\dump_all\\normal\\dump.cs",
+    "source_dump_sha256":  "020702AB8B85AB7202DE59275FD874BC34D39E2E27775016BA1FFB9DE6F20F47",
+    "source_catalog":  "F:\\gua\\UnityExplorer-main\\dump_workspace\\research\\hero-catalog\\artifacts\\normal_reference\\catalog_20260912_170137_308_15176_0",
+    "header_sha256":  "4ad6c5acc89f5c4d861a3df5a25309d9603d48314ff19c4ae12b2237b3241b6e",
+    "output":  "F:\\gua\\UnityExplorer-main\\dump_workspace\\research\\hero-catalog\\artifacts\\normal_reference\\catalog_20260912_170137_308_15176_0\\dump_with_hero_catalog.cs",
+    "output_sha256":  "6FE29DA795490DBBBE5104193F45DA50610850BD4CD5A0E8B455CD9DEB39A26B",
+    "counts":  {
+                   "config_records":  37,
+                   "main_marked_records":  33,
+                   "named_main_records":  28,
+                   "placeholder_records":  5,
+                   "related_non_main_forms":  4,
+                   "missing_fashion_rows":  0,
+                   "different_name_rows":  2,
+                   "mapping_links":  370,
+                   "unresolved_nonzero_mapping_links":  0,
+                   "state_names":  19057,
+                   "hero_skill_links":  321,
+                   "unresolved_skill_records":  0,
+                   "unresolved_skill_mapping_links":  0
+               }
+}

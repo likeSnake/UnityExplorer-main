@@ -1,0 +1,13 @@
+﻿hero_id	source_table	source_field	mapping_id	mapping_name	status
+100	HeroConfig_HeroBattleConfig.tsv	_HeroMappingID	0	null	NO_OVERRIDE
+100	HeroConfig_HeroBattleConfig.tsv	_EmoteMappingID	200	hero_emote_group	FOUND
+100	HeroConfig_HeroBattleConfig.tsv	_StandbyMappingID	201	null	MISSING_ID
+100	HeroConfig_HeroBattleConfig.tsv	_SoulMapping	200	hero_emote_group	FOUND
+101	HeroConfig_HeroBattleConfig.tsv	_HeroMappingID	0	null	NO_OVERRIDE
+101	HeroConfig_HeroBattleConfig.tsv	_EmoteMappingID	200	hero_emote_group	FOUND
+101	HeroConfig_HeroBattleConfig.tsv	_StandbyMappingID	200	hero_emote_group	FOUND
+101	HeroConfig_HeroBattleConfig.tsv	_SoulMapping	200	hero_emote_group	FOUND
+102	HeroConfig_HeroBattleConfig.tsv	_HeroMappingID	0	null	NO_OVERRIDE
+102	HeroConfig_HeroBattleConfig.tsv	_EmoteMappingID	200	hero_emote_group	FOUND
+102	HeroConfig_HeroBattleConfig.tsv	_StandbyMappingID	200	hero_emote_group	FOUND
+102	HeroConfig_HeroBattleConfig.tsv	_SoulMapping	200	hero_emote_group	FOUND

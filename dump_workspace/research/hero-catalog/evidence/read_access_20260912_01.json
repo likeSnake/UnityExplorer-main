@@ -1,0 +1,15 @@
+﻿{
+    "timestamp":  "2026-09-12T05:33:35.4054356+08:00",
+    "pid":  25208,
+    "process_name":  "NarakaBladepoint.exe",
+    "process_start":  "2026-09-12T05:22:47.0220000+08:00",
+    "access":  "PROCESS_QUERY_INFORMATION | PROCESS_VM_READ (0x410)",
+    "read_only":  true,
+    "status":  "MODULE_ENUM_FAILED",
+    "modules":  [
+
+                ],
+    "image_path":  "F:\\yjwj_2025-12-28-11-00\\Naraka\\program\\NarakaBladepoint.exe",
+    "module_bytes_reported":  0,
+    "win32_error":  5
+}

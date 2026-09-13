@@ -1,0 +1,54 @@
+{
+    "passed":  12,
+    "failed":  0,
+    "checks":  [
+                   {
+                       "name":  "dump_modified=false",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "source dump exists",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "source dump size",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "source dump sha256",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "product heroes.json",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "product heroes.tsv",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "product hero_skills.tsv",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "product hero_action_links.tsv",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "product action_states.tsv",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "product dump_header.cs",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "product offset_log.txt",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "product README.md",
+                       "passed":  true
+                   }
+               ]
+}

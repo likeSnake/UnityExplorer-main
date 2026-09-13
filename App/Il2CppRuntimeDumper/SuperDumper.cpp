@@ -14,18 +14,24 @@
 //   第一行 = 输出目录；其余 key=value：outdir/images/fields/properties/methods/
 //   instance/classrvas/offsetsummary/structureindexes/metadata/outheuristic/maxclasses/
 //   maxfields/maxmethods/maxprops/maxifaces（0=按原始计数逐项验证）
-// 输出：dump_YYYYMMDD_HHMMSS_mmm.cs（本机运行开始时间，精确到毫秒）
-//       同名 _structures 目录中的类型/方法/指针槽位/接口索引、成员诊断及简体中文产物说明。
+// 输出：默认写入 C:\\YJDumped\\YYYYMMDD_HHMMSS_mmm\\
+//       目录中的 dump_YYYYMMDD_HHMMSS_mmm.cs、log.txt 及 _structures 产物。
+//       如果 SuperDumper.cfg 明确指定了 outdir，则把它作为根目录，仍创建时间戳子目录。
 // ============================================================================
 #include <Windows.h>
 #include <psapi.h>
 #include <TlHelp32.h>
 #include <cstdio>
 #include <cstring>
+#include <fstream>
+#include <iomanip>
+#include <sstream>
 #include <string>
+#include <unordered_set>
 #include <vector>
 
 #include "il2cpp_dump_core.hpp"
+#include "hero_catalog_runtime.hpp"
 
 #pragma comment(lib, "psapi.lib")
 
@@ -33,11 +39,13 @@ namespace {
 
 using namespace ildump;
 
-char g_dir[MAX_PATH] = "C:\\selfdump";
+char g_dir[MAX_PATH] = "C:\\YJDumped";
+bool g_outDirConfigured = false;
 Options g_opt;
 FILE *g_logFile = nullptr;
 LogCtx g_log;
 std::vector<std::string> g_cfgWarnings;
+std::string g_runtimeCatalogMode = "auto";
 
 void LogToFile(void *ud, const char *msg) {
   (void)ud;
@@ -84,12 +92,18 @@ bool LoadCfg(HMODULE hModule) {
     if (s.empty() || s[0] == '#' || s[0] == ';') continue;
     size_t eq = s.find('=');
     if (eq == std::string::npos) {
-      if (lineNo == 1) strncpy_s(g_dir, s.c_str(), _TRUNCATE);
+      if (lineNo == 1) {
+        strncpy_s(g_dir, s.c_str(), _TRUNCATE);
+        g_outDirConfigured = true;
+      }
       continue;
     }
     std::string k = Trim(s.substr(0, eq));
     std::string v = Trim(s.substr(eq + 1));
-    if (k == "outdir" || k == "out") strncpy_s(g_dir, v.c_str(), _TRUNCATE);
+    if (k == "outdir" || k == "out") {
+      strncpy_s(g_dir, v.c_str(), _TRUNCATE);
+      g_outDirConfigured = true;
+    }
     else if (k == "images") g_opt.imageFilter = v;
     else if (k == "fields") g_opt.fields = (v != "0");
     else if (k == "properties") g_opt.properties = (v != "0");
@@ -100,6 +114,7 @@ bool LoadCfg(HMODULE hModule) {
     else if (k == "structureindexes") g_opt.structureIndexes = (v != "0");
     else if (k == "metadata") g_opt.useMetadata = (v != "0");
     else if (k == "outheuristic") g_opt.outHeuristic = (v != "0");
+    else if (k == "runtimecatalog" || k == "runtime_catalog") g_runtimeCatalogMode = v;
     else if (k == "maxclasses") g_opt.maxClassesPerImage = (uint32_t)strtoul(v.c_str(), nullptr, 0);
     else if (k == "maxfields" || k == "maxmethods" || k == "maxprops" || k == "maxifaces") {
       char *end = nullptr;
@@ -321,15 +336,20 @@ DWORD WINAPI DumpWorker(LPVOID param) {
   // Keep all file-system and C++ container work out of DllMain/loader lock.
   g_opt.structureIndexes = true;
   const bool cfgLoaded = LoadCfg(self);
-  EnsureDir(g_dir);
   SYSTEMTIME started = {};
   GetLocalTime(&started);
-  char dumpFileName[64] = {};
-  snprintf(dumpFileName, sizeof(dumpFileName),
-           "dump_%04u%02u%02u_%02u%02u%02u_%03u.cs",
-           (unsigned)started.wYear, (unsigned)started.wMonth, (unsigned)started.wDay,
-           (unsigned)started.wHour, (unsigned)started.wMinute, (unsigned)started.wSecond,
+  char timestamp[32] = {};
+  snprintf(timestamp, sizeof(timestamp), "%04u%02u%02u_%02u%02u%02u_%03u",
+           (unsigned)started.wYear, (unsigned)started.wMonth,
+           (unsigned)started.wDay, (unsigned)started.wHour,
+           (unsigned)started.wMinute, (unsigned)started.wSecond,
            (unsigned)started.wMilliseconds);
+  const std::string outputRoot = g_dir;
+  const std::string timestampDir = outputRoot + "\\" + timestamp;
+  strncpy_s(g_dir, timestampDir.c_str(), _TRUNCATE);
+  EnsureDir(g_dir);
+  char dumpFileName[64] = {};
+  snprintf(dumpFileName, sizeof(dumpFileName), "dump_%s.cs", timestamp);
   g_opt.outPath = std::string(g_dir) + "\\" + dumpFileName;
   std::string logPath = std::string(g_dir) + "\\log.txt";
   g_logFile = fopen(logPath.c_str(), "w");
@@ -342,6 +362,10 @@ DWORD WINAPI DumpWorker(LPVOID param) {
   g_log.line("[0] pid=%lu tid=%lu outdir=%s cfg=%s", GetCurrentProcessId(), GetCurrentThreadId(),
              g_dir, cfgLoaded ? "loaded" : "default");
   g_log.line("[0] dumpFile=%s (timestamp=local run start)", g_opt.outPath.c_str());
+  g_log.line("[0] outputMode=%s root=%s timestamp=%s",
+             g_outDirConfigured ? "configured-timestamp-folder"
+                                : "default-timestamp-folder",
+             outputRoot.c_str(), timestamp);
 
   ModuleInfo mod;
   if (!FindGameAssemblyModule(g_log, mod, 30)) {
@@ -428,6 +452,14 @@ DWORD WINAPI DumpWorker(LPVOID param) {
     d.opt = &g_opt;
     d.log = &g_log;
     rc = RunDumpWithSeh(&d, &crashCode);
+    if (rc == 0 && g_runtimeCatalogMode != "off" && g_runtimeCatalogMode != "0" &&
+        g_runtimeCatalogMode != "false" && g_runtimeCatalogMode != "disabled") {
+      std::string catalogError;
+      if (!CaptureHeroCatalogRuntime(d, g_dir, g_runtimeCatalogMode, &catalogError)) {
+        g_log.line("[hero-catalog] live memory capture unavailable: %s", catalogError.c_str());
+        if (g_runtimeCatalogMode == "required") rc = 1;
+      }
+    }
     qualityWarnings = d.quality.warnings();
   } // Release collectors and close files before FreeLibraryAndExitThread.
   if (rc == 2) g_log.line("[CRASH] 0x%08lX (dump aborted, target untouched)", crashCode);

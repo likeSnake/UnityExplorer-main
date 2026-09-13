@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "status": "COMPLETE_WITH_LIMITATIONS",
+  "source_kind": "FILE_SNAPSHOT",
+  "live_process_verified": false,
+  "exported_at_local": "2026-09-12T17:01:37.168",
+  "counts": {
+    "config_records": 3,
+    "main_marked_records": 0,
+    "named_main_records": 0,
+    "placeholder_records": 1,
+    "related_non_main_forms": 0,
+    "missing_fashion_rows": 3,
+    "different_name_rows": 0,
+    "mapping_links": 12,
+    "unresolved_nonzero_mapping_links": 1,
+    "state_names": 1,
+    "hero_skill_links": 0,
+    "unresolved_skill_records": 0,
+    "unresolved_skill_mapping_links": 0
+  },
+  "sources": [
+    {
+      "file": "F:\\gua\\UnityExplorer-main\\dump_workspace\\research\\hero-catalog\\validation\\selftest_8424_1438750\\input\\HeroConfig_HeroBattleConfig.tsv",
+      "status": "PARSED",
+      "rows": 3,
+      "sha256": "73381a4421fac5b4cf4a7566b2596f804368aa7fab933a79efe26f2009d697dc",
+      "bytes": 251
+    },
+    {
+      "file": "F:\\gua\\UnityExplorer-main\\dump_workspace\\research\\hero-catalog\\validation\\selftest_8424_1438750\\input\\HeroFashion_HeroFashion.tsv",
+      "status": "EMPTY",
+      "rows": 0,
+      "sha256": "a209211a59953c58d97abd8ca3bac3bc42892476643fb1e7317bb8bf971e0078",
+      "bytes": 60
+    },
+    {
+      "file": "F:\\gua\\UnityExplorer-main\\dump_workspace\\research\\hero-catalog\\validation\\selftest_8424_1438750\\input\\HeroTalent_HeroTalent.tsv",
+      "status": "MISSING",
+      "rows": null,
+      "sha256": null
+    },
+    {
+      "file": "F:\\gua\\UnityExplorer-main\\dump_workspace\\research\\hero-catalog\\validation\\selftest_8424_1438750\\input\\PlayableMappingConfig_MappingConfig.tsv",
+      "status": "PARSED",
+      "rows": 1,
+      "sha256": "d34d5e13cdb07f38812e8e9dd028d4c00639b4a1ca0b3fb2fc21e9fa35424159",
+      "bytes": 47
+    },
+    {
+      "file": "F:\\gua\\UnityExplorer-main\\dump_workspace\\research\\hero-catalog\\validation\\selftest_8424_1438750\\input\\AutoAnimatorStates_MaxStateMachineConf.tsv",
+      "status": "PARSED",
+      "rows": 1,
+      "sha256": "7753753271b75d2187cde96f6605cc556dc4e333db7dbcba1aae6e443c1f418b",
+      "bytes": 78
+    },
+    {
+      "file": "F:\\gua\\UnityExplorer-main\\dump_workspace\\research\\hero-catalog\\validation\\selftest_8424_1438750\\input\\TalentConfig_TalentSkill.tsv",
+      "status": "MISSING",
+      "rows": null,
+      "sha256": null
+    }
+  ],
+  "products": [
+    {
+      "file": "heroes.json",
+      "bytes": 8331,
+      "sha256": "9a4b22c8f6911098341d6eb424a0f375a73d3873ca1908aadd7ec6225e1257b9"
+    },
+    {
+      "file": "heroes.tsv",
+      "bytes": 387,
+      "sha256": "7c20484ed874d91c0cdec8edd109263db70c777e0b98d13e89bfe3a4a09e0965"
+    },
+    {
+      "file": "hero_action_links.tsv",
+      "bytes": 992,
+      "sha256": "a2025fc2ce57cb5085f6f58210b2d51c3212c3fd2821931c8dc2c156fa48955c"
+    },
+    {
+      "file": "hero_skills.tsv",
+      "bytes": 166,
+      "sha256": "c4ee1b0c64023171bfe21258717c8a8f635dd42fc825729693c019273314317a"
+    },
+    {
+      "file": "action_states.tsv",
+      "bytes": 101,
+      "sha256": "02b8419ac1ae0f02c5d7eb6ccd9c24e301279a6648debfa12ded8ce49875aea6"
+    },
+    {
+      "file": "dump_header.cs",
+      "bytes": 645,
+      "sha256": "7f0d59fc8e0f9f903e07414cbc4e94c1e8930dd5321e97fa9f881a19599f7b6d"
+    },
+    {
+      "file": "offset_log.txt",
+      "bytes": 814,
+      "sha256": "aa04e4209bde026b4a4d1892d45750edd33c2f1a109df4e5f4a68a9530cf15e3"
+    }
+  ]
+}

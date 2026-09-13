@@ -1,0 +1,386 @@
+{
+  "schema_version": 1,
+  "source_kind": "FILE_SNAPSHOT",
+  "source_directory": "F:\\gua\\UnityExplorer-main\\dump_workspace\\research\\hero-catalog\\validation\\selftest_8424_1438750\\input",
+  "live_process_verified": false,
+  "current_playable_hero_count": null,
+  "full_game_catalog_verified": false,
+  "sources": [
+    {
+      "file": "F:\\gua\\UnityExplorer-main\\dump_workspace\\research\\hero-catalog\\validation\\selftest_8424_1438750\\input\\HeroConfig_HeroBattleConfig.tsv",
+      "status": "PARSED",
+      "rows": 3,
+      "sha256": "73381a4421fac5b4cf4a7566b2596f804368aa7fab933a79efe26f2009d697dc",
+      "bytes": 251
+    },
+    {
+      "file": "F:\\gua\\UnityExplorer-main\\dump_workspace\\research\\hero-catalog\\validation\\selftest_8424_1438750\\input\\HeroFashion_HeroFashion.tsv",
+      "status": "PARSED",
+      "rows": 3,
+      "sha256": "be49136030050d33b72647ccba676509059272274c925f51825993fecf91b002",
+      "bytes": 145
+    },
+    {
+      "file": "F:\\gua\\UnityExplorer-main\\dump_workspace\\research\\hero-catalog\\validation\\selftest_8424_1438750\\input\\HeroTalent_HeroTalent.tsv",
+      "status": "PARSED",
+      "rows": 1,
+      "sha256": "15240d447d1a3a8b72733899f249300b75483b5aba5a4d3f2d6cc3cc3974b193",
+      "bytes": 111
+    },
+    {
+      "file": "F:\\gua\\UnityExplorer-main\\dump_workspace\\research\\hero-catalog\\validation\\selftest_8424_1438750\\input\\PlayableMappingConfig_MappingConfig.tsv",
+      "status": "PARSED",
+      "rows": 1,
+      "sha256": "d34d5e13cdb07f38812e8e9dd028d4c00639b4a1ca0b3fb2fc21e9fa35424159",
+      "bytes": 47
+    },
+    {
+      "file": "F:\\gua\\UnityExplorer-main\\dump_workspace\\research\\hero-catalog\\validation\\selftest_8424_1438750\\input\\AutoAnimatorStates_MaxStateMachineConf.tsv",
+      "status": "PARSED",
+      "rows": 1,
+      "sha256": "7753753271b75d2187cde96f6605cc556dc4e333db7dbcba1aae6e443c1f418b",
+      "bytes": 78
+    },
+    {
+      "file": "F:\\gua\\UnityExplorer-main\\dump_workspace\\research\\hero-catalog\\validation\\selftest_8424_1438750\\input\\TalentConfig_TalentSkill.tsv",
+      "status": "MISSING",
+      "rows": null,
+      "sha256": null
+    }
+  ],
+  "warnings": [
+    "缺少可选输入表：TalentConfig_TalentSkill.tsv",
+    "统计仅对应输入文件；尚未验证当前版本、完整缓存覆盖或英雄开放状态。",
+    "主英雄标记不等于已开放；占位名称、变身关系与主英雄标记分别保留。",
+    "动作映射名是配置组名，不等于具体动作；状态目录未关联英雄，未推算 Hash。",
+    "技能名称来自天赋技能表；连招图名称不是动画片段名，技能 Launch 标记不代表英雄当前开放。",
+    "未解析的非零动作映射引用：1",
+    "战斗表与外观表名称不同，已同时保留：1",
+    "未确认所属英雄或详情缺失的技能：5"
+  ],
+  "counts": {
+    "config_records": 3,
+    "main_marked_records": 2,
+    "named_main_records": 1,
+    "placeholder_records": 1,
+    "related_non_main_forms": 1,
+    "missing_fashion_rows": 0,
+    "different_name_rows": 1,
+    "mapping_links": 15,
+    "unresolved_nonzero_mapping_links": 1,
+    "state_names": 1,
+    "hero_skill_links": 5,
+    "unresolved_skill_records": 5,
+    "unresolved_skill_mapping_links": 0
+  },
+  "heroes": [
+    {
+      "hero_id": 100,
+      "battle_title": "测试女侠",
+      "internal_name": "heroine",
+      "display_name": "测试女侠",
+      "is_main_config": true,
+      "placeholder": false,
+      "category": "NAMED_MAIN_CONFIG",
+      "related_hero_id": 101,
+      "related_from_hero_ids": [],
+      "deprecated": false,
+      "shop_unlock_config": true,
+      "playable_now": null,
+      "fashion_status": "FOUND",
+      "talent": {
+        "default_skill_id": 10,
+        "skill_ids": [
+          11,
+          12
+        ],
+        "default_ultimate_id": 20,
+        "ultimate_ids": [
+          21
+        ]
+      },
+      "names_differ": false
+    },
+    {
+      "hero_id": 101,
+      "battle_title": "变身",
+      "internal_name": "form",
+      "display_name": "形态别名",
+      "is_main_config": false,
+      "placeholder": false,
+      "category": "RELATED_NON_MAIN_FORM",
+      "related_hero_id": 0,
+      "related_from_hero_ids": [
+        100
+      ],
+      "deprecated": false,
+      "shop_unlock_config": false,
+      "playable_now": null,
+      "fashion_status": "FOUND",
+      "talent": null,
+      "names_differ": true
+    },
+    {
+      "hero_id": 102,
+      "battle_title": "【占坑】",
+      "internal_name": "future",
+      "display_name": "【占坑】",
+      "is_main_config": true,
+      "placeholder": true,
+      "category": "PLACEHOLDER",
+      "related_hero_id": 0,
+      "related_from_hero_ids": [],
+      "deprecated": false,
+      "shop_unlock_config": true,
+      "playable_now": null,
+      "fashion_status": "FOUND",
+      "talent": null,
+      "names_differ": false
+    }
+  ],
+  "hero_action_links": [
+    {
+      "hero_id": 100,
+      "source_table": "HeroConfig_HeroBattleConfig.tsv",
+      "source_field": "_HeroMappingID",
+      "mapping_id": 0,
+      "mapping_name": null,
+      "status": "NO_OVERRIDE",
+      "concrete_action_names": null,
+      "action_hash": null
+    },
+    {
+      "hero_id": 100,
+      "source_table": "HeroConfig_HeroBattleConfig.tsv",
+      "source_field": "_EmoteMappingID",
+      "mapping_id": 200,
+      "mapping_name": "hero_emote_group",
+      "status": "FOUND",
+      "concrete_action_names": null,
+      "action_hash": null
+    },
+    {
+      "hero_id": 100,
+      "source_table": "HeroConfig_HeroBattleConfig.tsv",
+      "source_field": "_StandbyMappingID",
+      "mapping_id": 201,
+      "mapping_name": null,
+      "status": "MISSING_ID",
+      "concrete_action_names": null,
+      "action_hash": null
+    },
+    {
+      "hero_id": 100,
+      "source_table": "HeroConfig_HeroBattleConfig.tsv",
+      "source_field": "_SoulMapping",
+      "mapping_id": 200,
+      "mapping_name": "hero_emote_group",
+      "status": "FOUND",
+      "concrete_action_names": null,
+      "action_hash": null
+    },
+    {
+      "hero_id": 100,
+      "source_table": "HeroFashion_HeroFashion.tsv",
+      "source_field": "_UIHeroMappingID",
+      "mapping_id": 200,
+      "mapping_name": "hero_emote_group",
+      "status": "FOUND",
+      "concrete_action_names": null,
+      "action_hash": null
+    },
+    {
+      "hero_id": 101,
+      "source_table": "HeroConfig_HeroBattleConfig.tsv",
+      "source_field": "_HeroMappingID",
+      "mapping_id": 0,
+      "mapping_name": null,
+      "status": "NO_OVERRIDE",
+      "concrete_action_names": null,
+      "action_hash": null
+    },
+    {
+      "hero_id": 101,
+      "source_table": "HeroConfig_HeroBattleConfig.tsv",
+      "source_field": "_EmoteMappingID",
+      "mapping_id": 200,
+      "mapping_name": "hero_emote_group",
+      "status": "FOUND",
+      "concrete_action_names": null,
+      "action_hash": null
+    },
+    {
+      "hero_id": 101,
+      "source_table": "HeroConfig_HeroBattleConfig.tsv",
+      "source_field": "_StandbyMappingID",
+      "mapping_id": 200,
+      "mapping_name": "hero_emote_group",
+      "status": "FOUND",
+      "concrete_action_names": null,
+      "action_hash": null
+    },
+    {
+      "hero_id": 101,
+      "source_table": "HeroConfig_HeroBattleConfig.tsv",
+      "source_field": "_SoulMapping",
+      "mapping_id": 200,
+      "mapping_name": "hero_emote_group",
+      "status": "FOUND",
+      "concrete_action_names": null,
+      "action_hash": null
+    },
+    {
+      "hero_id": 101,
+      "source_table": "HeroFashion_HeroFashion.tsv",
+      "source_field": "_UIHeroMappingID",
+      "mapping_id": 0,
+      "mapping_name": null,
+      "status": "NO_OVERRIDE",
+      "concrete_action_names": null,
+      "action_hash": null
+    },
+    {
+      "hero_id": 102,
+      "source_table": "HeroConfig_HeroBattleConfig.tsv",
+      "source_field": "_HeroMappingID",
+      "mapping_id": 0,
+      "mapping_name": null,
+      "status": "NO_OVERRIDE",
+      "concrete_action_names": null,
+      "action_hash": null
+    },
+    {
+      "hero_id": 102,
+      "source_table": "HeroConfig_HeroBattleConfig.tsv",
+      "source_field": "_EmoteMappingID",
+      "mapping_id": 200,
+      "mapping_name": "hero_emote_group",
+      "status": "FOUND",
+      "concrete_action_names": null,
+      "action_hash": null
+    },
+    {
+      "hero_id": 102,
+      "source_table": "HeroConfig_HeroBattleConfig.tsv",
+      "source_field": "_StandbyMappingID",
+      "mapping_id": 200,
+      "mapping_name": "hero_emote_group",
+      "status": "FOUND",
+      "concrete_action_names": null,
+      "action_hash": null
+    },
+    {
+      "hero_id": 102,
+      "source_table": "HeroConfig_HeroBattleConfig.tsv",
+      "source_field": "_SoulMapping",
+      "mapping_id": 200,
+      "mapping_name": "hero_emote_group",
+      "status": "FOUND",
+      "concrete_action_names": null,
+      "action_hash": null
+    },
+    {
+      "hero_id": 102,
+      "source_table": "HeroFashion_HeroFashion.tsv",
+      "source_field": "_UIHeroMappingID",
+      "mapping_id": 200,
+      "mapping_name": "hero_emote_group",
+      "status": "FOUND",
+      "concrete_action_names": null,
+      "action_hash": null
+    }
+  ],
+  "action_states": [
+    {
+      "state_name": "idle",
+      "tag": "standby",
+      "layer": 0,
+      "hero_id": null,
+      "action_hash": null,
+      "association_status": "UNRESOLVED"
+    }
+  ],
+  "hero_skill_links": [
+    {
+      "hero_id": 100,
+      "talent_id": 10,
+      "listed_in_hero_talent": true,
+      "related_hero_id": null,
+      "skill_name": null,
+      "combo_graph": null,
+      "combo_mapping_id": null,
+      "combo_mapping_name": null,
+      "mapping_status": "UNKNOWN",
+      "launch_config": null,
+      "deprecated": null,
+      "status": "MISSING_TABLE",
+      "animation_clip_names": null,
+      "action_hash": null
+    },
+    {
+      "hero_id": 100,
+      "talent_id": 11,
+      "listed_in_hero_talent": true,
+      "related_hero_id": null,
+      "skill_name": null,
+      "combo_graph": null,
+      "combo_mapping_id": null,
+      "combo_mapping_name": null,
+      "mapping_status": "UNKNOWN",
+      "launch_config": null,
+      "deprecated": null,
+      "status": "MISSING_TABLE",
+      "animation_clip_names": null,
+      "action_hash": null
+    },
+    {
+      "hero_id": 100,
+      "talent_id": 12,
+      "listed_in_hero_talent": true,
+      "related_hero_id": null,
+      "skill_name": null,
+      "combo_graph": null,
+      "combo_mapping_id": null,
+      "combo_mapping_name": null,
+      "mapping_status": "UNKNOWN",
+      "launch_config": null,
+      "deprecated": null,
+      "status": "MISSING_TABLE",
+      "animation_clip_names": null,
+      "action_hash": null
+    },
+    {
+      "hero_id": 100,
+      "talent_id": 20,
+      "listed_in_hero_talent": true,
+      "related_hero_id": null,
+      "skill_name": null,
+      "combo_graph": null,
+      "combo_mapping_id": null,
+      "combo_mapping_name": null,
+      "mapping_status": "UNKNOWN",
+      "launch_config": null,
+      "deprecated": null,
+      "status": "MISSING_TABLE",
+      "animation_clip_names": null,
+      "action_hash": null
+    },
+    {
+      "hero_id": 100,
+      "talent_id": 21,
+      "listed_in_hero_talent": true,
+      "related_hero_id": null,
+      "skill_name": null,
+      "combo_graph": null,
+      "combo_mapping_id": null,
+      "combo_mapping_name": null,
+      "mapping_status": "UNKNOWN",
+      "launch_config": null,
+      "deprecated": null,
+      "status": "MISSING_TABLE",
+      "animation_clip_names": null,
+      "action_hash": null
+    }
+  ],
+  "exported_at_local": "2026-09-12T17:01:37.198"
+}

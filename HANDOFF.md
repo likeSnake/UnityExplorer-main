@@ -8,6 +8,13 @@
 
 ## 0. 交接摘要（30 秒版）
 
+> ⚠️ **两条注入/重启硬规则（2026-09-13 新增，务必先看）**：
+> 1. **重复注入同一个 DLL 会让第二次 DllMain/worker 与已加载模块冲突而卡住**——每次注入验证前必须先重启游戏到登录界面，再做干净首次注入。
+> 2. **自行重启游戏**：`Stop-Process -Name NarakaBladepoint -Force` 后，用
+>    `Start-Process 'F:\yjwj_2025-12-28-11-00\Naraka\program\StartGame.exe' -WorkingDirectory 'F:\yjwj_2025-12-28-11-00\Naraka\program'`
+>    直接启动到登录界面（`StartGame.exe` 是可直启入口，`LauncherGame.exe` 只是进启动器界面）。
+>    详见 `dump_workspace/docs/2026-09-13_SuperDumper英雄目录内存自动采集完成.md` 的「注意事项」。
+
 - **目标**：通过注入式 dump（CE 注入自研 DLL，免 FPGA）dump 永劫无间（Unity + IL2CPP）的**完整**游戏结构（dump.cs：类/字段名+偏移/方法名+RVA/属性），**脱离对闭源注入器 Unity-Offset.dll 的依赖**。
 - **本机定位（关键）**：**本机是游戏主机（target），不是 DMA 分析机**。不需要 FPGA/DMA ——
   CE 注入（`F:\DrunkenDreamDriverCE v1.4.0\`）是唯一注入通道。DMA 相关命令

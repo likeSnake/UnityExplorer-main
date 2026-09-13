@@ -1,0 +1,4 @@
+_KEY	_ID	_HeroTitle	_HeroName	_RelateHeroID	_Deprecated	_HeroMappingID	_EmoteMappingID	_StandbyMappingID	_SoulMapping
+100	100	测试女侠	heroine	101	0	0	200	201	200
+101	101	变身	form	0	0	0	200	200	200
+102	102	【占坑】	future	0	0	0	200	200	200

@@ -1,0 +1,72 @@
+{
+    "schema_version":  1,
+    "status":  "COMPLETE_WITH_LIMITATIONS",
+    "source_kind":  "FILE_SNAPSHOT",
+    "dump_modified":  false,
+    "source_dump":  {
+                        "path":  "F:\\gua\\dump\\dump_all\\normal\\dump.cs",
+                        "file":  "dump.cs",
+                        "sha256":  "020702ab8b85ab7202de59275fd874bc34d39e2e27775016ba1ffb9de6f20f47",
+                        "bytes":  90079648
+                    },
+    "catalog_directory":  "F:\\gua\\UnityExplorer-main\\dump_workspace\\research\\hero-catalog\\artifacts\\normal_reference\\catalog_20260912_170137_308_15176_0",
+    "catalog_manifest_sha256":  "d45d82a7b38361c7a7ecc97696fb354e9ef085d5bf09b44f537e3299516685e4",
+    "counts":  {
+                   "config_records":  37,
+                   "main_marked_records":  33,
+                   "named_main_records":  28,
+                   "placeholder_records":  5,
+                   "related_non_main_forms":  4,
+                   "missing_fashion_rows":  0,
+                   "different_name_rows":  2,
+                   "mapping_links":  370,
+                   "unresolved_nonzero_mapping_links":  0,
+                   "state_names":  19057,
+                   "hero_skill_links":  321,
+                   "unresolved_skill_records":  0,
+                   "unresolved_skill_mapping_links":  0
+               },
+    "products":  [
+                     {
+                         "file":  "heroes.json",
+                         "bytes":  4240050,
+                         "sha256":  "2a6897377e44a63123851fb9f514596a93902c51314717df1d556f497037832b"
+                     },
+                     {
+                         "file":  "heroes.tsv",
+                         "bytes":  3513,
+                         "sha256":  "c623a56884d2b254d6773318900398100facbfd9edd0d1f4a4bed2b2b2a82002"
+                     },
+                     {
+                         "file":  "hero_skills.tsv",
+                         "bytes":  46126,
+                         "sha256":  "fec3503f036c73b5039bce2785c03df377dce444f71e5043396ae567a5019e6f"
+                     },
+                     {
+                         "file":  "hero_action_links.tsv",
+                         "bytes":  36190,
+                         "sha256":  "308aa0ee9f08deec3f9541ac22afded706b9875eb77d73c646b1adf663aeaaf9"
+                     },
+                     {
+                         "file":  "action_states.tsv",
+                         "bytes":  1324626,
+                         "sha256":  "b61f18bde29ff36b7052dad0b54382c214cb7dbb51f3f55d2d1cf02480826887"
+                     },
+                     {
+                         "file":  "dump_header.cs",
+                         "bytes":  2716,
+                         "sha256":  "4ad6c5acc89f5c4d861a3df5a25309d9603d48314ff19c4ae12b2237b3241b6e"
+                     },
+                     {
+                         "file":  "offset_log.txt",
+                         "bytes":  669,
+                         "sha256":  "a91ca6a3ab5f0e4f2861eee21684f5acaba765050246d6aa7810487f40f488cd"
+                     },
+                     {
+                         "file":  "README.md",
+                         "bytes":  434,
+                         "sha256":  "f2d0807f59163ae43c8e575ba900e695dbb8c4fe0f156eb4a5e7257fd2714d72"
+                     }
+                 ],
+    "exported_at_local":  "2026-09-12T17:15:50.0709452+08:00"
+}
