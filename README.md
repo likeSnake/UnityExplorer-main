@@ -202,5 +202,177 @@ int main()
 
 </div>
 
+---
+
+## MCP 常驻服务（HTTP + JSON-RPC 持续读写 DMA）
+
+本项目除了 GUI 分析器和 Headless CLI 之外，还提供一个**常驻 MCP 服务** `UnityExplorerMcpServer.exe`：它直接通过 `MetickAdapter -> VMMDLL/MemProcFS -> FPGA DMA` 访问 `NarakaBladepoint.exe`，AI / 脚本以 HTTP `POST /mcp` 的 JSON-RPC 2.0 方式持续读写，无需每次启动 CLI 再解析日志。完整细节见 `docs/mcp-server-usage.md`，下面是可直接照做的速查。
+
+### 定位与前提
+
+- 服务是一个常驻 Windows x64 进程，运行在 DMA 副机；`NarakaBladepoint.exe` 在另一台主机，由 FPGA/VMMDLL 远端采样。副机上 `Get-Process`/`tasklist` 看不到目标是正常现象，是否找到目标只以 `unity_session_connect` 的返回为准。
+- 输出目录必须同时包含：
+  ```text
+  UnityExplorerMcpServer.exe
+  vmm.dll
+  leechcore.dll
+  FTD3XX.dll
+  ```
+  当前已就位：`App\x64\Release\`。
+
+### 1. 启动服务（HTTP，常驻）
+
+```powershell
+cd J:\Code\C++\dma\er_new\UnityExplorer-main\App\x64\Release
+.\UnityExplorerMcpServer.exe `
+  --transport http `
+  --bind 127.0.0.1 `
+  --port 19002 `
+  --token "replace-with-a-long-random-token"
+```
+
+- endpoint：`http://127.0.0.1:19002/mcp`（默认端口为 `18765`）。
+- `--token` 也可用环境变量 `UNITY_EXPLORER_MCP_TOKEN` 提供；两者都不给时，服务生成一次性 token 写到 stderr。
+- 默认只监听 loopback（`127.0.0.1`），不要改 `--bind` 到 LAN。
+- 希望 HTTP 监听前自动连接目标，加 `--target NarakaBladepoint.exe --auto-connect`（`--auto-connect` 不能单独使用）。不勾选时服务启动后处于 `idle`，由 MCP client 调 `unity_session_connect` 建立 session。
+
+### 2. 请求约定
+
+每个 HTTP 请求带：
+
+```text
+Authorization: Bearer <token>
+Accept: application/json
+Content-Type: application/json
+```
+
+只接受 `POST /mcp`，请求体是 JSON-RPC 2.0。PowerShell 示例：
+
+```powershell
+$token = "replace-with-a-long-random-token"
+$headers = @{
+  Authorization = "Bearer $token"
+  Accept = "application/json"
+  "Content-Type" = "application/json"
+}
+$body = '{"jsonrpc":"2.0","id":1,"method":"server/discover","params":{}}'
+Invoke-RestMethod -Uri http://127.0.0.1:19002/mcp -Method Post -Headers $headers -Body $body
+```
+
+`tools/call` 的业务失败仍是正常 JSON-RPC result，但 `isError=true` 且带 `error.code`；读取 `result.structuredContent`（或 `result.content[0].text`）得到机器可读数据。
+
+### 3. 典型调用顺序
+
+先发现工具 / 看状态：
+
+```json
+{"jsonrpc":"2.0","id":1,"method":"server/discover","params":{}}
+{"jsonrpc":"2.0","id":2,"method":"tools/list","params":{}}
+{"jsonrpc":"2.0","id":3,"method":"tools/call","params":{"name":"unity_session_status","arguments":{}}}
+```
+
+默认只读工具：
+
+```text
+unity_session_status
+unity_session_connect
+unity_session_disconnect
+unity_memory_read
+unity_memory_read_ptr
+unity_memory_read_string
+unity_pointer_chain_resolve
+unity_modules_list
+unity_session_modules   (unity_modules_list 的兼容别名)
+```
+
+连接一次并复用 DMA session（保存返回的 `session.generation`）：
+
+```json
+{"jsonrpc":"2.0","id":4,"method":"tools/call","params":{
+  "name":"unity_session_connect",
+  "arguments":{"targetProcess":"NarakaBladepoint.exe","mode":"dma","timeoutMs":30000}
+}}
+```
+
+读模块 / 读内存 / 读指针 / 走指针链：
+
+```json
+{"jsonrpc":"2.0","id":5,"method":"tools/call","params":{"name":"unity_modules_list","arguments":{"expectedGeneration":1}}}
+{"jsonrpc":"2.0","id":6,"method":"tools/call","params":{"name":"unity_memory_read","arguments":{"expectedGeneration":1,"address":"0x7FFE08570000","length":64,"nocache":true}}}
+{"jsonrpc":"2.0","id":7,"method":"tools/call","params":{"name":"unity_memory_read_ptr","arguments":{"expectedGeneration":1,"address":"0x7FFE08570000"}}}
+{"jsonrpc":"2.0","id":8,"method":"tools/call","params":{"name":"unity_pointer_chain_resolve","arguments":{"base":"0x7FFE08570000+0x376ABF8","offsets":[0xB8,0x8,0x70,0x90,0x0]}}}
+```
+
+- `unity_memory_read_ptr`：读 8 字节按小端解释为指针，返回 `valueHex/valueDec/isCanonical/isUserPointer`，省去手工字节反转。
+- `unity_memory_read_string`：读 NUL 结尾字符串，`encoding=ascii`（默认）或 `utf16`，`maxBytes` 上限 4096。
+- `unity_pointer_chain_resolve`：一次 job 内逐级解引用链，`base` 起每级读 8 字节指针、地址 = 当前值 + 下一偏移；返回每一跳和 `finalValueHex/finalValueDec`，命中空指针返回 `null_pointer`，失败返回 `read_failed`。
+
+断开 / 重连：
+
+```json
+{"jsonrpc":"2.0","id":9,"method":"tools/call","params":{"name":"unity_session_disconnect","arguments":{"expectedGeneration":1}}}
+```
+
+每次 disconnect 或 replacement connect 都会推进 `generation`，带旧 `expectedGeneration` 的请求返回 `stale_generation`。目标重启后要重新 `connect` 并用新 generation。
+
+### 4. 写入策略（默认只读）
+
+默认构建与默认启动均为只读，`tools/list` 不出现 `unity_memory_write`。要真正启用写入，服务启动参数和每笔请求都必须同时满足：
+
+```powershell
+.\UnityExplorerMcpServer.exe `
+  --transport http --bind 127.0.0.1 --port 19002 `
+  --token "replace-with-a-long-random-token" `
+  --enable-writes `
+  --write-range 0x000001F000000000:0x1000
+```
+
+- `--write-range BASE:LENGTH` 至少一个，是半开区间 `[BASE, BASE+LENGTH)`；没有 `--enable-writes` 时 `--write-range` 会被参数校验拒绝。
+- 每笔写入还要带 `expectedGeneration`、`address`、偶数长度 hex `data` 和同长度 `expectedBefore`；`data` 最多 4096 bytes 且不能跨 4 KiB page。
+- 服务先 compare `expectedBefore`，写入后强制 readback；compare 失败 / 越界 / 旧 generation / readback 不一致都会报错。
+
+写入示例（`data`/`expectedBefore` 各 4 字节）：
+
+```json
+{"jsonrpc":"2.0","id":10,"method":"tools/call","params":{
+  "name":"unity_memory_write",
+  "arguments":{
+    "expectedGeneration":1,
+    "address":"0x000001F000000100",
+    "data":"01000000",
+    "expectedBefore":"00000000",
+    "verifyReadback":true
+  }
+}}
+```
+
+没有明确的 typed action 和经过验证的 allowlist 时，不建议启用 raw write。
+
+### 5. 生命周期与并发
+
+- 一次成功 `connect` 建立并复用同一个 VMM/CR3/DMA session；`disconnect`、replacement `connect`、进程重启后重连都会推进 `generation`。
+- 会触碰 VMMDLL/`er2` 全局 context 的操作都进同一个 `SessionExecutor` 串行队列（上限 64）；HTTP 最多 32 个并发 worker。DMA 操作不会并行化。
+- 收到 `Ctrl+C`/`SIGINT` 后：先停 HTTP 监听 → 等 worker → 停 executor → 断开 session → 释放 MetickAdapter/VMM/FPGA。
+
+### 6. 常见错误码
+
+| code | 处理 |
+| --- | --- |
+| `not_connected` | 先 `unity_session_connect` |
+| `target_not_found` | 确认进程名；服务继续运行等待下次 connect |
+| `dma_init_failed` | 查 VMMDLL/MemProcFS/FPGA DLL、管理员权限 |
+| `module_ambiguous` | 显式指定 `unityPlayerName`/`gameAssemblyName` |
+| `stale_generation` | 重新 status/connect 用最新 generation |
+| `permission_denied` | 写工具或用启动策略不匹配 |
+| `compare_failed` | `expectedBefore` 不一致，重新 read 后决定 |
+| `readback_mismatch` | 写入结果不确定，重新读取确认 |
+| `401/403/404/405/413/503` | token / Origin / 路径 / 方法 / 体积 / worker 占用 |
+
+### 7. 当前能力边界
+
+本版本已提供持久 session、模块枚举、通用 memory read 和受策略保护的可选 raw write。GOM、MSID、Transform、Camera、Metadata 及 Naraka 专用 Probe（`--naraka-ground-probe` 等）仍在 GUI/Headless 前端（`ExternalResolveConsole.exe`）里，尚未注册为 MCP tools。需要这些能力时，先走 Headless CLI，后续再复用 `AnalysisSession/SessionExecutor` 接入 MCP，不要另建第二个 DMA owner。
+
+> 与 `YJWJ_DMA_NEW` 的关系：本服务是**分析侧**，用于只读发现与窄范围写验证；得到验证的 RVA/字段偏移/指针链再迁入 `YJWJ_DMA_NEW\Naraka\Offset.h` + `SDK.cpp`/`Thread.cpp`（详见本仓库 `项目交接文档.md`）。
+
 
 

@@ -1,0 +1,26 @@
+[
+  {
+    "path": "README.md",
+    "sha256": "cfa0746be9074672948f47f5ca5e3f257e710f58f3a1363770f87ee4c34c831a"
+  },
+  {
+    "path": "writeups\\document-review-and-restoration.md",
+    "sha256": "f95aa87b357e6950ae4b8dbf48ba0feb81c3e49009dda73e4e493550f472d979"
+  },
+  {
+    "path": "field-journal.md",
+    "sha256": "50ef0fa12b39e900e59bb24b3566988f9521a0efe8f85a320ac9f22c0cee18aa"
+  },
+  {
+    "path": "evidence\\final-verification.json",
+    "sha256": "83c9a7709bc406b2aa3e8fdb417fb475da8e3cbcf27c59bc0a4382a03bf4ef4a"
+  },
+  {
+    "path": "evidence\\source-rollback.json",
+    "sha256": "c2ca8842945340c7084ee77fa5a2d8d56dd50ce3697586fac8e2fc3d267278d8"
+  },
+  {
+    "path": "evidence\\naraka-restored-build.log",
+    "sha256": "b4e5f1bbd9f35c58fcfc0c4d006ed8a53c0a64317cefda8b59ccdb576415f9dd"
+  }
+]

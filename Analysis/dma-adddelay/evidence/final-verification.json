@@ -1,0 +1,67 @@
+{
+  "verifiedUtc": "2026-09-11T07:16:18.635146+00:00",
+  "files": [
+    {
+      "file": "J:\\Code\\C++\\dma\\er_new\\YJWJ_DMA_NEW\\Naraka\\Hook.cpp",
+      "sha256": "530f4c15f65c121e1b2a7fbb7bc86bf4dcae222362c4436b578713f54b615496",
+      "baselineByteMatch": true
+    },
+    {
+      "file": "J:\\Code\\C++\\dma\\er_new\\YJWJ_DMA_NEW\\Naraka\\Hook.h",
+      "sha256": "cb6f5f51c4795f01489bec3752d61bccebe3a835b14d1cf338f8bce71578a456",
+      "baselineByteMatch": true
+    },
+    {
+      "file": "J:\\Code\\C++\\dma\\er_new\\YJWJ_DMA_NEW\\Naraka\\Data.cpp",
+      "sha256": "10d0875dd2a221d01e277e85e5b9efe7d5faa27e7e2f259cae96c301987d56aa",
+      "baselineByteMatch": true
+    },
+    {
+      "file": "J:\\Code\\C++\\dma\\er_new\\YJWJ_DMA_NEW\\Naraka\\Data.h",
+      "sha256": "15e4a30a57186cf391d1b26068d828a30ed99887ac171ed1c1a91e076470436c",
+      "baselineByteMatch": true
+    },
+    {
+      "file": "J:\\Code\\C++\\dma\\er_new\\YJWJ_DMA_NEW\\Naraka\\Menu.cpp",
+      "sha256": "a0a0ab4ea819a732d84dd0b8bfab897bc261c3d47d71a452d73d3b1f99951637",
+      "baselineByteMatch": true
+    },
+    {
+      "file": "J:\\Code\\C++\\dma\\er_new\\YJWJ_DMA_NEW\\Naraka\\Naraka.vcxproj",
+      "sha256": "a33208961a494fea78fc24dc3216f9209f9cb2f069781ab07551a2de11885ccc",
+      "baselineByteMatch": true
+    }
+  ],
+  "offsetHeader": {
+    "sessionAdditionsAbsent": true,
+    "byteBaselineAvailable": false
+  },
+  "binary": {
+    "path": "J:\\Code\\C++\\dma\\er_new\\YJWJ_DMA_NEW\\x64\\Release\\Naraka.exe",
+    "size": 6619648,
+    "sha256": "78458085f1387f33072c04ccc78d0f8d646fb78d7f01e90dae53f67161c0093b"
+  },
+  "restoredBuildExitCode": 0,
+  "restoredBuildEvidence": "naraka-restored-build.log",
+  "historicalLogs": [
+    {
+      "file": "adddelay_probe_normal_baseline_20260911.log",
+      "exists": false
+    },
+    {
+      "file": "adddelay_repro_success_20260911.log",
+      "exists": false
+    },
+    {
+      "file": "adddelay_probe_postrestore_20260911.log",
+      "exists": false
+    },
+    {
+      "file": "adddelay_repro_persistent_restore_20260911_110636.log",
+      "exists": false
+    }
+  ],
+  "targetProcessWritesPerformedByThisTask": false,
+  "dmaEffectReproduced": false,
+  "featureIntegrated": false
+}

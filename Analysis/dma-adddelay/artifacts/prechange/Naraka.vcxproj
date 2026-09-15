@@ -1,0 +1,435 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{23b306c3-f020-4604-94ae-d06a4e7deaa3}</ProjectGuid>
+    <RootNamespace>Naraka</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>NotSet</CharacterSet>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <EnableThemidaProtection Condition="'$(EnableThemidaProtection)'==''">false</EnableThemidaProtection>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <TargetName>Naraka</TargetName>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <OutDir>..\x64\Release</OutDir>
+    <IntDir>.\x64\Release</IntDir>
+    <ExcludePath>libs\mimalloc\src;$(ExcludePath)</ExcludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <PublicIncludeDirectories>
+    </PublicIncludeDirectories>
+    <PublicModuleDirectories>
+    </PublicModuleDirectories>
+    <OutDir>..\x64\Debug</OutDir>
+    <IntDir>.\x64\Debug</IntDir>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <ExcludePath>libs\mimalloc\src;$(ExcludePath)</ExcludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_HAS_STD_BYTE=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>Ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>
+      </SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_HAS_STD_BYTE=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>Ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;_HAS_STD_BYTE=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalIncludeDirectories>libs\mimalloc;libs\mimalloc\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader />
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>Ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <FunctionLevelLinking>
+      </FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;_HAS_STD_BYTE=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(EnableThemidaProtection)'=='true'">THEMIDA_PROTECTION;NDEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;_HAS_STD_BYTE=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <SupportJustMyCode>false</SupportJustMyCode>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <LanguageStandard_C>Default</LanguageStandard_C>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+      <AdditionalIncludeDirectories>libs\mimalloc\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(EnableThemidaProtection)'=='true'">$(ThemidaSdkDir)\Include\C;libs\mimalloc\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+      <TreatLinkerWarningAsErrors>false</TreatLinkerWarningAsErrors>
+      <UACExecutionLevel>HighestAvailable</UACExecutionLevel>
+      <AdditionalDependencies>Ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories Condition="'$(EnableThemidaProtection)'=='true'">$(ThemidaSdkDir)\Lib\COFF;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies Condition="'$(EnableThemidaProtection)'=='true'">SecureEngineSDK64.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>if exist "$(OutDir)auth.ini" del /Q "$(OutDir)auth.ini"
+copy /Y "$(ProjectDir)ERPort\libs\*.dll" "$(OutDir)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AutoUpdate.cpp">
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="AuthGate.cpp">
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization Condition="'$(EnableThemidaProtection)'=='true'">Disabled</Optimization>
+      <WholeProgramOptimization Condition="'$(EnableThemidaProtection)'=='true'">false</WholeProgramOptimization>
+      <AdditionalOptions Condition="'$(EnableThemidaProtection)'=='true'">/utf-8 /GL- %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="AuthSecurity.cpp">
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="VersionHistoryDialog.cpp">
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="aimbot.cpp" />
+    <ClCompile Include="changqiang.cpp" />
+    <ClCompile Include="Data.cpp" />
+    <ClCompile Include="DhzBoxAdapter.cpp" />
+    <ClCompile Include="ESP.cpp" />
+    <ClCompile Include="etc_elements.cpp" />
+    <ClCompile Include="FakeThread.cpp" />
+    <ClCompile Include="Hook.cpp" />
+    <ClCompile Include="huonan.cpp" />
+    <ClCompile Include="ERPort\MemoryAllocation.cpp">
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <ClCompile Include="KmBox.cpp" />
+    <ClCompile Include="kmboxNet.cpp" />
+    <ClCompile Include="libs\mimalloc\src\static.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="lzChangJian.cpp" />
+    <ClCompile Include="lzFeidao.cpp" />
+    <ClCompile Include="lzTongyong.cpp" />
+    <ClCompile Include="main.cpp">
+      <AdditionalOptions>/source-charset:utf-8 /execution-charset:.936 %(AdditionalOptions)</AdditionalOptions>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Default</CompileAs>
+    </ClCompile>
+    <ClCompile Include="Memory\InputManager.cpp" />
+    <ClCompile Include="Memory\Memory.cpp" />
+    <ClCompile Include="Memory\Registry.cpp" />
+    <ClCompile Include="Memory\Shellcode.cpp" />
+    <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="my_enc.cpp" />
+    <ClCompile Include="nav_elements.cpp" />
+    <ClCompile Include="NetVerHelp\Help头文件\cJSON.c" />
+    <ClCompile Include="NetVerHelp\Help源文件\CJsonObject.cpp" />
+    <ClCompile Include="NetVerHelp\Help源文件\HttpRequestTool.cpp" />
+    <ClCompile Include="NetVerHelp\Help源文件\Md5.cpp" />
+    <ClCompile Include="NetVerHelp\Help源文件\NetworkVerHelp.cpp" />
+    <ClCompile Include="NetVerHelp\Help源文件\OtherHelpTools.cpp" />
+    <ClCompile Include="NetVerHelp\Help源文件\Rc4.cpp" />
+    <ClCompile Include="OS-ImGui\imgui\imgui.cpp" />
+    <ClCompile Include="OS-ImGui\imgui\imgui_demo.cpp" />
+    <ClCompile Include="OS-ImGui\imgui\imgui_draw.cpp" />
+    <ClCompile Include="OS-ImGui\imgui\imgui_impl_dx11.cpp" />
+    <ClCompile Include="OS-ImGui\imgui\imgui_impl_win32.cpp" />
+    <ClCompile Include="OS-ImGui\imgui\imgui_tables.cpp" />
+    <ClCompile Include="OS-ImGui\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="OS-ImGui\NeverloseGUI.cpp" />
+    <ClCompile Include="OS-ImGui\OS-ImGui.cpp" />
+    <ClCompile Include="OS-ImGui\OS-ImGui_Base.cpp" />
+    <ClCompile Include="OS-ImGui\OS-ImGui_External.cpp" />
+    <ClCompile Include="SDK.cpp" />
+    <ClCompile Include="ShockKnife.cpp" />
+    <ClCompile Include="ShuangDao.cpp" />
+    <ClCompile Include="SkillActivate.h" />
+    <ClCompile Include="Thread.cpp" />
+    <ClCompile Include="TongYuan.cpp" />
+    <ClCompile Include="xulihou.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AuthGate.h" />
+    <ClInclude Include="AuthSecurity.h" />
+    <ClInclude Include="AutoUpdate.h" />
+    <ClInclude Include="VersionHistoryDialog.h" />
+    <ClInclude Include="Protection\ThemidaProtection.h" />
+    <ClInclude Include="Build\Generated\AuthBuildConfig.h" />
+    <ClInclude Include="aimbot.h" />
+    <ClInclude Include="AttackDuanXu.h" />
+    <ClInclude Include="AttackShockKnife.h" />
+    <ClInclude Include="AttackWrite.h" />
+    <ClInclude Include="autoCombo.h" />
+    <ClInclude Include="changqiang.h" />
+    <ClInclude Include="Data.h" />
+    <ClInclude Include="DhzBoxAdapter.h" />
+    <ClInclude Include="ESP.h" />
+    <ClInclude Include="etc_elements.h" />
+    <ClInclude Include="FakeThread.h" />
+    <ClInclude Include="ERPort\MemoryAllocation.h" />
+    <ClInclude Include="ERPort\SignatureDefs.h" />
+    <ClInclude Include="ERPort\VMProtectSDK.h" />
+    <ClInclude Include="ERPort\xorstr.h" />
+    <None Include="Build\build-profiles.json" />
+    <None Include="Build\build-package.cmd" />
+    <None Include="Build\build-package.ps1" />
+    <None Include="Build\README.md" />
+    <None Include="Build\THEMIDA.md" />
+    <None Include="Build\Themida\HANDOFF.zh-CN.md" />
+    <None Include="Build\Themida\Naraka.tmd" />
+    <None Include="ERPort\libs\FTD3XX.dll" />
+    <None Include="ERPort\libs\FTD3XX.lib" />
+    <None Include="ERPort\libs\leechcore.dll" />
+    <None Include="ERPort\libs\leechcore.lib" />
+    <None Include="ERPort\libs\vmm.dll" />
+    <None Include="ERPort\libs\vmm.lib" />
+    <None Include="ERPort\libs\VMProtectSDK64.dll" />
+    <None Include="ERPort\libs\VMProtectSDK64.lib" />
+    <ClInclude Include="HeroActivation.h" />
+    <ClInclude Include="HidTable.h" />
+    <ClInclude Include="Hook.h" />
+    <ClInclude Include="huonan.h" />
+    <ClInclude Include="json.hpp" />
+    <ClInclude Include="KeyBindManager.h" />
+    <ClInclude Include="KmboxNet.h" />
+    <ClInclude Include="landing.h" />
+    <ClInclude Include="libs\leechcore.h" />
+    <ClInclude Include="libs\vmmdll.h" />
+    <ClInclude Include="libs\VMProtectSDK.h" />
+    <ClInclude Include="log.h" />
+    <ClInclude Include="lzChangJian.h" />
+    <ClInclude Include="lzFeidao.h" />
+    <ClInclude Include="lzTongyong.h" />
+    <ClInclude Include="Memory\InputManager.h" />
+    <ClInclude Include="Memory\Memory.h" />
+    <ClInclude Include="Memory\pch.h" />
+    <ClInclude Include="Memory\Registry.h" />
+    <ClInclude Include="Memory\Shellcode.h" />
+    <ClInclude Include="Menu.h" />
+    <ClInclude Include="my_enc.h" />
+    <ClInclude Include="nav_elements.h" />
+    <ClInclude Include="NetVerHelp\Help头文件\cJSON.h" />
+    <ClInclude Include="NetVerHelp\Help头文件\CJsonObject.hpp" />
+    <ClInclude Include="NetVerHelp\Help头文件\HttpRequestTool.h" />
+    <ClInclude Include="NetVerHelp\Help头文件\Md5.h" />
+    <ClInclude Include="NetVerHelp\Help头文件\NetworkVerHelp.h" />
+    <ClInclude Include="NetVerHelp\Help头文件\OtherHelpTools.h" />
+    <ClInclude Include="NetVerHelp\Help头文件\Rc4.h" />
+    <ClInclude Include="NetVerHelp\Model\ActiveState.h" />
+    <ClInclude Include="NetVerHelp\Model\ApiRequestArgs.h" />
+    <ClInclude Include="NetVerHelp\Model\BusinessCompleteType.h" />
+    <ClInclude Include="NetVerHelp\Model\BusinessType.h" />
+    <ClInclude Include="NetVerHelp\Model\DisableCardOrAccountType.h" />
+    <ClInclude Include="NetVerHelp\Model\EncryptType.h" />
+    <ClInclude Include="NetVerHelp\Model\In_accountDetailArgs.h" />
+    <ClInclude Include="NetVerHelp\Model\In_AccountLoginArgs.h" />
+    <ClInclude Include="NetVerHelp\Model\In_AccountRegisterArgs.h" />
+    <ClInclude Include="NetVerHelp\Model\In_BucklePointArgs.h" />
+    <ClInclude Include="NetVerHelp\Model\In_BuyCardNumArgs.h" />
+    <ClInclude Include="NetVerHelp\Model\In_BuyGoodsArgs.h" />
+    <ClInclude Include="NetVerHelp\Model\In_cardDetailArgs.h" />
+    <ClInclude Include="NetVerHelp\Model\In_CardLoginArgs.h" />
+    <ClInclude Include="NetVerHelp\Model\In_CreateCardArgs.h" />
+    <ClInclude Include="NetVerHelp\Model\In_DataBaseArgs.h" />
+    <ClInclude Include="NetVerHelp\Model\In_DisableCardOrAccountArgs.h" />
+    <ClInclude Include="NetVerHelp\Model\In_getCalculateArgs.h" />
+    <ClInclude Include="NetVerHelp\Model\In_getGoodsPriceArgs.h" />
+    <ClInclude Include="NetVerHelp\Model\In_getRemoteVarArgs.h" />
+    <ClInclude Include="NetVerHelp\Model\In_getSoftPriceListArgs.h" />
+    <ClInclude Include="NetVerHelp\Model\In_HeartBeatArgs.h" />
+    <ClInclude Include="NetVerHelp\Model\In_IniSoftInfoArgs.h" />
+    <ClInclude Include="NetVerHelp\Model\In_LoginOutArgs.h" />
+    <ClInclude Include="NetVerHelp\Model\In_OpenRenewAccountArgs.h" />
+    <ClInclude Include="NetVerHelp\Model\In_OpenRenewCardNumArgs.h" />
+    <ClInclude Include="NetVerHelp\Model\In_rechCardDetailArgs.h" />
+    <ClInclude Include="NetVerHelp\Model\In_RechCardRenewCardOrAccountArgs.h" />
+    <ClInclude Include="NetVerHelp\Model\In_SearchOrderArgs.h" />
+    <ClInclude Include="NetVerHelp\Model\In_unbundMacArgs.h" />
+    <ClInclude Include="NetVerHelp\Model\In_UpdOrderFlagArgs.h" />
+    <ClInclude Include="NetVerHelp\Model\In_UpdPwdArgs.h" />
+    <ClInclude Include="NetVerHelp\Model\In_updRemarkArgs.h" />
+    <ClInclude Include="NetVerHelp\Model\IsPay.h" />
+    <ClInclude Include="NetVerHelp\Model\OpenState.h" />
+    <ClInclude Include="NetVerHelp\Model\OrderState.h" />
+    <ClInclude Include="NetVerHelp\Model\Out_accountDetail.h" />
+    <ClInclude Include="NetVerHelp\Model\Out_bucklePoint.h" />
+    <ClInclude Include="NetVerHelp\Model\Out_BuyCardNum.h" />
+    <ClInclude Include="NetVerHelp\Model\Out_BuyGoods.h" />
+    <ClInclude Include="NetVerHelp\Model\Out_cardDetail.h" />
+    <ClInclude Include="NetVerHelp\Model\Out_CreateCard.h" />
+    <ClInclude Include="NetVerHelp\Model\Out_DataBaseArgs.h" />
+    <ClInclude Include="NetVerHelp\Model\Out_getCalculate.h" />
+    <ClInclude Include="NetVerHelp\Model\Out_getRemoteVar.h" />
+    <ClInclude Include="NetVerHelp\Model\Out_goodsInfo.h" />
+    <ClInclude Include="NetVerHelp\Model\Out_GoodsPrice.h" />
+    <ClInclude Include="NetVerHelp\Model\Out_heartBeat.h" />
+    <ClInclude Include="NetVerHelp\Model\Out_iniGoodsInfo.h" />
+    <ClInclude Include="NetVerHelp\Model\Out_iniSoftInfo.h" />
+    <ClInclude Include="NetVerHelp\Model\Out_Login.h" />
+    <ClInclude Include="NetVerHelp\Model\Out_LoginJurisdiction.h" />
+    <ClInclude Include="NetVerHelp\Model\Out_OpenRenewAccount.h" />
+    <ClInclude Include="NetVerHelp\Model\Out_OpenRenewCardNum.h" />
+    <ClInclude Include="NetVerHelp\Model\Out_rechCardNumDetail.h" />
+    <ClInclude Include="NetVerHelp\Model\Out_SearchOrder.h" />
+    <ClInclude Include="NetVerHelp\Model\Out_softInfo.h" />
+    <ClInclude Include="NetVerHelp\Model\Out_softPrice.h" />
+    <ClInclude Include="NetVerHelp\Model\Out_SoftPriceList.h" />
+    <ClInclude Include="NetVerHelp\Model\Out_unbundMacArgs.h" />
+    <ClInclude Include="NetVerHelp\Model\Out_Var.h" />
+    <ClInclude Include="NetVerHelp\Model\PayType.h" />
+    <ClInclude Include="NetVerHelp\Model\PlatformType.h" />
+    <ClInclude Include="NetVerHelp\Model\Result.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="ShockKnife.h" />
+    <ClInclude Include="ShockKnifeLogic1.h" />
+    <ClInclude Include="ShockKnifeLogic.h" />
+    <ClInclude Include="ShuangDao.h" />
+    <ClInclude Include="TongYuan.h" />
+    <ClInclude Include="Tool.h" />
+    <ClInclude Include="OS-ImGui\imgui\imconfig.h" />
+    <ClInclude Include="OS-ImGui\imgui\imgui.h" />
+    <ClInclude Include="OS-ImGui\imgui\imgui_impl_dx11.h" />
+    <ClInclude Include="OS-ImGui\imgui\imgui_impl_win32.h" />
+    <ClInclude Include="OS-ImGui\imgui\imgui_internal.h" />
+    <ClInclude Include="OS-ImGui\imgui\imstb_rectpack.h" />
+    <ClInclude Include="OS-ImGui\imgui\imstb_textedit.h" />
+    <ClInclude Include="OS-ImGui\imgui\imstb_truetype.h" />
+    <ClInclude Include="OS-ImGui\NeverloseGUI.hpp" />
+    <ClInclude Include="OS-ImGui\NeverloseBytes.hpp" />
+    <ClInclude Include="OS-ImGui\NeverloseIcons.hpp" />
+    <ClInclude Include="OS-ImGui\NeverloseColors.hpp" />
+    <ClInclude Include="OS-ImGui\OS-ImGui.h" />
+    <ClInclude Include="OS-ImGui\OS-ImGui_Base.h" />
+    <ClInclude Include="OS-ImGui\OS-ImGui_Exception.hpp" />
+    <ClInclude Include="OS-ImGui\OS-ImGui_External.h" />
+    <ClInclude Include="OS-ImGui\OS-ImGui_Struct.h" />
+    <ClInclude Include="pak.h" />
+    <ClInclude Include="SDK.h" />
+    <ClInclude Include="Thread.h" />
+    <ClInclude Include="Vector.h" />
+    <ClInclude Include="Offset.h" />
+    <ClInclude Include="xorstr.h" />
+    <ClInclude Include="xulihou.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="AuthResources.rc">
+      <AdditionalOptions>/c 65001 %(AdditionalOptions)</AdditionalOptions>
+    </ResourceCompile>
+    <ResourceCompile Include="Naraka.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
