@@ -18,6 +18,7 @@ FILE *g_log = nullptr;
 std::string g_path;
 std::string g_stopPath;
 uintptr_t g_target = 0;
+size_t g_skipLen = 5;
 uintptr_t g_sync = 0;
 uintptr_t g_gameStatics = 0;
 volatile LONG g_hits = 0;
@@ -51,9 +52,33 @@ void OpenLog(HMODULE self) {
 bool ResolveObject(const Mod &m, DWORD rva, const char *want, uintptr_t &obj, uintptr_t &statics, uintptr_t &instance) {
   uintptr_t k=0,np=0; if(!ReadV(m.base+rva,k)||!Ptr(k)||!ReadV(k+0x10,np))return false; char n[128]{};CStr(np,n,sizeof(n)); if(strcmp(n,want)!=0)return false; if(!ReadV(k+0xB8,statics)||!Ptr(statics))return false; instance=0;ReadV(statics+0x8,instance);obj=k;Log("[OBJ] %s rva=0x%X klass=0x%llX statics=0x%llX instance=0x%llX",want,rva,(unsigned long long)k,(unsigned long long)statics,(unsigned long long)instance);return true;
 }
+bool FindSuperSubsd(const Mod &m) {
+  // Super builds use VEX-encoded scalar subtracts, while some builds retain
+  // the legacy F2 0F 5C encoding. Search only inside the AddDelay body.
+  uintptr_t begin = m.base + 0xD0287B0;
+  for (size_t off = 0; off < 0x4000; ++off) {
+    unsigned char b[8]{};
+    if (!ReadBytes((const void *)(begin + off), b, sizeof(b))) continue;
+    bool legacy = b[0] == 0xF2 && b[1] == 0x0F && b[2] == 0x5C &&
+                  (b[3] & 0xC0) == 0x40 && b[4] == 0x28;
+    bool vex2 = b[0] == 0xC5 && b[1] == 0xFB && b[2] == 0x5C &&
+                (b[3] & 0xC0) == 0x40 && b[4] == 0x28;
+    bool vex3 = b[0] == 0xC4 && (b[1] & 0x1F) == 0x03 && b[2] == 0x5C &&
+                (b[3] & 0xC0) == 0x40 && b[4] == 0x28;
+    if (legacy || vex2 || vex3) {
+      g_target = begin + off;
+      g_skipLen = 5;
+      Log("[TARGET] Super AddDelay candidate RVA=0x%zX VA=0x%llX bytes=%02X %02X %02X %02X %02X",
+          (size_t)(g_target - m.base), (unsigned long long)g_target,
+          b[0], b[1], b[2], b[3], b[4]);
+      return true;
+    }
+  }
+  return false;
+}
 LONG CALLBACK Veh(PEXCEPTION_POINTERS ep) {
   if (ep && ep->ExceptionRecord && ep->ContextRecord && ep->ExceptionRecord->ExceptionCode==EXCEPTION_SINGLE_STEP && ep->ContextRecord->Rip==g_target) {
-    ep->ContextRecord->Rip += 5; InterlockedIncrement(&g_hits); return EXCEPTION_CONTINUE_EXECUTION;
+    ep->ContextRecord->Rip += g_skipLen; InterlockedIncrement(&g_hits); return EXCEPTION_CONTINUE_EXECUTION;
   }
   return EXCEPTION_CONTINUE_SEARCH;
 }
@@ -70,7 +95,7 @@ void Sample(unsigned seq) {
   double d=0,g=0;float r=0;bool okd=ReadV(g_sync+0x10,d),okr=ReadV(g_sync+0x68,r),okg=Ptr(g_gameStatics)&&ReadV(g_gameStatics+0x28,g);Log("[SAMPLE] #%u D=%.9f R=%.6f G=%.9f G+D=%.9f read=%s hits=%ld",seq,d,(double)r,g,g+d,(okd&&okr&&okg)?"OK":"PARTIAL",g_hits);
 }
 DWORD WINAPI Worker(LPVOID arg) {
-  OpenLog((HMODULE)arg);Log("=== AddDelayRepro 持续复现开始 ===");Mod m;if(!FindMod(m)){Log("[FAIL] GameAssembly 未找到");if(g_log)fclose(g_log);FreeLibraryAndExitThread((HMODULE)arg,0);return 0;}Log("[MODULE] name=%s base=0x%llX size=0x%X timestamp=0x%08X",m.name,(unsigned long long)m.base,m.size,m.ts);if(strcmp(m.name,"GameAssembly.dll")!=0){Log("[STOP] 当前不是普通版，拒绝使用普通版 RVA");if(g_log)fclose(g_log);FreeLibraryAndExitThread((HMODULE)arg,0);return 0;}g_target=m.base+0x156C395;unsigned char code[5]{};ReadBytes((const void*)g_target,code,5);Log("[TARGET] RVA=0x156C395 VA=0x%llX bytes=%02X %02X %02X %02X %02X",(unsigned long long)g_target,code[0],code[1],code[2],code[3],code[4]);uintptr_t st=0,inst=0,syncKlass=0;if(!ResolveObject(m,0xE606490,"CharactorSync",syncKlass,st,inst)||!inst){Log("[FAIL] CharactorSync 未初始化");if(g_log)fclose(g_log);FreeLibraryAndExitThread((HMODULE)arg,0);return 0;}g_sync=inst;uintptr_t bk=0;ResolveObject(m,0xE644808,"GameBaseObject",bk,g_gameStatics,inst);if(GetFileAttributesA(g_stopPath.c_str())!=INVALID_FILE_ATTRIBUTES){Log("[STOP] 发现停止标志，未设置断点：%s",g_stopPath.c_str());if(g_log)fclose(g_log);FreeLibraryAndExitThread((HMODULE)arg,0);return 0;}g_veh=AddVectoredExceptionHandler(1,Veh);Log("[BASELINE] 先采集 10 个样本");for(unsigned i=0;i<10;i++){Sample(i);Sleep(100);}Log("[ARM] 已进入持续复现；每 100ms 补齐线程断点；创建停止标志即可恢复");unsigned seq=10;while(GetFileAttributesA(g_stopPath.c_str())==INVALID_FILE_ATTRIBUTES){ApplyAll(true);Sample(seq++);Sleep(100);}Log("[STOP] 收到停止标志，开始清理");ApplyAll(false);Log("[RESTORE] 已清除执行断点，hits=%ld；继续观察恢复",g_hits);for(unsigned i=0;i<20;i++){Sample(seq++);Sleep(100);}if(g_veh){RemoveVectoredExceptionHandler(g_veh);g_veh=nullptr;}Log("=== AddDelayRepro 持续复现结束，代码页未写入，输出=%s ===",g_path.c_str());if(g_log)fclose(g_log);FreeLibraryAndExitThread((HMODULE)arg,0);return 0;
+  OpenLog((HMODULE)arg);Log("=== AddDelayRepro 持续复现开始 ===");Mod m;if(!FindMod(m)){Log("[FAIL] GameAssembly 未找到");if(g_log)fclose(g_log);FreeLibraryAndExitThread((HMODULE)arg,0);return 0;}Log("[MODULE] name=%s base=0x%llX size=0x%X timestamp=0x%08X",m.name,(unsigned long long)m.base,m.size,m.ts);bool super = strcmp(m.name,"GameAssembly.dll") != 0;if(!super){g_target=m.base+0x156C395;unsigned char code[5]{};ReadBytes((const void*)g_target,code,5);Log("[TARGET] RVA=0x156C395 VA=0x%llX bytes=%02X %02X %02X %02X %02X",(unsigned long long)g_target,code[0],code[1],code[2],code[3],code[4]);if(!(code[0]==0xF2&&code[1]==0x0F&&code[2]==0x5C&&code[4]==0x28)){Log("[FAIL] 普通版目标字节不匹配");if(g_log)fclose(g_log);FreeLibraryAndExitThread((HMODULE)arg,0);return 0;}}else if(!FindSuperSubsd(m)){Log("[FAIL] Super AddDelay 中未找到目标 subsd");if(g_log)fclose(g_log);FreeLibraryAndExitThread((HMODULE)arg,0);return 0;}uintptr_t st=0,inst=0,syncKlass=0;DWORD syncRva=super?0x0374C368:0x0E606490;DWORD baseRva=super?0x03755D18:0x0E644808;if(!ResolveObject(m,syncRva,"CharactorSync",syncKlass,st,inst)||!inst){Log("[FAIL] CharactorSync 未初始化");if(g_log)fclose(g_log);FreeLibraryAndExitThread((HMODULE)arg,0);return 0;}g_sync=inst;uintptr_t bk=0;ResolveObject(m,baseRva,"GameBaseObject",bk,g_gameStatics,inst);if(GetFileAttributesA(g_stopPath.c_str())!=INVALID_FILE_ATTRIBUTES){Log("[STOP] 发现停止标志，未设置断点：%s",g_stopPath.c_str());if(g_log)fclose(g_log);FreeLibraryAndExitThread((HMODULE)arg,0);return 0;}g_veh=AddVectoredExceptionHandler(1,Veh);Log("[BASELINE] 先采集 10 个样本");for(unsigned i=0;i<10;i++){Sample(i);Sleep(100);}Log("[ARM] 已进入持续复现；每 100ms 补齐线程断点；创建停止标志即可恢复");unsigned seq=10;while(GetFileAttributesA(g_stopPath.c_str())==INVALID_FILE_ATTRIBUTES){ApplyAll(true);Sample(seq++);Sleep(100);}Log("[STOP] 收到停止标志，开始清理");ApplyAll(false);Log("[RESTORE] 已清除执行断点，hits=%ld；继续观察恢复",g_hits);for(unsigned i=0;i<20;i++){Sample(seq++);Sleep(100);}if(g_veh){RemoveVectoredExceptionHandler(g_veh);g_veh=nullptr;}Log("=== AddDelayRepro 持续复现结束，代码页未写入，输出=%s ===",g_path.c_str());if(g_log)fclose(g_log);FreeLibraryAndExitThread((HMODULE)arg,0);return 0;
 }
 }
 BOOL APIENTRY DllMain(HMODULE h,DWORD r,LPVOID){if(r==DLL_PROCESS_ATTACH){DisableThreadLibraryCalls(h);HANDLE t=CreateThread(nullptr,0,Worker,h,0,nullptr);if(t)CloseHandle(t);}return TRUE;}
